@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/example4.png">
 <meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/PING.png">
 <meta property="article:published_time" content="2023-11-04T13:43:39.000Z">
-<meta property="article:modified_time" content="2023-11-09T12:22:57.123Z">
+<meta property="article:modified_time" content="2023-11-09T13:10:34.978Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="ctf_Replay">
 <meta name="twitter:card" content="summary">
@@ -344,8 +344,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-09 20:22:57</span>
-            <span class="mobile">2023-11-09 20:22:57</span>
+            <span class="desktop">2023-11-09 21:10:34</span>
+            <span class="mobile">2023-11-09 21:10:34</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -461,7 +461,7 @@
 
 <h3 id="Canary绕过"><a href="#Canary绕过" class="headerlink" title="Canary绕过"></a><strong>Canary绕过</strong></h3><p>首先介绍Canary：栈溢出是通过溢出存在在栈上的局部变量，让多出来的数据覆盖ebp、eip等，从而达到劫持控制流的目的。栈溢出保护，缓冲区溢出攻击缓解手段，覆盖栈上的返回地址执行shellcode。</p>
 <p>启用站保护，函数执行时会在栈的尾部插入cookie值，函数返回时检测cookie值是否合法（在栈桢销毁前测试值是否被改变：攻击在覆盖返回地址是会将cookie值给覆盖掉），不合法就直接停止程序运行，组织了shellcode的执行，避免漏洞执行。在 Linux 中将 cookie 信息称为 Canary。就本题中的汇编来看，类似这样的标识符。</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">.text:00000000004012D2                               ; __unwind &#123;</span><br><span class="line">.text:00000000004012D2 F3 0F 1E FA                   endbr64</span><br><span class="line">.text:00000000004012D6 55                            push    rbp</span><br><span class="line">.text:00000000004012D7 48 89 E5                      mov     rbp, rsp</span><br><span class="line">.text:00000000004012DA 48 81 EC A0 00 00 00          sub     rsp, 0A0h</span><br><span class="line">.text:00000000004012E1 64 48 8B 04 25 28 00 00 00    mov     rax, fs:28h</span><br><span class="line">;在启用canary编译后，函数会取fs寄存器0x28处的值，</span><br><span class="line">.text:00000000004012EA 48 89 45 F8                   mov     [rbp+var_8], rax</span><br><span class="line">;存放在栈中[rbp+var_8]的位置，操作即为栈中插入canary</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.text:0000000000401470 48 8B 45 F8                   mov     rax, [rbp+var_8] </span><br><span class="line">;函数返回之前，将变量交给rax</span><br><span class="line">.text:0000000000401474 64 48 33 04 25 28 00 00 00    xor     rax, fs:28h </span><br><span class="line">;比较fs寄存器0x28处的值和原本的存储异或判断canary是否被修改 相等即rax=0</span><br><span class="line">.text:000000000040147D 74 05                         jz      short locret_401484  </span><br><span class="line">;结果是0不跳转 </span><br><span class="line">.text:000000000040147D</span><br><span class="line">.text:000000000040147F E8 6C FC FF FF                call    ___stack_chk_fail    </span><br><span class="line">;不是0则执行call调用程序崩溃函数</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">.text:00000000004012D2                               ; __unwind &#123;</span><br><span class="line">.text:00000000004012D2 F3 0F 1E FA                   endbr64</span><br><span class="line">.text:00000000004012D6 55                            push    rbp</span><br><span class="line">.text:00000000004012D7 48 89 E5                      mov     rbp, rsp</span><br><span class="line">.text:00000000004012DA 48 81 EC A0 00 00 00          sub     rsp, 0A0h</span><br><span class="line">.text:00000000004012E1 64 48 8B 04 25 28 00 00 00    mov     rax, fs:28h</span><br><span class="line">;在启用canary编译后，函数会取fs寄存器0x28处的值，</span><br><span class="line">.text:00000000004012EA 48 89 45 F8                   mov     [rbp+var_8], rax</span><br><span class="line">;存放在栈中[rbp+var_8]的位置，操作即为栈中插入canary</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.text:0000000000401470 48 8B 45 F8                   mov     rax, [rbp+var_8] </span><br><span class="line">;函数返回之前，将变量交给rax</span><br><span class="line">.text:0000000000401474 64 48 33 04 25 28 00 00 00    xor     rax, fs:28h </span><br><span class="line">;比较fs寄存器0x28处的值和原本的存储异或判断canary是否被修改 相等即rax=0</span><br><span class="line">.text:000000000040147D 74 05                         jz      short locret_401484  </span><br><span class="line">;结果是0不跳转 </span><br><span class="line">.text:000000000040147D</span><br><span class="line">.text:000000000040147F E8 6C FC FF FF                call    ___stack_chk_fail    </span><br><span class="line">;不是0则执行call调用程序崩溃函数</span><br></pre></td></tr></table></figure></div>
 
 <p>canary设计以字节<code>\x00</code>结尾，为了保证 Canary 可以截断字符串。 泄露栈中的 Canary 的思路是覆盖 Canary 的低字节，来打印出剩余的 Canary 部分。</p>
 <p>后续再做一些这样的题目来熟悉。</p>
@@ -509,7 +509,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-11-09 20:22:57
+                    :</strong> 2023-11-09 21:10:34
             </li>
         
         <li>
