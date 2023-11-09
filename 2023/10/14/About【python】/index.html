@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Juana_2u">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://juana-2u.github.io/2023/10/14/about【python】/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="【Python】Installing Angr(附wheel file)  原文的地址：https:&#x2F;&#x2F;github.com&#x2F;bannsec&#x2F;angr-Windows  在之前就安装好了的z3的基础上， 所以搞这个东西也是蛮快的 123456789git clone https:&#x2F;&#x2F;github.com&#x2F;Owlz&#x2F;angr-Windows.gitcd angr-Windowspip install">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About【python】">
+<meta property="og:url" content="https://juana-2u.github.io/2023/10/14/About%E3%80%90python%E3%80%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="【Python】Installing Angr(附wheel file)  原文的地址：https:&#x2F;&#x2F;github.com&#x2F;bannsec&#x2F;angr-Windows  在之前就安装好了的z3的基础上， 所以搞这个东西也是蛮快的 123456789git clone https:&#x2F;&#x2F;github.com&#x2F;Owlz&#x2F;angr-Windows.gitcd angr-Windowspip install">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668481279446-68beecfd-1d40-4973-838d-004f6f4fedaa.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668481315041-5fa95728-5491-4348-ae39-ee96640827b2.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668482137615-964c25aa-4222-453d-a5c7-f433fe92339a.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483245944-b3a29601-763e-4b59-b12c-139cbb9c08dd.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483246512-601d5977-29fc-481d-a44d-faec8e7e058a.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483246129-6ea9ac80-1a61-4380-90dd-0728a6532dc7.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483245821-796976e4-e5c0-4f9e-8b6d-bc2d4ca20162.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483246029-22fefc10-c2a4-4074-b851-22c394ccc995.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483246661-6906691a-5bf2-44e9-8e60-5346021c3c52.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483247066-b4fa1486-6ad1-49d3-b00e-e99e8cba64e8.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483785133-b878f895-361e-4e33-b243-97264c201cb4.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483823250-5c39e1c2-1202-4e7b-ad2b-f0fffc2e09b4.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483864656-e8a7892e-0f27-4319-983b-f072a9980528.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483896069-0edfa943-7b1c-4b5b-bc5b-ef79ef763400.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668483976296-07828cf1-ed56-4abe-9902-9e7916dbbf6c.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1671292678431-684e2cd6-36e3-4b0b-bab2-3ad4534b3693.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1671292746202-02549763-d054-4c64-b958-bbd28cf24dbf.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1671292883344-f9e8831a-a0b6-4e72-9a3d-43ba81f212e9.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1677404041227-2f0e2fb2-865a-4de1-9ab4-a513a5094a05.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1677404343880-3d4a56dc-79e4-4374-9b74-b4374242c5eb.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1661705835169-a4ead24c-7b79-4ad2-8407-f0c30d206045.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1661706291563-d31d7805-be6e-443b-bc88-8420188a6c9b.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1673937581360-9c46de9a-be9b-4187-ac17-dbea89ccc020.png">
+<meta property="article:published_time" content="2023-10-14T04:19:57.000Z">
+<meta property="article:modified_time" content="2023-10-14T06:50:20.851Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://juana-2u.github.io/Post_images/About_python.assets/1668481279446-68beecfd-1d40-4973-838d-004f6f4fedaa.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/ico.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/ico.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/ico.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            About【python】 -
+        
+        Juana_2u
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"juana-2u.github.io","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["记录来时的路"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#FF5722"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Juana_2uのhappyworld","subtitle":{"text":["BEING HAPPY IS THE MOST IMPORTANT!!"," I have a dream!","Sometimes you have to trust your gut.","If you start at the bottom,pay your dues,life here can be a dream come true.","Loading..."],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":"https://www.zhihu.com/people/fawn-16-32","twitter":null,"email":"2530624471@qq.com# your email","bilibili":"https://space.bilibili.com/440820814?spm_id_from=333.1007.0.0"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"An der schönen blauen Donau,Walzer,op.314","artist":"Johann Strauss II","url":"https://open.spotify.com/embed/track/5odlY52u43F5BjByhxg7wg?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"City of Stars","artist":"Ryan Gosling,Emma Stone","url":"https://open.spotify.com/embed/track/1xk2Z84gbcn4tPXiiutxzS?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"Stray sheep","artist":"Kenshi Yonezu","url":"https://open.spotify.com/track/0iniTNHwqBiP4UDE1dgUpD?si=94e55cca33114e88","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user"},"tags":{"icon":"fa-solid fa-tags","path":"/tags/","categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"Links":{"icon":"fa-regular fa-link"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/5/10 23:30:00"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Juana_2u
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags/"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-tags"></i>
+                                        
+                                        TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/tags/"  >
+                             
+                                
+                                    <i class="fa-solid fa-tags"></i>
+                                
+                                TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">About【python】</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Juana_2u</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">记录来时的路</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-14 12:19:57</span>
+        <span class="mobile">2023-10-14 12:19:57</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-14 14:50:20</span>
+            <span class="mobile">2023-10-14 14:50:20</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/python/">python</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h1 id="【Python】Installing-Angr-附wheel-file"><a href="#【Python】Installing-Angr-附wheel-file" class="headerlink" title="【Python】Installing Angr(附wheel file)"></a>【Python】Installing Angr(附wheel file)</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668481279446-68beecfd-1d40-4973-838d-004f6f4fedaa.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668481315041-5fa95728-5491-4348-ae39-ee96640827b2.png"
+                      alt="img"
+                ></p>
+<p>原文的地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/bannsec/angr-Windows" >https://github.com/bannsec/angr-Windows <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>在之前就安装好了的z3的基础上， 所以搞这个东西也是蛮快的</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Owlz/angr-Windows.git</span><br><span class="line">cd angr-Windows</span><br><span class="line">pip install virtualenv</span><br><span class="line">virtualenv --python=C:\Python2<span class="number">.7</span>-64bit\python.exe angr</span><br><span class="line">angr\Scripts\activate</span><br><span class="line">pip install &lt;capstone&gt;</span><br><span class="line">pip install &lt;z3&gt;</span><br><span class="line">pip install &lt;pyvex&gt;</span><br><span class="line">pip install angr</span><br></pre></td></tr></table></figure></div>
+
+<p>分解步骤一步一步来</p>
+<h3 id="1-git安装"><a href="#1-git安装" class="headerlink" title="1.git安装"></a>1.git安装</h3><p>（这一步是蛮简单的，打开到相应的目录下进行命令行的输入，之前git环境G掉了了，也不知道这个是怎么好的，大概是代理的原因）</p>
+<p>先是在原来的C:&#x2F;&#x2F;python36的根目录下，使用git的方式将安装包放入到目录中去（如下图示）</p>
+<h3 id="2-cd-angr-Windows"><a href="#2-cd-angr-Windows" class="headerlink" title="2.cd angr-Windows"></a>2.cd angr-Windows</h3><p>打开到Angr-Windows文件下，可以看到的是目录下有很多的wheel files</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668482137615-964c25aa-4222-453d-a5c7-f433fe92339a.png"
+                      alt="img"
+                ></p>
+<h4 id="wheel-files的简介："><a href="#wheel-files的简介：" class="headerlink" title="wheel files的简介："></a>wheel files的简介：</h4><p>wheel files（.whl文件）也叫轮子（wheel）， 用于python分发(distribution)的标准内置包格式(standard built-package format)，包含安装所需的所有文件和元数据(metadata)。.whl文件使用的是zip压缩 .whl文件还包含有关此wheel文件支持的Python版本和平台的信息。.whl文件格式是一种即装即用格式(ready-to-install format)，允许在不构建源代码分发(without building the source distribution)的情况下运行安装包。  </p>
+<h4 id="命名格式："><a href="#命名格式：" class="headerlink" title="命名格式："></a>命名格式：</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;dist&#125;-&#123;version&#125;(-&#123;build&#125;)?-&#123;python.version&#125;-&#123;abi&#125;-&#123;platform&#125;.whl  </span><br></pre></td></tr></table></figure></div>
+
+<p>可以通过pip安装已经下载的.whl文件， <code>pip install &lt;filename&gt;.whl</code>  </p>
+<h4 id="wheel的类型："><a href="#wheel的类型：" class="headerlink" title="wheel的类型："></a>wheel的类型：</h4><p>1)<code>.universal wheel</code>：包含了<code>py2.py3-none-any.whl</code> 任何操作系统和平台上都支持python2和python3</p>
+<p>2)<code>.pure-python wheel</code>：包含<code>py3-none-any.whl</code>或<code>py2-none-any.whl</code>，但不能同时支持两者，在其它方面与universal wheel相同，但它会被标记为py2或py3而不是py2.py3标签。  </p>
+<p>3)<code>.platform wheel</code>： 支持特定的Python版本和平台。  </p>
+<h4 id="创建wheel"><a href="#创建wheel" class="headerlink" title="创建wheel"></a>创建wheel</h4><p>1).将所有模块(python脚本)、包(包含模块的文件夹&#x2F;目录)保存在父目录中。随意命名根目录，通常与项目相关  </p>
+<p>2).最好创建一个空的名为__init__.py文件，并将此__init__.py文件放在所有包目录和子包目录下。无需将其保存在根目录中。</p>
+<p>3).创建一个名为setup.py的文件并将其放在根目录中。此脚本的内容至少应包括：<code>distribution name, version number, and list of package names</code>  </p>
+<p>4）转到运行python和pip命令的命令提示符，在提示符下更改目录并导航到放置setup.py的项目的根目录，执行下列命令( 扩展名为.whl的文件将在根目录下自动创建的子目录中创建，名为dist)</p>
+<p> 注：需提取安装wheel setuptools: <code>pip install wheel setuptools</code>，在conda中默认是安装的  </p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python setup.py bdist_wheel --universal # universal wheel</span><br><span class="line">python setup.py bdist_wheel # pure-Python wheel</span><br></pre></td></tr></table></figure></div>
+
+<p>这里通过conda在虚拟环境base下创建一个wheel，取名为testwheel目录组织结构如下所示：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483245944-b3a29601-763e-4b59-b12c-139cbb9c08dd.png"
+                      alt="img"
+                ></p>
+<p>setup.py内容如下：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> setuptools</span><br><span class="line"> setuptools.setup(</span><br><span class="line">     name=<span class="string">&quot;testwheel&quot;</span>,</span><br><span class="line">     version=<span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">     author=<span class="string">&quot;fengbingchun&quot;</span>,</span><br><span class="line">     author_email=<span class="string">&quot;fengbingchun@163.com&quot;</span>,</span><br><span class="line">     description=<span class="string">&quot;test wheel&quot;</span>,</span><br><span class="line">     packages=setuptools.find_packages(),</span><br><span class="line">     url=<span class="string">&quot;https://github.com/fengbingchun&quot;</span>,</span><br><span class="line">     license=<span class="string">&quot;MIT&quot;</span>,</span><br><span class="line">     python_requires=<span class="string">&quot;&gt;=3.8&quot;</span></span><br><span class="line"> )</span><br></pre></td></tr></table></figure></div>
+
+<p>testwheel目录下的__init__.py是个空文件，math目录下的__init__.py内容如下：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from .math_add import * </span><br><span class="line">from .math_sub import *</span><br></pre></td></tr></table></figure></div>
+
+<p>math_add.py内容如下：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add3</span>(<span class="params">a, b, c</span>):</span><br><span class="line">     <span class="built_in">print</span>(<span class="string">&quot;call add operation: three parameters ...&quot;</span>)</span><br><span class="line">     <span class="keyword">return</span> (a+b+c)</span><br><span class="line"> <span class="keyword">def</span> <span class="title function_">add2</span>(<span class="params">a, b</span>):</span><br><span class="line">     <span class="built_in">print</span>(<span class="string">&quot;call add operation: two parameters ...&quot;</span>)</span><br><span class="line">     <span class="keyword">return</span> (a+b)</span><br></pre></td></tr></table></figure></div>
+
+<p>math_sub.py内容如下：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sub3</span>(<span class="params">a, b, c</span>):</span><br><span class="line">     <span class="built_in">print</span>(<span class="string">&quot;call sub operation: three parameters ...&quot;</span>)</span><br><span class="line">     <span class="keyword">return</span> (a-b-c)</span><br><span class="line"> <span class="keyword">def</span> <span class="title function_">sub2</span>(<span class="params">a, b</span>):</span><br><span class="line">     <span class="built_in">print</span>(<span class="string">&quot;call sub operation: two parameters ...&quot;</span>)</span><br><span class="line">     <span class="keyword">return</span> (a-b)</span><br></pre></td></tr></table></figure></div>
+
+<p>执行如下命令生成wheel，此wheel仅限于在Python3上执行，将终端定位到setup.py目录下</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483246512-601d5977-29fc-481d-a44d-faec8e7e058a.png"
+                      alt="img"
+                ></p>
+<p>执行完上述命令后会产生3个新的目录，build, dist, testwhell.egg-info，各个目录的内容如下所示，生成的whell在dist目录下，全名为<code>testwheel-1.0.0-py3-none-any.whl</code>，只需将此文件分发出去，其他人安装后即能使用。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483246129-6ea9ac80-1a61-4380-90dd-0728a6532dc7.png"
+                      alt="img"
+                ></p>
+<h4 id="导入使用wheel"><a href="#导入使用wheel" class="headerlink" title="导入使用wheel"></a>导入使用wheel</h4><p>如果你想在项目中安装已经安装过的wheel文件，需要更新此wheel的版本号。如果版本号保持不变，pip将不会安装它。或者先卸载已安装的whell: <code>pip uninstall testwheel</code></p>
+<p>通过conda新建一个虚拟环境testwheel，用来测试上面生成的<code>testwheel-1.0.0-py3-none-any.whl</code>，将终端定位到其它的test目录下，并将生成的wheel文件拷贝到此目录下，安装，执行结果如下图所示：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483245821-796976e4-e5c0-4f9e-8b6d-bc2d4ca20162.png"
+                      alt="img"
+                ></p>
+<p>会将此wheel安装到<code>anaconda3/envs/testwheel/lib/python3.8/site-packages/</code>目录下，如下图所示：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483246029-22fefc10-c2a4-4074-b851-22c394ccc995.png"
+                      alt="img"
+                ></p>
+<p>在tmp下添加一个test.py文件，用于测试wheel，内容如下：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> testwheel.math <span class="keyword">import</span> math_add, math_sub</span><br><span class="line"> a, b, c = <span class="number">10</span>, <span class="number">5</span>, <span class="number">2</span></span><br><span class="line"> <span class="built_in">print</span>(<span class="string">&quot;add3:&quot;</span>, math_add.add3(a, b, c))</span><br><span class="line"> <span class="built_in">print</span>(<span class="string">&quot;add2:&quot;</span>, math_add.add2(a, b))</span><br><span class="line"> <span class="built_in">print</span>(<span class="string">&quot;sub3:&quot;</span>, math_sub.sub3(a, b, c))</span><br><span class="line"> <span class="built_in">print</span>(<span class="string">&quot;sub2:&quot;</span>, math_sub.sub2(a, b))</span><br><span class="line"> <span class="built_in">print</span>(<span class="string">&quot;test finish&quot;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>执行结果如下所示：可见正确的调用了wheel中的接口</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483246661-6906691a-5bf2-44e9-8e60-5346021c3c52.png"
+                      alt="img"
+                ></p>
+<p>如果需要反复的调整wheel的内容，需要反复的测试，又不想修改version number，一种方法是可先卸载已安装的wheel，然后再次安装新的wheel，如下图所示：也可使用–force-reinstall</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483247066-b4fa1486-6ad1-49d3-b00e-e99e8cba64e8.png"
+                      alt="img"
+                ></p>
+<h3 id="3-pip-install-virtualenv"><a href="#3-pip-install-virtualenv" class="headerlink" title="3.pip install virtualenv"></a>3.pip install virtualenv</h3><p>安装的是一个python的虚拟环境</p>
+<p>之后设置指向的python.exe文件<code>virtualenv --python=C:\Python36\python.exe angr</code></p>
+<p>进入虚拟环境后<code>angr\Scripts\activate</code>进入到这个文件内，将这个原来是在angr-Windows文件夹下的C++filt.exe文件放在这个angr的文件下</p>
+<p>Then move the “c++filt” executable into your angr&#x2F;Scripts directory. And yes, the order matters somewhat. Primarily I think capstone needs to be installed first, then the other wheel files in any order. Make sure you install the wheel files prior to attempting to install angr proper.</p>
+<p>根据这个原文中的内容，要先使用pip安装好capstone</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483785133-b878f895-361e-4e33-b243-97264c201cb4.png"
+                      alt="img"
+                ></p>
+<p>安装好了之后，就直接按照这个顺序安装z3</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483823250-5c39e1c2-1202-4e7b-ad2b-f0fffc2e09b4.png"
+                      alt="img"
+                ></p>
+<p>接着pyvex</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483864656-e8a7892e-0f27-4319-983b-f072a9980528.png"
+                      alt="img"
+                ></p>
+<p>最后要好长时间来安装angr</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483896069-0edfa943-7b1c-4b5b-bc5b-ef79ef763400.png"
+                      alt="img"
+                ></p>
+<h3 id="4-验证一下angr是否能够使用"><a href="#4-验证一下angr是否能够使用" class="headerlink" title="4.验证一下angr是否能够使用"></a>4.验证一下angr是否能够使用</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1668483976296-07828cf1-ed56-4abe-9902-9e7916dbbf6c.png"
+                      alt="img"
+                ></p>
+<p>太棒了，没有像之前一样报错。</p>
+<h1 id="【python】安装pillow的三种方法"><a href="#【python】安装pillow的三种方法" class="headerlink" title="【python】安装pillow的三种方法"></a>【python】安装pillow的三种方法</h1><p>pillow是python的图形界面库</p>
+<h2 id="M1-pip："><a href="#M1-pip：" class="headerlink" title="M1 pip："></a>M1 pip：</h2><p>在Dos界面输入命令：<code>pip install pillow</code></p>
+<h2 id="M2-download-wheel-file："><a href="#M2-download-wheel-file：" class="headerlink" title="M2 download wheel file："></a>M2 download wheel file：</h2><p>wheel源文件下载安装官网 <a class="link"   target="_blank" rel="noopener" href="https://pypi.org/" >https://pypi.org/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>找到对应的版本下载</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1671292678431-684e2cd6-36e3-4b0b-bab2-3ad4534b3693.png"
+                     
+                ></p>
+<p>在pyhon目录下Dos界面输入命令：<code>pip install &lt;name&gt;.amd64.whl</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1671292746202-02549763-d054-4c64-b958-bbd28cf24dbf.png"
+                      alt="img"
+                ></p>
+<h2 id="M3-pip-with-doubanio："><a href="#M3-pip-with-doubanio：" class="headerlink" title="M3 pip with doubanio："></a>M3 pip with doubanio：</h2><p>使用豆瓣提供的源</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com pillow</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1671292883344-f9e8831a-a0b6-4e72-9a3d-43ba81f212e9.png"
+                      alt="img"
+                ></p>
+<p>记录一下 </p>
+<h1 id="【python】常用方法"><a href="#【python】常用方法" class="headerlink" title="【python】常用方法"></a>【python】常用方法</h1><h2 id="python逆序："><a href="#python逆序：" class="headerlink" title="python逆序："></a>python逆序：</h2><p><code>enc=&quot;ScDZC1cNDZaxnh/2eW1UdqaCiJ0ijRIExlvVEgP43rpxoxbYePBhpwHDPJ==&quot;</code></p>
+<p><code>print(enc[::-1])</code></p>
+<h2 id="python将字母转换成大写字母"><a href="#python将字母转换成大写字母" class="headerlink" title="python将字母转换成大写字母"></a>python将字母转换成大写字母</h2><p>三种方法upper() capitalize() title()</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span> = <span class="string">&quot;www.php.com&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>.upper())         <span class="comment"># 把所有字符中的小写字母转换成大写字母</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>.lower())         <span class="comment"># 把所有字符中的大写字母转换成小写字母</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>.capitalize())      <span class="comment"># 把第一个字母转化为大写字母，其余小写</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>.title())          <span class="comment"># 把每个单词的第一个字母转化为大写，其余小写</span></span><br><span class="line">WWW.PHP.COM</span><br><span class="line">www.php.com</span><br><span class="line">Www.php.com</span><br><span class="line">Www.Php.Com</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="【python】利用setup-py安装"><a href="#【python】利用setup-py安装" class="headerlink" title="【python】利用setup.py安装"></a>【python】利用setup.py安装</h1><p>在安装secret的python模块包遇到的问题</p>
+<p>直接下载安装包</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1677404041227-2f0e2fb2-865a-4de1-9ab4-a513a5094a05.png"
+                      alt="img"
+                ></p>
+<p>打开之后有setup.py文件</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1677404343880-3d4a56dc-79e4-4374-9b74-b4374242c5eb.png"
+                      alt="img"
+                ></p>
+<p>在该目录下，cmd输入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.python setup.py build</span><br><span class="line">2.python setup.py install  </span><br></pre></td></tr></table></figure></div>
+
+<h1 id="【Python】有关pyc文件介绍及逆向"><a href="#【Python】有关pyc文件介绍及逆向" class="headerlink" title="【Python】有关pyc文件介绍及逆向"></a>【Python】有关pyc文件介绍及逆向</h1><h1 id="pyc文件是什么"><a href="#pyc文件是什么" class="headerlink" title="pyc文件是什么"></a>pyc文件是什么</h1><p>pyc是一种二进制文件，是由Python文件经过编译后所生成的文件，它是一种byte code（字节码），可由python虚拟机直接执行。</p>
+<p>py文件编译成pyc文件后加载速度更快而且提高了代码的安全性。pyc的内容与python的版本相关，不同版本编译的pyc文件不一样</p>
+<p><strong>py文件速生成pyc文件</strong></p>
+<p><strong>python -m py_compile 1.py</strong></p>
+<h1 id="pyc文件有什么用"><a href="#pyc文件有什么用" class="headerlink" title="pyc文件有什么用"></a>pyc文件有什么用</h1><p>py文件是可以直接看见python源码的，由于不可能把源码泄露，所以我们就需要将原来的py文件编译成pyc文件来保护源码。</p>
+<p>另外生成的pyc文件时可以进行反编译的，然而不同版本编译后的pyc文件是不一样的，这主要是根据Python源码中所提供的opcode来决定。</p>
+<h1 id="pyc文件怎么生成"><a href="#pyc文件怎么生成" class="headerlink" title="pyc文件怎么生成"></a>pyc文件怎么生成</h1><h2 id="单个pyc文件的生成"><a href="#单个pyc文件的生成" class="headerlink" title="单个pyc文件的生成"></a>单个pyc文件的生成</h2><ul>
+<li><strong>命令行的生成</strong><code>**python -m py_compile 1.py**</code></li>
+<li><strong>代码实现</strong><code>**import py_compile**   </code></li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**py_compile.compile(r&#x27;H:/game/test.py&#x27;)**</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>compile()函数的语法:</strong></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile(file[, cfile[, dfile[, doraise]]])</span><br></pre></td></tr></table></figure></div>
+
+<p>file ：表示需要编译的py文件的路径</p>
+<p>cfile ：表示编译后的pyc文件名称和路径，默认为直接在file文件名后加c 或者 o,（o表示优化的字节码）</p>
+<p>dfile：指的是错误消息保存的路径</p>
+<p>doraise ：有两个值分别是true或false</p>
+<p>​     如果为true时则会引发一个PyCompileError，否则如果编译文件出错，则会有一个错误，默认显示在sys.stderr中，而不会引发异常</p>
+<h2 id="批量生成pyc文件"><a href="#批量生成pyc文件" class="headerlink" title="批量生成pyc文件"></a>批量生成pyc文件</h2><ul>
+<li><strong>代码实现</strong><code>**import compileall**</code></li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**compileall.compile_dir(r&#x27;H:/game&#x27;) ##把game目录下以及其子目录下的py文件都编译为pyc文件**</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>compileall()函数语法：</strong></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile_dir(dir[, maxlevels[, ddir[, force[, rx[, quiet]]]]])</span><br></pre></td></tr></table></figure></div>
+
+<p>dir： 表示编译文件的文件夹位置</p>
+<p>maxlevels ：表示需要递归编译的子目录的层数，默认是10层，即默认会把10层子目录中的py文件编译为pyc</p>
+<p>ddir ：表示错误消息保存的路径</p>
+<p>force：当为true时表示会被强制编译成pyc文件，即使pyc文件是最新的依然会被强制编译一次 </p>
+<p>rx： 表示一个正则表达式，可以排除掉不想要的目录，或者只有符合条件的目录才进行编译</p>
+<p>quiet：当为True时，在编译后不会再标准输出中来打印信息</p>
+<h1 id="pyc文件的格式"><a href="#pyc文件的格式" class="headerlink" title="pyc文件的格式"></a>pyc文件的格式</h1><p>pyc文件的字节码</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1661705835169-a4ead24c-7b79-4ad2-8407-f0c30d206045.png"
+                      alt="img"
+                ></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">03f3 0d0a	magic number表示python的版本信息;</span><br><span class="line"></span><br><span class="line">6206 b160 	时间戳，编译的时间信息</span><br><span class="line"></span><br><span class="line">63 			Blockde的开头</span><br><span class="line"></span><br><span class="line">后4字节0000 0000 ：argcount：	参数个数</span><br><span class="line"></span><br><span class="line">后4字节0000 0000： nlocals：	局部变量个数</span><br><span class="line"></span><br><span class="line">后4字节1b00 0000:    stacksize(栈空间大小)</span><br><span class="line"></span><br><span class="line">后4字节4000 0000：  flags：		特殊标志的flags</span><br><span class="line"></span><br><span class="line">73:类型是string</span><br><span class="line"></span><br><span class="line">3501 0000 			字节长度（小端模式）</span><br><span class="line"></span><br><span class="line">之后是opcode（操作码）</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>时间戳</strong></p>
+<p>时间戳的主要目的在于通过一定的技术手段，对数据产生的时间进行认证，从而验证这段数据在产生后是否经过篡改。</p>
+<p>个人理解是，时间戳指的是对数修改的时间记录。类似你修改一个文件，而文件后面会保存你文件修改的时间，这个时间就是时间戳。</p>
+<p>时间戳的协议：</p>
+<ul>
+<li>简单的时间戳协议</li>
+<li>线性链接协议</li>
+<li>树形协议</li>
+<li>二进制协议</li>
+<li>线索认证树协议</li>
+<li>分布式协议</li>
+</ul>
+<h1 id="pyc文件逆向的实例–-SUSCTF-DigitalCircuits"><a href="#pyc文件逆向的实例–-SUSCTF-DigitalCircuits" class="headerlink" title="pyc文件逆向的实例–[SUSCTF]DigitalCircuits"></a>pyc文件逆向的实例–[SUSCTF]DigitalCircuits</h1><p> 解题：</p>
+<p>直接解压压缩包，看到是这样的文件，查看文件的详细信息</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1661706291563-d31d7805-be6e-443b-bc88-8420188a6c9b.png"
+                      alt="img"
+                ></p>
+<p>很容易看出是用python写的文件，并将python打包成exe的——用python的思路解包，及使用解 python的软件——pyinstxtractor-master（另附项目地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/extremecoders-re/pyi" >https://github.com/extremecoders-re/pyi <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> nstxtractor）</p>
+<ul>
+<li>python解包</li>
+</ul>
+<p>在解包脚本的路径下输入cmd打开命令行， </p>
+<p>解包后是这样的界面 同时会得到一个文件 在文件中找到需要恢复的字节码文件——DigitalCircuits.pyc，然而这个文件是一个这个文件是用 010editor打开 查看最上面一排（由于笔者操作太快，忘截图了），其缺少magic numbers（用来标记文件或者协议的 格式，很多文件都有幻数标志来表明该文件的格式。）和相关的文件识别属性。 stuct.pyc文件包含一个完整可用的首部,可以用来修复.pyc文件，即将stuct.pyc文件最上面一排cv到 DigitalCircuits.pyc文件，保存。 由于pyc文件是二进制文件，所以需要将这个二进制文件转成py文件（ps：uncompyle6，然而作 者太菜，先用队友推荐的在线转的工具）可以得到DigitalCirciuts的源代码  </p>
+<h1 id="【Python】爬取网页视频-20230117"><a href="#【Python】爬取网页视频-20230117" class="headerlink" title="【Python】爬取网页视频(20230117)"></a>【Python】爬取网页视频(20230117)</h1><h1 id="you-get简易版"><a href="#you-get简易版" class="headerlink" title="you-get简易版"></a>you-get简易版</h1><p>首先在python36下直接cmd 输入安装命令：<code>pip install you-get</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/About_python.assets/1673937581360-9c46de9a-be9b-4187-ac17-dbea89ccc020.png"
+                      alt="img"
+                ></p>
+<p>安装好了之后就直接在计划将视频放入的文件下输入cmd进行爬取命令的输入：<code>you-get videourl</code></p>
+<h1 id="【Python】Z3求解器的结果输出-python"><a href="#【Python】Z3求解器的结果输出-python" class="headerlink" title="【Python】Z3求解器的结果输出(python)"></a>【Python】Z3求解器的结果输出(python)</h1><h3 id="1-安装和导包"><a href="#1-安装和导包" class="headerlink" title="1.安装和导包"></a>1.安装和导包</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">pip install z3-solver</span><br><span class="line"><span class="comment">#导包</span></span><br><span class="line"><span class="keyword">from</span> z3 <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-声明变量"><a href="#2-声明变量" class="headerlink" title="2.声明变量"></a>2.声明变量</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#变量是整数</span></span><br><span class="line">	<span class="comment">#逐一定义</span></span><br><span class="line">	a = Int(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">	b = Int(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">	<span class="comment">#一起定义</span></span><br><span class="line">	a,b = Ints(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line"><span class="comment">#变量为实数</span></span><br><span class="line">	<span class="comment">##逐一定义</span></span><br><span class="line">	c = Real(<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line">	d = Real(<span class="string">&#x27;d&#x27;</span>)</span><br><span class="line"><span class="comment">##一起定义</span></span><br><span class="line">	c,d = Reals(<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="3-建立模型约束"><a href="#3-建立模型约束" class="headerlink" title="3. 建立模型约束"></a>3. 建立模型约束</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##求解器</span></span><br><span class="line">S = Solver()</span><br><span class="line"><span class="comment">##添加约束</span></span><br><span class="line">s.add=(a+b==<span class="number">8</span>)</span><br><span class="line">s.add=(a-b==<span class="number">8</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="4-模型求解"><a href="#4-模型求解" class="headerlink" title="4.模型求解"></a>4.模型求解</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##检查模型是否有解</span></span><br><span class="line">s.check() </span><br><span class="line">	<span class="comment">#模型有解输出 sat;否则就是unsat</span></span><br><span class="line">Out[<span class="number">14</span>]:sat</span><br><span class="line"></span><br><span class="line"><span class="comment">#计算结果</span></span><br><span class="line">s.model()</span><br><span class="line">Out[<span class="number">15</span>]:[a = <span class="number">5</span>,d = <span class="number">3</span>]</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="5-补充"><a href="#5-补充" class="headerlink" title="5.补充"></a>5.补充</h3><p>fraction类型(分数有理数)的数据可以直接转换成flaot类型</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d_float</span><br><span class="line">Out[<span class="number">30</span>]: Fraction(<span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">float</span>(d_float)</span><br><span class="line">Out[<span class="number">31</span>]: <span class="number">3.0</span></span><br></pre></td></tr></table></figure></div>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> About【python】</li>
+        <li><strong>Author:</strong> Juana_2u</li>
+        <li><strong>Created at
+                :</strong> 2023-10-14 12:19:57</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-10-14 14:50:20
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://juana-2u.github.io/2023/10/14/About【python】/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/python/">#python</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/10/18/2023XiangShan-Replay/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2023香山杯复现与学习[231016]</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/10/14/Something/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Something</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">About【python】</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90Python%E3%80%91Installing-Angr-%E9%99%84wheel-file"><span class="nav-text">【Python】Installing Angr(附wheel file)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-git%E5%AE%89%E8%A3%85"><span class="nav-text">1.git安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-cd-angr-Windows"><span class="nav-text">2.cd angr-Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-pip-install-virtualenv"><span class="nav-text">3.pip install virtualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%AA%8C%E8%AF%81%E4%B8%80%E4%B8%8Bangr%E6%98%AF%E5%90%A6%E8%83%BD%E5%A4%9F%E4%BD%BF%E7%94%A8"><span class="nav-text">4.验证一下angr是否能够使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90python%E3%80%91%E5%AE%89%E8%A3%85pillow%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-text">【python】安装pillow的三种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pip%EF%BC%9A"><span class="nav-text">M1 pip：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M2-download-wheel-file%EF%BC%9A"><span class="nav-text">M2 download wheel file：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M3-pip-with-doubanio%EF%BC%9A"><span class="nav-text">M3 pip with doubanio：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90python%E3%80%91%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">【python】常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E9%80%86%E5%BA%8F%EF%BC%9A"><span class="nav-text">python逆序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E5%B0%86%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E6%88%90%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D"><span class="nav-text">python将字母转换成大写字母</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90python%E3%80%91%E5%88%A9%E7%94%A8setup-py%E5%AE%89%E8%A3%85"><span class="nav-text">【python】利用setup.py安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90Python%E3%80%91%E6%9C%89%E5%85%B3pyc%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D%E5%8F%8A%E9%80%86%E5%90%91"><span class="nav-text">【Python】有关pyc文件介绍及逆向</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pyc%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">pyc文件是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pyc%E6%96%87%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8"><span class="nav-text">pyc文件有什么用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pyc%E6%96%87%E4%BB%B6%E6%80%8E%E4%B9%88%E7%94%9F%E6%88%90"><span class="nav-text">pyc文件怎么生成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%B8%AApyc%E6%96%87%E4%BB%B6%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-text">单个pyc文件的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90pyc%E6%96%87%E4%BB%B6"><span class="nav-text">批量生成pyc文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pyc%E6%96%87%E4%BB%B6%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-text">pyc文件的格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pyc%E6%96%87%E4%BB%B6%E9%80%86%E5%90%91%E7%9A%84%E5%AE%9E%E4%BE%8B%E2%80%93-SUSCTF-DigitalCircuits"><span class="nav-text">pyc文件逆向的实例–[SUSCTF]DigitalCircuits</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90Python%E3%80%91%E7%88%AC%E5%8F%96%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91-20230117"><span class="nav-text">【Python】爬取网页视频(20230117)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#you-get%E7%AE%80%E6%98%93%E7%89%88"><span class="nav-text">you-get简易版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90Python%E3%80%91Z3%E6%B1%82%E8%A7%A3%E5%99%A8%E7%9A%84%E7%BB%93%E6%9E%9C%E8%BE%93%E5%87%BA-python"><span class="nav-text">【Python】Z3求解器的结果输出(python)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E5%92%8C%E5%AF%BC%E5%8C%85"><span class="nav-text">1.安装和导包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="nav-text">2.声明变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%BB%BA%E7%AB%8B%E6%A8%A1%E5%9E%8B%E7%BA%A6%E6%9D%9F"><span class="nav-text">3. 建立模型约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%A8%A1%E5%9E%8B%E6%B1%82%E8%A7%A3"><span class="nav-text">4.模型求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%A1%A5%E5%85%85"><span class="nav-text">5.补充</span></a></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">PUJIPUJIPUJI~~~~DA~~~~</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Juana_2u</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>

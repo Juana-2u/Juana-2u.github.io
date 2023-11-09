@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Juana_2u">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://juana-2u.github.io/2023/10/14/something/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="LuoGo刷题（20220107）1.自动填充01234#include &lt;iomanip&gt;&#x2F;&#x2F;自动填充0的头文件cout&lt;&lt;setfill(&amp;#x27;0&amp;#x27;)&lt;&lt;setw(2)&lt;&lt;h&lt;&lt;&quot;:&quot;&lt;&lt;setfill(&amp;#x27;0&amp;#x27;)&lt;&lt;setw(2)&lt;&lt;m&lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Something">
+<meta property="og:url" content="https://juana-2u.github.io/2023/10/14/Something/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="LuoGo刷题（20220107）1.自动填充01234#include &lt;iomanip&gt;&#x2F;&#x2F;自动填充0的头文件cout&lt;&lt;setfill(&amp;#x27;0&amp;#x27;)&lt;&lt;setw(2)&lt;&lt;h&lt;&lt;&quot;:&quot;&lt;&lt;setfill(&amp;#x27;0&amp;#x27;)&lt;&lt;setw(2)&lt;&lt;m&lt;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668404120905-dd8a68b2-9b6f-43cd-87ff-6e330d0794f7.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668404219007-ba99af70-5443-47c4-8023-5fdd596afab3.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668420767958-90d461b8-7667-4239-8628-3179458f2816.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668420922151-ac29ba78-51a2-4569-aa58-43ede27447a9.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668421597709-3cbd7125-e1d0-460d-8da8-0f192473af76.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668421684044-3ee291a6-4b76-415c-8344-34bc7d86e877.png">
+<meta property="og:image" content="https://juana-2u.github.io/Something.assets/1668421875992-4b663a0d-66c8-410a-ac3a-8b4e9f2ca82e.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668425932541-133de46c-b17a-4882-8fa7-fcf3336fd959.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668426009789-b77d4da8-3221-4861-94f3-841f8cd0ded8.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668426062317-ffae97e1-a07f-44b8-8ff0-bf4a3b4f348d.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668426106100-0820a840-a4bc-4235-8889-11b8aaf7047b.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668426121912-0179c8b6-2519-493f-ab26-66038ac93d74.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667668275713-5e562423-0807-4e4b-b461-737e4fee39f2.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667668469216-aabcc0cc-1772-48be-9384-580bf8cf532a.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667668533587-d59be024-0dcd-4b89-83bb-71a77ba7c413.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667668558428-19568af9-d786-48cf-80e4-60507c92a810.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667668584313-3f55f198-7311-46fc-9074-6806c1a2c2dd.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667668997273-c06b1dc1-442c-4771-a0d9-3d95f2567d95.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669072979-7e4d7ad3-c5d8-454c-b4cd-f7094ad807ab.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669131744-9463bb87-42a8-4405-9b8f-93312b7f1609.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669180355-6d40a585-a64e-432d-a022-e3f590e953bc.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669204944-4b3579b0-90b4-4155-88f9-bd313b4ed3f8.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669276872-55fe41c2-9d09-4997-b63d-4868788a66e1.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669298174-51554f82-3270-4122-9ded-d9fe88535e9b.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669616172-5edf4445-29e2-485e-8e55-8bf255c3b8b1.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669675689-c3e79048-5cd6-460a-b703-b1b8b0b314f6.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669716468-9fcd772b-69a8-44bf-ac09-f69c691a644c.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667669875566-01fe72ae-41fb-46bd-a015-065f586d9da5.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667464145537-b5f3b425-02bb-468b-b6c5-a899deb5409b.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667464906063-1c15b180-2026-49d2-97ca-415e2dbb2397.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667465162935-a2fa42fd-5411-48c9-8c55-8532026091f5.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667382247166-6fd7d09c-0172-4988-b21a-969d5a2e410a.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667382026560-46d95dac-7fb4-4816-bce3-205eded22175.jpeg">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667381489509-63354319-3781-4072-8f52-c4287c8edcfd.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667381512984-56f41cf0-1cd9-44d5-ad4c-c296ec793fdc.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667381695531-1cc58063-be5d-4fa4-84de-ddb711b17aee.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1667381684374-1d5642f6-63d4-468e-8f8e-0b58291c2571.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1662200425223-0def4bfb-3ea8-4836-a2fa-459a024ee2bb.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1662200482675-337c7972-4f15-4c6d-811b-71588867dbaf.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1662200498635-9eaeb825-5d47-406d-a559-8efc756c3e38.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1662200567739-eb67e174-d1e9-41e9-94c6-78dd4a1cdde0.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1662200598015-9cf6d4df-72f5-42b4-88fa-eb6c7e9177d5.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1661180671911-082360a1-7568-4763-96d9-fb77de1455ef.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1661180722806-abcad174-1361-46b0-b198-885f75d604b0.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1661180740399-aea0878b-8dee-4cfe-8dc1-be9b71dd78ac.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659926508230-1523ff12-a9bd-4456-b9cf-aff11a2a791a.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659926554575-da3e4301-5af1-4ec2-b402-041017a7e9aa.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659926136653-e6f2184a-9456-4fd0-a195-c59a64908dc3.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659926207559-739d2189-50bb-48fc-9b64-2c677c554ab5.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659926273054-55219c91-2f4d-44fe-bfd0-449e355e3fab.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659927835292-51fd287a-4270-406a-aca3-6e9b1b0584e0.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659927962778-751dd32c-dd5c-47d2-b95b-2a6ddeec5be6.png">
+<meta property="og:image" content="https://juana-2u.github.io/Post_images/Something.assets/1659928351430-7846ab42-07b6-4be1-9fb9-f848d4c839e5.png">
+<meta property="article:published_time" content="2023-10-14T04:01:05.000Z">
+<meta property="article:modified_time" content="2023-10-14T06:54:25.424Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="have_deal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://juana-2u.github.io/Post_images/Something.assets/1668404120905-dd8a68b2-9b6f-43cd-87ff-6e330d0794f7.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/ico.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/ico.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/ico.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Something -
+        
+        Juana_2u
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"juana-2u.github.io","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["记录来时的路"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#FF5722"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Juana_2uのhappyworld","subtitle":{"text":["BEING HAPPY IS THE MOST IMPORTANT!!"," I have a dream!","Sometimes you have to trust your gut.","If you start at the bottom,pay your dues,life here can be a dream come true.","Loading..."],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":"https://www.zhihu.com/people/fawn-16-32","twitter":null,"email":"2530624471@qq.com# your email","bilibili":"https://space.bilibili.com/440820814?spm_id_from=333.1007.0.0"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"An der schönen blauen Donau,Walzer,op.314","artist":"Johann Strauss II","url":"https://open.spotify.com/embed/track/5odlY52u43F5BjByhxg7wg?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"City of Stars","artist":"Ryan Gosling,Emma Stone","url":"https://open.spotify.com/embed/track/1xk2Z84gbcn4tPXiiutxzS?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"Stray sheep","artist":"Kenshi Yonezu","url":"https://open.spotify.com/track/0iniTNHwqBiP4UDE1dgUpD?si=94e55cca33114e88","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user"},"tags":{"icon":"fa-solid fa-tags","path":"/tags/","categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"Links":{"icon":"fa-regular fa-link"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/5/10 23:30:00"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Juana_2u
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags/"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-tags"></i>
+                                        
+                                        TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/tags/"  >
+                             
+                                
+                                    <i class="fa-solid fa-tags"></i>
+                                
+                                TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">Something</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Juana_2u</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">记录来时的路</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-14 12:01:05</span>
+        <span class="mobile">2023-10-14 12:01:05</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-14 14:54:25</span>
+            <span class="mobile">2023-10-14 14:54:25</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/have-deal/">have_deal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h1 id="LuoGo刷题（20220107）"><a href="#LuoGo刷题（20220107）" class="headerlink" title="LuoGo刷题（20220107）"></a>LuoGo刷题（20220107）</h1><h4 id="1-自动填充0"><a href="#1-自动填充0" class="headerlink" title="1.自动填充0"></a>1.自动填充0</h4><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span><span class="comment">//自动填充0的头文件</span></span></span><br><span class="line">cout&lt;&lt;<span class="built_in">setfill</span>(<span class="string">&#x27;0&#x27;</span>)&lt;&lt;<span class="built_in">setw</span>(<span class="number">2</span>)&lt;&lt;h&lt;&lt;<span class="string">&quot;:&quot;</span>&lt;&lt;<span class="built_in">setfill</span>(<span class="string">&#x27;0&#x27;</span>)&lt;&lt;<span class="built_in">setw</span>(<span class="number">2</span>)&lt;&lt;m&lt;&lt;endl;</span><br><span class="line"><span class="comment">//输出的顺序没影响，是双引号的问题，如果是setfill(&quot;0&quot;)就会报错</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="2-一维数组的输入"><a href="#2-一维数组的输入" class="headerlink" title="2.一维数组的输入"></a>2.一维数组的输入</h4><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a[<span class="number">9</span>];</span><br><span class="line"><span class="type">int</span> b=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; a[<span class="number">0</span>];</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;-&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a[<span class="number">1</span>] &gt;&gt; a[<span class="number">2</span>] &gt;&gt; a[<span class="number">3</span>];</span><br><span class="line"> 	cout &lt;&lt; <span class="string">&quot;-&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a[<span class="number">4</span>] &gt;&gt; a[<span class="number">5</span>] &gt;&gt; a[<span class="number">6</span>] &gt;&gt; a[<span class="number">7</span>] &gt;&gt; a[<span class="number">8</span>];</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;-&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a[<span class="number">9</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>问题一：数组的长度应该是长度+1 还有一个”&#x2F;0”的结尾符号</li>
+<li>问题二：数组的输入：</li>
+</ul>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> sorce[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">sizeof</span>(sorce)/<span class="built_in">sizeof</span>(sorce[<span class="number">0</span>]); i++) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;请输入第&quot;</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="string">&quot;个学生的成绩（共十个）：&quot;</span> ;</span><br><span class="line">        cin &gt;&gt; sorce[i];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>问题三：一般函数中的符号用’ ‘(单引号)，输出时用” “（双引号）</li>
+<li>问题四：数组中的元素要判断是什么类型 是否可以直接与 数字 进行运算</li>
+</ul>
+<details class="lake-collapse"><summary id="uad2f57fc"><span class="ne-text">例题:ISBN码</span></summary><h2 id="A5Hp6" style="font-size: 24px; line-height: 32px; margin: 21px 0 5px 0"><span class="ne-text">例题：题目描述</span></h2><p id="uc88cfa5a" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">每一本正式出版的图书都有一个 ISBN 号码与之对应，ISBN 码包括 </span><span class="ne-text">9</span><span class="ne-text">9</span><span class="ne-text"> 位数字、</span><span class="ne-text">1</span><span class="ne-text">1</span><span class="ne-text"> 位识别码和 </span><span class="ne-text">3</span><span class="ne-text">3</span><span class="ne-text"> 位分隔符，其规定格式如 </span><span class="ne-text">x-xxx-xxxxx-x</span><span class="ne-text">，其中符号 </span><span class="ne-text">-</span><span class="ne-text"> 就是分隔符（键盘上的减号），最后一位是识别码，例如 </span><span class="ne-text">0-670-82162-4</span><span class="ne-text">就是一个标准的 ISBN 码。ISBN 码的首位数字表示书籍的出版语言，例如 </span><span class="ne-text">0</span><span class="ne-text">0</span><span class="ne-text"> 代表英语；第一个分隔符 </span><span class="ne-text">-</span><span class="ne-text"> 之后的三位数字代表出版社，例如 </span><span class="ne-text">670</span><span class="ne-text">6</span><span class="ne-text">7</span><span class="ne-text">0</span><span class="ne-text"> 代表维京出版社；第二个分隔符后的五位数字代表该书在该出版社的编号；最后一位为识别码。</span></p><p id="ub7f8eecf" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">识别码的计算方法如下：</span></p><p id="u273cf238" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">首位数字乘以 </span><span class="ne-text">1</span><span class="ne-text">1</span><span class="ne-text"> 加上次位数字乘以 </span><span class="ne-text">2</span><span class="ne-text">2</span><span class="ne-text"> ……以此类推，用所得的结果 </span><span class="ne-text">m</span><span class="ne-text">o</span><span class="ne-text">d</span><span class="ne-text">11</span><span class="ne-text">m</span><span class="ne-text">o</span><span class="ne-text">d</span><span class="ne-text">1</span><span class="ne-text">1</span><span class="ne-text">，所得的余数即为识别码，如果余数为 </span><span class="ne-text">10</span><span class="ne-text">1</span><span class="ne-text">0</span><span class="ne-text">，则识别码为大写字母 </span><span class="ne-text">X</span><span class="ne-text">X</span><span class="ne-text">。例如 ISBN 号码 </span><span class="ne-text">0-670-82162-4</span><span class="ne-text"> 中的识别码 </span><span class="ne-text">4</span><span class="ne-text">4</span><span class="ne-text"> 是这样得到的：对 </span><span class="ne-text">067082162</span><span class="ne-text"> 这 </span><span class="ne-text">9</span><span class="ne-text">9</span><span class="ne-text"> 个数字，从左至右，分别乘以 </span><span class="ne-text">1</span><span class="ne-text">,</span><span class="ne-text">2</span><span class="ne-text">,</span><span class="ne-text">…</span><span class="ne-text">,</span><span class="ne-text">9</span><span class="ne-text">1</span><span class="ne-text">,</span><span class="ne-text">2</span><span class="ne-text">,</span><span class="ne-text">…</span><span class="ne-text">,</span><span class="ne-text">9</span><span class="ne-text"> 再求和，即 </span><span class="ne-text">0</span><span class="ne-text">×</span><span class="ne-text">1</span><span class="ne-text">+</span><span class="ne-text">6</span><span class="ne-text">×</span><span class="ne-text">2</span><span class="ne-text">+</span><span class="ne-text">…</span><span class="ne-text">…</span><span class="ne-text">+</span><span class="ne-text">2</span><span class="ne-text">×</span><span class="ne-text">9</span><span class="ne-text">=</span><span class="ne-text">158</span><span class="ne-text">0</span><span class="ne-text">×</span><span class="ne-text">1</span><span class="ne-text">+</span><span class="ne-text">6</span><span class="ne-text">×</span><span class="ne-text">2</span><span class="ne-text">+</span><span class="ne-text">…</span><span class="ne-text">…</span><span class="ne-text">+</span><span class="ne-text">2</span><span class="ne-text">×</span><span class="ne-text">9</span><span class="ne-text">=</span><span class="ne-text">1</span><span class="ne-text">5</span><span class="ne-text">8</span><span class="ne-text">，然后取 </span><span class="ne-text">158</span><span class="ne-text">m</span><span class="ne-text">o</span><span class="ne-text">d</span><span class="ne-text">11</span><span class="ne-text">1</span><span class="ne-text">5</span><span class="ne-text">8</span><span class="ne-text">m</span><span class="ne-text">o</span><span class="ne-text">d</span><span class="ne-text">1</span><span class="ne-text">1</span><span class="ne-text"> 的结果 </span><span class="ne-text">4</span><span class="ne-text">4</span><span class="ne-text"> 作为识别码。</span></p><p id="u6f30beda" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">你的任务是编写程序判断输入的 ISBN 号码中识别码是否正确，如果正确，则仅输出 Right；如果错误，则输出你认为是正确的 ISBN 号码。</span></p><h2 id="D397J" style="font-size: 24px; line-height: 32px; margin: 21px 0 5px 0"><span class="ne-text">输入格式</span></h2><p id="u122efd39" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">一个字符序列，表示一本书的 ISBN 号码（保证输入符合 ISBN 号码的格式要求）。</span></p><h2 id="devIX" style="font-size: 24px; line-height: 32px; margin: 21px 0 5px 0"><span class="ne-text">输出格式</span></h2><p id="uaf7d606b" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">一行，假如输入的 ISBN 号码的识别码正确，那么输出 </span><span class="ne-text">Right</span><span class="ne-text">，否则，按照规定的格式，输出正确的 ISBN 号码（包括分隔符 </span><span class="ne-text">-</span><span class="ne-text">）。</span></p><h2 id="aZBUg" style="font-size: 24px; line-height: 32px; margin: 21px 0 5px 0"><span class="ne-text">输入输出样例</span></h2><p id="ub167582a" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><strong><span class="ne-text">输入 #1                                  输出 #1</span></strong></p><p id="udf7f76f3" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">0-670-82162-4                      Right</span></p><p id="uc9d49a6c" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><strong><span class="ne-text">输入 #2                                  输出 #2</span></strong></p><p id="ub2172508" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">0-670-82162-0                      0-670-82162-4</span></p></details>
+
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> a[<span class="number">13</span>], b = <span class="number">1</span>, t[<span class="number">12</span>] = <span class="string">&quot;0123456789X&quot;</span>;<span class="comment">//数组后面还有一个&quot;/0&quot; </span></span><br><span class="line"><span class="comment">//由于分隔符的原因 将数组定义为char类型</span></span><br><span class="line"><span class="comment">//gets(a);直接输入数组a</span></span><br><span class="line"><span class="type">int</span> c;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">sizeof</span>(a); i++) &#123;</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i] == <span class="string">&#x27;-&#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">		c+= (a[i] - <span class="string">&#x27;0&#x27;</span>) * b++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (t[c % <span class="number">11</span>] == a[<span class="number">12</span>]) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Right&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		a[<span class="number">12</span>] = t[c % <span class="number">11</span>];</span><br><span class="line">		<span class="comment">//如果输入的并不是识别码的话 是需要修改过来的。</span></span><br><span class="line">		<span class="built_in">puts</span>(a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="3-for循环条件的设定"><a href="#3-for循环条件的设定" class="headerlink" title="3.for循环条件的设定"></a>3.for循环条件的设定</h4><h5 id="C-中for-int-i-1-i"><a href="#C-中for-int-i-1-i" class="headerlink" title="C++中for (int i &#x3D; 1; i &lt;&#x3D; n; i++) 和for (int i &#x3D;0 ; i &lt;&#x3D; n; i++)有什么区别？"></a>C++中for (int i &#x3D; 1; i &lt;&#x3D; n; i++) 和for (int i &#x3D;0 ; i &lt;&#x3D; n; i++)有什么区别？</h5><p>在 C++ 中，这两个循环的区别在于循环次数和循环变量的初始值和终止值。</p>
+<p>在<strong>for (int i &#x3D; 1; i &lt;&#x3D; n; i++)</strong> 循环中，循环变量 i 的初始值为 1，终止值为 n，所以循环会执行 n 次。在每次循环中，循环变量 i 的值会自增 1。</p>
+<p>在**for (int i &#x3D;0 ; i &lt;&#x3D; n; i++)**循环中，循环变量 i 的初始值为 0，终止值为 n，所以循环会执行 n+1 次。在每次循环中，循环变量 i 的值会自增 1。</p>
+<p>例如，</p>
+<p>如果 n 等于 3，那么第一个循环会执行三次，每次的 i 的值分别为 1、2 和 3。</p>
+<p>第二个循环也会执行三次，每次的 i 的值分别为 0、1 和 2。</p>
+<p>通常来说：</p>
+<p>如果你想要循环执行 n 次，你可以使用 for (int i &#x3D; 0; i &lt; n; i++)，这样 i 的值就会从 0 到 n-1。</p>
+<p>如果你想要循环执行 n+1 次，你可以使用 for (int i &#x3D; 0; i &lt;&#x3D; n; i++)，这样 i 的值就会从 0 到 n。</p>
+<h4 id="4-清屏的指令"><a href="#4-清屏的指令" class="headerlink" title="4.清屏的指令"></a>4.清屏的指令</h4><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;cls&quot;);</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="5-回文质数的判断"><a href="#5-回文质数的判断" class="headerlink" title="5.回文质数的判断"></a>5.回文质数的判断</h4><details class="lake-collapse"><summary id="u6825a711"><span class="ne-text">回文质数</span></summary><h4 id="slkPY" style="font-size: 16px; line-height: 24px; margin: 10px 0 5px 0"><span class="ne-text">题目描述</span></h4><p id="u77b034a3" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">因为 </span><span class="ne-text">151</span><span class="ne-text">1</span><span class="ne-text">5</span><span class="ne-text">1</span><span class="ne-text"> 既是一个质数又是一个回文数（从左到右和从右到左是看一样的），所以 </span><span class="ne-text">151</span><span class="ne-text">1</span><span class="ne-text">5</span><span class="ne-text">1</span><span class="ne-text"> 是回文质数。</span></p><p id="u4dc6e081" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">写一个程序来找出范围 </span><span class="ne-text">[</span><span class="ne-text">a</span><span class="ne-text">,</span><span class="ne-text">b</span><span class="ne-text">]</span><span class="ne-text">(</span><span class="ne-text">5</span><span class="ne-text">≤</span><span class="ne-text">a</span><span class="ne-text">&lt;</span><span class="ne-text">b</span><span class="ne-text">≤</span><span class="ne-text">100</span><span class="ne-text">,</span><span class="ne-text">000</span><span class="ne-text">,</span><span class="ne-text">000</span><span class="ne-text">)</span><span class="ne-text">[</span><span class="ne-text">a</span><span class="ne-text">,</span><span class="ne-text">b</span><span class="ne-text">]</span><span class="ne-text">(</span><span class="ne-text">5</span><span class="ne-text">≤</span><span class="ne-text">a</span><span class="ne-text">&lt;</span><span class="ne-text">b</span><span class="ne-text">≤</span><span class="ne-text">1</span><span class="ne-text">0</span><span class="ne-text">0</span><span class="ne-text">,</span><span class="ne-text">0</span><span class="ne-text">0</span><span class="ne-text">0</span><span class="ne-text">,</span><span class="ne-text">0</span><span class="ne-text">0</span><span class="ne-text">0</span><span class="ne-text">)</span><span class="ne-text">（一亿）间的所有回文质数。</span></p><h4 id="tyyMP" style="font-size: 16px; line-height: 24px; margin: 10px 0 5px 0"><span class="ne-text">输入格式</span></h4><p id="u2cfec773" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">第一行输入两个正整数 </span><span class="ne-text">a</span><span class="ne-text">a</span><span class="ne-text"> 和 </span><span class="ne-text">b</span><span class="ne-text">b</span><span class="ne-text">。</span></p><h4 id="B48k8" style="font-size: 16px; line-height: 24px; margin: 10px 0 5px 0"><span class="ne-text">输出格式</span></h4><p id="ueb694206" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">输出一个回文质数的列表，一行一个。</span></p><h4 id="MBChb" style="font-size: 16px; line-height: 24px; margin: 10px 0 5px 0"><span class="ne-text">输入输出样例</span></h4><p id="uf62c4714" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><strong><span class="ne-text">输入 #1                 </span></strong><span class="ne-text"> </span><strong><span class="ne-text">输出 #1</span></strong></p><p id="ue2f59c3b" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><span class="ne-text">5 500                     5 7 11 101 131 151 181 191 313 353 373 383</span></p></details>
+
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cmath&gt;</span></span><br><span class="line"><span class="comment">#include &lt;algorithm&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"><span class="built_in">int</span> main() &#123;</span><br><span class="line">	<span class="built_in">int</span> a, b;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">	<span class="built_in">int</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">int</span> i = a; i &lt;= b; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">9989900</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		flag = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">int</span> temp = i;</span><br><span class="line">		<span class="built_in">int</span> result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (temp != <span class="number">0</span>) &#123;</span><br><span class="line">			result = result * <span class="number">10</span> + temp % <span class="number">10</span>;</span><br><span class="line">			temp /= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (result == i) &#123;</span><br><span class="line">			<span class="built_in">int</span> n = sqrt(i);</span><br><span class="line">			<span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">2</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">				<span class="keyword">if</span> (i % j == <span class="number">0</span>) &#123;</span><br><span class="line">					flag = <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">				cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="呜呜呜-新学期网叕G了20230222"><a href="#呜呜呜-新学期网叕G了20230222" class="headerlink" title="呜呜呜 新学期网叕G了20230222"></a>呜呜呜 新学期网叕G了20230222</h1><p>首先是一个误区</p>
+<p>在重启路由器的时候电源要连上，但是网线是不连的，进行一系列的操作之后再连接网线和网口。</p>
+<p>还有一个不知道的是路由器的网口连接用的是WAN口，而不是LAN</p>
+<p>LAN和WLAN的区别</p>
+<p>LAN全称Local Area Network 中文名即局域网，在某一个区域多台计算机互联成计算机组，适用于接电脑的网线</p>
+<p>WLAN全称Wireless LAN无线局域网，空中进行通信连接</p>
+<p>全过程就是</p>
+<p>先拿一个路由器，只插上电源之后，现在的网络是一个开放的网络，可以直接连接，进行路由器的初始化，设置好路由器的名称密码等等：</p>
+<p>怕忘记所以就将管理员密码和WiFi设置成了同一个</p>
+<p>弄好了之后将网线插好，由于是无线连接所以使用的是将网口和路由器的WLAN口连接，连好了之后就好了。</p>
+<p>出现的界面是：<code>本次输入的宽带账号已在线 请勿重复登录拨号报错691</code></p>
+<p>造成的原因有：</p>
+<ol>
+<li>宽带账号欠费停机——充值缴费</li>
+<li>宽带拨号账号和密码输入错误——重置密码 </li>
+<li>宽带上网账号卡在运营商服务器上（本该有信号。但是无法上网）——需要联系客服将宽带端口优化刷新，设备进行断电，5分钟之后在重启就好了</li>
+</ol>
+<p>重启之后就可以正常上网了</p>
+<h1 id="可恶啊-python装不上z3-20221114"><a href="#可恶啊-python装不上z3-20221114" class="headerlink" title="可恶啊 python装不上z3(20221114)"></a>可恶啊 python装不上z3(20221114)</h1><p>呜呜呜~</p>
+<p>将电脑中的所有python相关的所有东西全部卸载掉之后，重新下，才发现是一个极为方便的修复方法</p>
+<h2 id="python3的重装"><a href="#python3的重装" class="headerlink" title="python3的重装"></a>python3的重装</h2><h3 id="卸载："><a href="#卸载：" class="headerlink" title="卸载："></a>卸载：</h3><p>首先一定不要先将launcher给删除掉，血的教训，我服了，如果和我一样先把这玩意儿给卸了的话，就会出现一堆的错误，但总的来说还是在文件查找上出现了错误。</p>
+<p>命令：</p>
+<p><code>del xxx文件名</code>删除顽固的文件。</p>
+<h3 id="为了两种版本的python能够共存，要改掉名字。"><a href="#为了两种版本的python能够共存，要改掉名字。" class="headerlink" title="为了两种版本的python能够共存，要改掉名字。"></a>为了两种版本的python能够共存，要改掉名字。</h3><h4 id="安装python3-6"><a href="#安装python3-6" class="headerlink" title="安装python3.6"></a>安装python3.6</h4><p>在文件的途径上也要注意，要尽量简单一些</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668404120905-dd8a68b2-9b6f-43cd-87ff-6e330d0794f7.png"
+                      alt="img"
+                ></p>
+<p>这里勾选的“Add Python 3.5 to PATH”是放在的用户变量中的。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668404219007-ba99af70-5443-47c4-8023-5fdd596afab3.png"
+                      alt="img"
+                ></p>
+<p>再进行手动设置环境变量</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668420767958-90d461b8-7667-4239-8628-3179458f2816.png"
+                      alt="img"
+                ></p>
+<p>同样的方法在安装一次python2</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668420922151-ac29ba78-51a2-4569-aa58-43ede27447a9.png"
+                      alt="img"
+                ></p>
+<p>将原来的<code>python.exe</code>和<code>pythonw.exe</code>都改成<code>python3.exe</code>和<code>pythonw3.exe</code></p>
+<h4 id="python2的安装"><a href="#python2的安装" class="headerlink" title="python2的安装"></a>python2的安装</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668421597709-3cbd7125-e1d0-460d-8da8-0f192473af76.png"
+                      alt="img"
+                ></p>
+<p>改名字</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668421684044-3ee291a6-4b76-415c-8344-34bc7d86e877.png"
+                      alt="img"
+                ></p>
+<p>差不多就是这样子了</p>
+<h3 id="设置pip，使得两种pip共存"><a href="#设置pip，使得两种pip共存" class="headerlink" title="设置pip，使得两种pip共存"></a>设置pip，使得两种pip共存</h3><p>之前已经改换掉名字了，之后要强制重新安装一下pip，在根目录打开命令行，输入：</p>
+<p>python3</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install --upgrade pip --force-reinstall</span><br></pre></td></tr></table></figure></div>
+
+<p>python2</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 -m pip install --upgrade pip --force-reinstall</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>python3的安装好了</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/Something.assets/1668421875992-4b663a0d-66c8-410a-ac3a-8b4e9f2ca82e.png"
+                      alt="img"
+                ></p>
+<hr>
+<h2 id="全部推翻！！"><a href="#全部推翻！！" class="headerlink" title="全部推翻！！"></a>全部推翻！！</h2><p>python3.6的环境也是可以将z3进行安装的。</p>
+<p>但是前提就是你的python足够干净。所以在之前要将之前电脑里面有的python全部清空之后，重新安装一次python。</p>
+<p>和上面的重装的方式一样</p>
+<ol>
+<li>自定义一个相对好找的位置来放这个python的文件，还有就是放在C盘下，新建文件为python36</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668425932541-133de46c-b17a-4882-8fa7-fcf3336fd959.png"
+                      alt="img"
+                ></p>
+<ol>
+<li>用户环境不用配置，需要手动配置系统环境。</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668426009789-b77d4da8-3221-4861-94f3-841f8cd0ded8.png"
+                      alt="img"
+                ></p>
+<p>配置好了。</p>
+<ol>
+<li>直接输入命令<code>pip install z3-solver</code></li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668426062317-ffae97e1-a07f-44b8-8ff0-bf4a3b4f348d.png"
+                      alt="img"
+                ></p>
+<p>此时观察到</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668426106100-0820a840-a4bc-4235-8889-11b8aaf7047b.png"
+                      alt="img"
+                ></p>
+<p>多了一个bin文件，惊喜就出来了！！</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1668426121912-0179c8b6-2519-493f-ab26-66038ac93d74.png"
+                      alt="img"
+                ></p>
+<h1 id="BurpSuite这个软件G了之后的重新下载-20221106"><a href="#BurpSuite这个软件G了之后的重新下载-20221106" class="headerlink" title="BurpSuite这个软件G了之后的重新下载(20221106)"></a>BurpSuite这个软件G了之后的重新下载(20221106)</h1><p>首先是Java环境的问题，我的Java环境原来是1.7的，点了run之后死活也跳不出来小弹框，所以问了同学之后发现是使用的坏境是错误的，怎么办？能想到的办法只能换！</p>
+<h2 id="1-原Java环境的卸除"><a href="#1-原Java环境的卸除" class="headerlink" title="1.原Java环境的卸除"></a>1.原Java环境的卸除</h2><p>先是在控制面板里将一开始的两个这样的Java 7 Update  Java SE Development Kit 7的应用全部卸载掉。发现卸载完了之后原文件都会一并被删除掉，所以不用再人工去删一些不必要的文件了。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667668275713-5e562423-0807-4e4b-b461-737e4fee39f2.png"
+                      alt="img"
+                ></p>
+<h2 id="2-配置新的Java8环境"><a href="#2-配置新的Java8环境" class="headerlink" title="2.配置新的Java8环境"></a>2.配置新的Java8环境</h2><p><strong>需要安装 jdk-8u261-windows-x64.exe</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667668469216-aabcc0cc-1772-48be-9384-580bf8cf532a.png"
+                      alt="img"
+                ></p>
+<p>这是从学习通老师那里白嫖的，感谢我的Java老师，太爱了，一度给了激活idea的教程</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667668533587-d59be024-0dcd-4b89-83bb-71a77ba7c413.png"
+                      alt="img"
+                ></p>
+<p>直接 下一步</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667668558428-19568af9-d786-48cf-80e4-60507c92a810.png"
+                      alt="img"
+                >放在C盘里，默认不变，直接 下一步  等待安装好</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667668584313-3f55f198-7311-46fc-9074-6806c1a2c2dd.png"
+                      alt="img"
+                ></p>
+<p>安装好了之后，一般环境配置都是自动配置好的，但还是可以检查一下，系统环境配置一下</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667668997273-c06b1dc1-442c-4771-a0d9-3d95f2567d95.png"
+                      alt="img"
+                ></p>
+<p>这样Java部分的全部工作就做好了</p>
+<h2 id="3-安装BurpSuite"><a href="#3-安装BurpSuite" class="headerlink" title="3.安装BurpSuite"></a>3.安装BurpSuite</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669072979-7e4d7ad3-c5d8-454c-b4cd-f7094ad807ab.png"
+                      alt="img"
+                ></p>
+<p>解压后的文件中一般都是这样的四个文件</p>
+<p>首先，双击打开burp-loader-keygen.jar文件，复制Lisence中的内容，然后点击Run（就是这里的run是需要的Java1.8的环境来运行出来）</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669131744-9463bb87-42a8-4405-9b8f-93312b7f1609.png"
+                      alt="img"
+                ></p>
+<p>出现弹框之后</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669180355-6d40a585-a64e-432d-a022-e3f590e953bc.png"
+                      alt="img"
+                ></p>
+<p>直接<code>I Accept</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669204944-4b3579b0-90b4-4155-88f9-bd313b4ed3f8.png"
+                      alt="img"
+                ></p>
+<p>将上面复制Lisence中的内容粘贴在这里，粘贴好之后点Next</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669276872-55fe41c2-9d09-4997-b63d-4868788a66e1.png"
+                      alt="img"
+                ></p>
+<p> 点击<code>Manual activation</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669298174-51554f82-3270-4122-9ded-d9fe88535e9b.png"
+                      alt="img"
+                ></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copy request`将第二个框里的内容复制到上面第一张图的`Activation Request`中去，会自动填补出`Activation Response`的内容，将这个自动填补`Activation Responsed`的内容复制放在`paste response`中去点击`next</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669616172-5edf4445-29e2-485e-8e55-8bf255c3b8b1.png"
+                      alt="img"
+                ></p>
+<p>就安装成功85%了，点击<code>finish</code>进入到软件的页面</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669675689-c3e79048-5cd6-460a-b703-b1b8b0b314f6.png"
+                      alt="img"
+                ></p>
+<p>点击<code>next</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669716468-9fcd772b-69a8-44bf-ac09-f69c691a644c.png"
+                      alt="img"
+                ></p>
+<p>点击<code>Start Burp</code></p>
+<p>下次要打开应用时直接点击下面的.bat文件才行</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667669875566-01fe72ae-41fb-46bd-a015-065f586d9da5.png"
+                      alt="img"
+                ></p>
+<p>如果说点击的是第三个文件，还是会跳出之前未激活前的样子。BurpSuite就这样就安装好了！</p>
+<p>开机出现的界面是找不到disk：</p>
+<h4 id="no-boot-disk-has-been-detected-or-the-disk-has-failed"><a href="#no-boot-disk-has-been-detected-or-the-disk-has-failed" class="headerlink" title="no boot disk has been detected or the disk has failed"></a>no boot disk has been detected or the disk has failed</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667464145537-b5f3b425-02bb-468b-b6c5-a899deb5409b.png"
+                      alt="img"
+                ></p>
+<p>大概就是下图这样的界面，感觉像是系统的问题，所以要进入到BIOS界面去改动。老样子还是百度。</p>
+<ol>
+<li>首先要进入BIOS设定页面，想到的就是在刚要开机的时候就开始按相应的快捷键。百度到的台式机的进入的快捷键一般都是F2，F1,ESC键，但是按了之后发现还是没进入到想要的BIOS设定页面，所以百度找到台式机的统一的进入BIOS页面的快捷键是DELETE键，并且成功了</li>
+<li>进入BIOS设定页面之后还是看不懂，按照百度上面写的： 将Authentication → Secure Boot→把 Enabled调成 Disabled</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667464906063-1c15b180-2026-49d2-97ca-415e2dbb2397.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667465162935-a2fa42fd-5411-48c9-8c55-8532026091f5.png"
+                      alt="img"
+                ></p>
+<p>最后呈现成这个样子。</p>
+<ol>
+<li>再找到Boot Options → Launch CSM →把 Never 改成 Always。</li>
+<li>最后到EXIT的界面，第一个就是save and exit setup,电脑自动重启之后就大功告成了</li>
+</ol>
+<p>注：改的时候会发现右下角会有提示，其中有一个大意是使用+-来改变选项。一般的↑↓←→是用来选择</p>
+<h1 id="关于我的网差点又G了-20221102"><a href="#关于我的网差点又G了-20221102" class="headerlink" title="关于我的网差点又G了(20221102)"></a>关于我的网差点又G了(20221102)</h1><h2 id="1-虚拟机VMware网络问题"><a href="#1-虚拟机VMware网络问题" class="headerlink" title="1.虚拟机VMware网络问题"></a>1.虚拟机VMware网络问题</h2><p>首先是爆出</p>
+<ul>
+<li>VMware network adapter VMnet1没有有效的IP配置</li>
+<li>VMware network adapter VMnet8没有有效的IP配置</li>
+<li>NAS无响应</li>
+</ul>
+<p>解决方式是：</p>
+<p>win+r呼唤出运行界面输入：services.msc</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667382247166-6fd7d09c-0172-4988-b21a-969d5a2e410a.png"
+                      alt="img"
+                ></p>
+<p>跳转到这个界面，找里面的VMware NAT service 和VMware DHCP service两个服务，启动两个服务就好。</p>
+<h2 id="2-代理服务器拒绝连接"><a href="#2-代理服务器拒绝连接" class="headerlink" title="2.代理服务器拒绝连接"></a>2.代理服务器拒绝连接</h2><p>第二个遇到的问题就是如下图这样的界面。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667382026560-46d95dac-7fb4-4816-bce3-205eded22175.jpeg"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667381489509-63354319-3781-4072-8f52-c4287c8edcfd.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667381512984-56f41cf0-1cd9-44d5-ad4c-c296ec793fdc.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667381695531-1cc58063-be5d-4fa4-84de-ddb711b17aee.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1667381684374-1d5642f6-63d4-468e-8f8e-0b58291c2571.png"
+                      alt="img"
+                ></p>
+<p>这里开启的代理服务器给关掉终于恢复了要解决的问题&#x2F;(ㄒoㄒ)&#x2F;~~</p>
+<p>我真的不知道为啥我的网会G掉，听师傅说的是可能因为路由器里面有东西卡了，那就记录一下暂时性的解决方法叭</p>
+<p>首先，切内网与外网的状态，登录本地管理地址<a class="link"   target="_blank" rel="noopener" href="http://192.168.10.1/" >192.168.10.1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1662200425223-0def4bfb-3ea8-4836-a2fa-459a024ee2bb.png"
+                      alt="img"
+                ></p>
+<p>点击右上角的“简易设置界面”，有一个上网设置</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1662200482675-337c7972-4f15-4c6d-811b-71588867dbaf.png"
+                      alt="img"
+                ></p>
+<p>点击之后，下图的状态就是在学校内网的状态，如果想切回外网的状态的话，就是将模式给改掉</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1662200498635-9eaeb825-5d47-406d-a559-8efc756c3e38.png"
+                      alt="img"
+                ></p>
+<p>本来是IPoE的状态，改为PPPoE的状态就好了</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1662200567739-eb67e174-d1e9-41e9-94c6-78dd4a1cdde0.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1662200598015-9cf6d4df-72f5-42b4-88fa-eb6c7e9177d5.png"
+                      alt="img"
+                ></p>
+<p>但需要的是将用户名称输入进去，我觉得应该是可以自定义的，这样的话，就切入到了外网的状态，手机和电脑就可以同时使用了</p>
+<h1 id="关于win7系统重新安装win10-20220822"><a href="#关于win7系统重新安装win10-20220822" class="headerlink" title="关于win7系统重新安装win10(20220822)"></a>关于win7系统重新安装win10(20220822)</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>拿到的win7系统发现设备都挺老化的挺严重的，而且好长时间没重新开过了，所以一台电脑是越用越新的，而不是说放在那边保存好就是对的，可能外机没坏内里已经跟不上了</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h2><p>将win7系统整顿一下：拿到机器之后发现太卡了，直接把一些拖慢进程的软件全部删掉了，删掉之后发现速度快了不少。</p>
+<p>其他的找系统内的更新，更新的时间挺长的。后面感觉这一步好像挺多余的。</p>
+<h2 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h2><p>找win10的镜像代替文件，</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://windows.xnlyr.cn/course.html" >https://windows.xnlyr.cn/course.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>装机教程是这样的</p>
+<p>首先将iso文件解压，解压后是这样的，直接双击硬盘安装，直接安装。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1661180671911-082360a1-7568-4763-96d9-fb77de1455ef.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1661180722806-abcad174-1361-46b0-b198-885f75d604b0.png"
+                      alt="img"
+                ></p>
+<p>之后等一下系统的自动安装</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1661180740399-aea0878b-8dee-4cfe-8dc1-be9b71dd78ac.png"
+                      alt="img"
+                ></p>
+<p>安好后屏幕会变黑掉，还会发出叫声巨吵，之后等待，会进入到BIOS系统，如果说不懂的话，直接Exiting and saving退出这个系统就好了。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>win10系统可以说就装好了，这是需要继续布置测试一下就好了</p>
+<h1 id="关于vscode连接服务器的ssh-20220805"><a href="#关于vscode连接服务器的ssh-20220805" class="headerlink" title="关于vscode连接服务器的ssh(20220805)"></a>关于vscode连接服务器的ssh(20220805)</h1><p>根据学习的东西，想将脚本放在服务器上跑，直接用服务器的ssh连接，找了很多资料，最终搞了一天弄出来了，有一些需要注意的地方，记录一下。</p>
+<p>首先要有服务器的用户，这里首先用我的root用户实验</p>
+<p>快捷键shift+ctrl+p呼唤命令行</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659926508230-1523ff12-a9bd-4456-b9cf-aff11a2a791a.png"
+                      alt="img"
+                ></p>
+<p>输入ssh open</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659926554575-da3e4301-5af1-4ec2-b402-041017a7e9aa.png"
+                      alt="img"
+                ></p>
+<p>适配的文件在C:&#x2F;uesr&#x2F;Administrator&#x2F;.ssh&#x2F;config的位置将里面的文件内容写上相关的内容</p>
+<p>Host <a class="link"   href="mailto:&#114;&#x6f;&#x6f;&#x74;&#x40;&#120;&#120;&#46;&#x78;&#x78;&#46;&#120;&#x78;&#x2e;&#120;&#120;" >&#114;&#x6f;&#x6f;&#x74;&#x40;&#120;&#120;&#46;&#x78;&#x78;&#46;&#120;&#x78;&#x2e;&#120;&#120; <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> </p>
+<p>Hostname xx.xx.xx.xx</p>
+<p>User root </p>
+<p>port 22 如下图示：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659926136653-e6f2184a-9456-4fd0-a195-c59a64908dc3.png"
+                      alt="img"
+                ></p>
+<p>安装vscode的拓展，并且设置好拓展</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659926207559-739d2189-50bb-48fc-9b64-2c677c554ab5.png"
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659926273054-55219c91-2f4d-44fe-bfd0-449e355e3fab.png"
+                      alt="img"
+                >设置好了之后可以点远程连接的按钮，进行连接测试</p>
+<p>快捷键shift+ctrl+p输入ssh connect回车确认后选择操作系统</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659927835292-51fd287a-4270-406a-aca3-6e9b1b0584e0.png"
+                      alt="img"
+                >我的服务器是Linux所以我选择了Linux的系统连接</p>
+<p>进入后输入服务器ssh的密码就连接好了</p>
+<p>连接完成大概是这个样子；</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659927962778-751dd32c-dd5c-47d2-b95b-2a6ddeec5be6.png"
+                      alt="img"
+                >当然我们不能用服务器的最高权限只用来跑代码（如果跑G了，服务器就G了</p>
+<p>所以我们可以在服务器上开一个单独的用户给vscode</p>
+<p>连接服务器的后台终端在里面输入以下命令进行修改：</p>
+<p>查看服务器的用户 <code>cat /etc/passwd</code></p>
+<p>增加服务器的用户 <code>useradd -u 777 -d /usr/vscoder -g users -m vscoder</code></p>
+<p><code>adduser vscoder</code></p>
+<p><code>passwd vscoder</code>重复输入两次密码来改vscoder这个用户的密码</p>
+<p>改好之后将上面的改掉</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../Post_images/Something.assets/1659928351430-7846ab42-07b6-4be1-9fb9-f848d4c839e5.png"
+                      alt="img"
+                ></p>
+<p>做到这一步就与上面无异了，直接连接输入密码就好了。</p>
+<h1 id="信息安全三级分不清的考点"><a href="#信息安全三级分不清的考点" class="headerlink" title="信息安全三级分不清的考点"></a>信息安全三级分不清的考点</h1><h1 id="年份整理"><a href="#年份整理" class="headerlink" title="年份整理"></a>年份整理</h1><ol>
+<li>当代信息安全学起源<strong>20世纪<strong><strong>40年代</strong></strong>通信保密</strong></li>
+<li>电子认证服务提供者应当妥善保存与认证相关的信息，信息保存期限至少为电子签名认证证书失效后<strong>5年</strong></li>
+<li>香农<strong>1949</strong>年发表论文<strong>《保密系统的通信理论》</strong>，用信息论的观点对保密问题进行了全面的论述，它是信息安全发展的重要里程碑。</li>
+<li><strong>1972</strong>年完成的著名<strong>Anderson报告</strong>，是计算机安全发展的重要里程碑</li>
+<li>数据加密标准DES制定的年份是<strong>1977</strong></li>
+<li>1985 ECC加密算法提出（椭圆曲线密码学）</li>
+<li><strong>1994</strong>美国联邦政府颁布数字签名标准（DSS）的年份.</li>
+<li><strong>1996，</strong>国际标准ISO 15408 <strong>GB&#x2F;T18336</strong>的标准<strong>（CC）信息技术安全评价通用标准</strong>   *信息技术安全评估标准（ITSEC）</li>
+<li>组织机构实施信息安全管理体系认证所根据的国际信息安全管理标准是<strong>BS7799</strong></li>
+<li>AES是<strong>2001</strong></li>
+<li>国家秘密保密期限：绝密级<strong>不超过三十年</strong>，机密级不超过<strong>二十年</strong>，秘密级不超过<strong>十年。</strong></li>
+<li>《网络安全法》颁布时间：<strong>2016</strong></li>
+<li><strong>2023年9月</strong>中央颁布的《国家信息化领导小组关于加强信息安全保障工作的意见》（中办发27号文件），标志着我国信息安全保障体系建设工作的开始</li>
+</ol>
+<h1 id="专业名词"><a href="#专业名词" class="headerlink" title="专业名词"></a>专业名词</h1><ol>
+<li>AAA： 认证、授权、审计（Authentication-Authorization-Accounting）</li>
+<li><strong>数据执行保护(DEP)</strong>:（1）<strong>限制</strong>内存堆栈区的代码为<strong>不可执行</strong>的状态，从而<strong>防范溢出</strong>后代码执行的技术；（2）将内存敏感区域设置为不可执行状态，从而溢出后即使跳转到恶意代码的地址，恶意代码也无法运行</li>
+<li><strong>模糊测试****（fuzzing）</strong>：通过向目标软件<strong>输入大量</strong>的<strong>畸形数据</strong>并<strong>监测</strong>目标系统的<strong>异常</strong>来发现潜在的软件漏洞</li>
+<li><strong>渗透测试****：模拟黑客</strong>可能使用的攻击技术和漏洞发现技术，对目标系统的安全做深入的探测，发现系统<strong>最脆弱</strong>的环节</li>
+<li><strong>滑板指令****：</strong>大量NOP空指令0x90填充组成的指令序列</li>
+<li>综合漏洞扫描：IP地址扫描、网络端口扫描、漏洞扫描、弱口令扫描、注入攻击、SQL注入扫描</li>
+<li>专项定向扫描：恶意程序扫描（病毒扫描）</li>
+<li><strong>蠕虫（worm）</strong>：可通过<strong>网络</strong>等途径，自动将自身的全部代码或部分代码，通过网络复制、传播给其他网络中计算机的完全独立可运行程序</li>
+<li><strong>基本</strong>风险评估（参照风险评估×）：只参照标准所提到的风险项对组织机构的资产进行风险评估的方法</li>
+<li>出现漏洞的可能性是指成功攻击机构内某个漏洞的<strong>概率</strong>。</li>
+<li>P2DR模型美国ISS提出的动态网络安全体系（动态安全模型的雏形）：**策略(Policy)**、防护(Protection)、检测(Detection)、响应(Response)</li>
+<li>事故响应：计划、反应、恢复</li>
+<li><strong>网络舆情分析****：</strong>网络信息<strong>内容监控</strong>的主要方法</li>
+<li>IDS异常检测技术通过<strong>统计分析方法</strong>和<strong>神经网络方法</strong>实现</li>
+<li>网络信息内容审计系统分为:<strong>流水线</strong>模型和<strong>分段</strong>模型</li>
+<li>整数溢出：符号问题、运算溢出、存储溢出</li>
+<li>风险管理：风险的<strong>识别</strong>、风险的分析、风险控制策略</li>
+<li>数据库安全防护三个阶段：事前检查、事中监控、事后<strong>审计</strong></li>
+<li>软件安全开发：建立<strong>安全威胁</strong>模型、安全设计、安全编码、安全测试</li>
+<li>微软SDL模型的中文全称：<strong>软件****安全开发生命周期</strong>模型</li>
+<li>软件安全监测技术中，定理证明属于软件<strong>静态</strong>安全监测技术</li>
+<li><strong>入侵检测系统</strong>可以实现事中防护：入侵检测系统可通过与<strong>防火墙</strong>联动从而实现动态防护</li>
+<li><strong>入侵防御系统IPS</strong>具有拦截和检测功能</li>
+<li>防火墙体系结构：屏蔽<strong>路由器</strong>、<strong>双重宿主主机体系</strong>结构、屏蔽<strong>主机体系</strong>结构、屏蔽<strong>子网体系</strong>结构yes√ 屏蔽中间网络体系结构 no×</li>
+<li>NAT三种类型：端口地址转换PAT、NAT池、静态NATyes√ <strong>动态NAT no×</strong></li>
+<li>数据库软件执行三种类型的完整性服务：<strong>语义</strong>完整性、<strong>参照</strong>完整性、实体完整性</li>
+<li>《信息系统安全保护等级划分准则》提出四个要素：信息系统所属类型、<strong>业务数据</strong>类型、信息系统服务范围、业务自动化处理程度</li>
+<li>Hosts文件</li>
+<li>采用SSL协议，传输层协议就是<strong>TCP</strong></li>
+<li>风险识别和风险<strong>控制</strong></li>
+<li>数据执行保护技术：DEP限制内存堆栈区的代码为<strong>不可执行状态</strong>从而防范溢出后代码执行</li>
+<li>ESP基于IPSec的数据通信提供安全的保护机制不包括：加密存储no×  安全加密、身份认证、数据完整性鉴别</li>
+<li>HeapSpray攻击导致被攻击进程的内存占用非常大</li>
+</ol>
+<h1 id="UNIX-Linux系统"><a href="#UNIX-Linux系统" class="headerlink" title="UNIX&#x2F;Linux系统"></a>UNIX&#x2F;Linux系统</h1><ol>
+<li>unix文件权限先是，第一个字母表示文件类型：p,d,l,s,c,b,-</li>
+</ol>
+<h1 id="第一、首部"><a href="#第一、首部" class="headerlink" title="第一、首部"></a>第一、首部</h1><ol>
+<li>中国首部真正意义上的信息化法律<strong>《电子签名法》</strong></li>
+<li>风险管理第一阶段：风险的<strong>识别</strong></li>
+<li><strong>我国</strong>发布的第一个有关信息安全方面的标准是在<strong>1985年</strong></li>
+</ol>
+<h1 id="模糊分不清"><a href="#模糊分不清" class="headerlink" title="模糊分不清"></a>模糊分不清</h1><ol>
+<li>RADIUS没有完备功能：基于UDP的传输、<strong>简单</strong>的丢包机制、没有关于重传的规定和集中式审计服务</li>
+<li>分布式访问控制方法：单点登录、<strong>Kerberos协议</strong>、SESAME</li>
+<li>集中式AAA管理协议包括a.拨号用户远程认证服务RADIUS、b.终端访问控制器访问控制系统TACACS和Diameter</li>
+<li>Kerberos协议，<strong>对称加密机制</strong>，支持<strong>单点登录，</strong>支持<strong>双向身份认证</strong>，<strong>非集中访问</strong>控制方法。</li>
+<li>Kerberos协议设计核心：在用户验证过程中引入一个可信的第三方》。..无需<strong>主机地址信任，不需要认证</strong></li>
+<li><strong>文件系统安全</strong>是UNIX&#x2F;Linux系统安全的核心，文件是存储在<strong>外存</strong>上具有标识名的一组相关<strong>字符流或记录</strong>的集合，用户数据的集合是文件，目录也是文件，文件系统在安装操作系统<strong>之前</strong>创建</li>
+<li><strong>shellcode</strong>：在缓冲区溢出攻击中，被植入的一段用以获得执行权限的代码</li>
+<li>信息安全五个基本属性：<strong>完整性</strong>、机密性、可用性、可控性、不可否认性</li>
+<li>信息安全保障工作：确定安全需求、设计和实施安全方案、进行<strong>信息安全评测</strong>、实施信息安全监控与维护</li>
+<li>ISO 13335标准<strong>首次</strong>给出的关于IT安全的6个方面的含义：机密性、完整性、可用性、审计性、认证性、可靠性</li>
+<li><strong>1996，</strong>国际标准ISO 15408的标准<strong>（CC）信息技术安全评价通用标准</strong>   <em>信息技术安全评估标准（ITSEC）*<em>GB&#x2F;T18336</em></em></li>
+<li>堆是先进先出，往高地址增长，从低地址向高地址增长；栈是后进先出，往低地址增长，从高地址向地址增长。</li>
+<li>数据库事务均以<strong>BEGIN TRANSACTION</strong>语句显式开始，<strong>COMMIT</strong>和<strong>ROLLBACK</strong>语句显式结束.</li>
+<li>数据库用户权限的两个要素：<strong>数据库对象</strong>和操作类型</li>
+<li>数据库新用户三权限：DBA、RESOURCE、CONNECT</li>
+<li>在CREATE TABLE语句中使用<strong>DEFAULT</strong>子句，是定义默认值首选的方法</li>
+<li>&#x2F;bin用户命令的可执行文件（二进制文件） &#x2F;dev（特殊设备）&#x2F;etc（系统执行文件、配置文件、管理文件，Red Hat Liunx中非二进制配置文件保留）&#x2F;lib（引导系统以及root文件系统中运行命令所需的共享库文件）</li>
+<li>显式地执行自陷指令</li>
+</ol>
+<h1 id="TCP数据包头标志位"><a href="#TCP数据包头标志位" class="headerlink" title="TCP数据包头标志位"></a>TCP数据包头标志位</h1><p>RST：出现差错，必须释放TCP连接重新建立应用层</p>
+<p>URG：紧急指针有效</p>
+<p>PSH：请求接收端主机尽快将数据包交付应用层</p>
+<p>FIN：释放TCP连接</p>
+<p>ACK：确认序号字段有效</p>
+<p>SYN：建立一个同步连接</p>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p>ESP-&gt;安全载荷封装</p>
+<p>AH-&gt;认证协议头</p>
+<p>ISAKMP：两台配置了IPSec协议的windows计算机进行IPSec初始链接，通过Wireshark嗅探的前面10个数据包是ISAKMP协议的数据包</p>
+<p>ICMP-&gt;ping命令</p>
+<h1 id="全错"><a href="#全错" class="headerlink" title="全错"></a>全错</h1><ol>
+<li>风险评估：<strong>自评估</strong>、<strong>检查</strong>评估（风险评估分为自评估和检查评估）</li>
+<li>风险评估主要依赖因素：<strong>灾难恢复策略</strong>no× 所采用的系统环境、使用信息的商业目的、商业信息和系统的性质yes√</li>
+<li>信息安全管理的基本技术要求设计五个方面：<strong>物理安全、</strong>网络安全、主机安全、应用安全和数据安全</li>
+<li>审核最大化，体系审核过程影响最小的<strong>必须</strong>选项-&gt;<strong>组织机构要对审核过程本身</strong>进行<strong>安全控制</strong></li>
+<li>利用网络服务程序的漏洞进行传播：<strong>局域网传播</strong></li>
+<li>进行栈溢出漏洞利用时，不属于漏洞利用数据项的是-&gt;<strong>exploit</strong></li>
+<li>漏洞利用的核心是利用程序漏洞去执行<strong>shellcode</strong>以便劫持进程的控制权</li>
+<li>windows系统进程管理工具：任务管理器、Msinfo32、DOS命令行yes√ <strong>本地安全策略no×</strong></li>
+<li>传送会话或文件密钥进行加密时，采用的密钥是：<strong>密钥加密密钥</strong>  会话密钥№×</li>
+<li>配置IPSec支持的身份验证方法不包括<strong>会话密钥</strong></li>
+<li>验证所收到的<strong>消息</strong>确实来自真正发送方未篡改的过程：<strong>消息认证</strong></li>
+<li>验证数字证书的真实性：<strong>验证证书中证书<strong><strong>认证机构的数字签名</strong></strong>来实现</strong></li>
+<li>SSL中记录协议的作用：完成<strong>传输格式</strong>的定义</li>
+<li>不属于主流捆绑：<strong>网站挂马no×</strong>   多文件捆绑、资源融合捆绑、漏洞利用挂马</li>
+<li>不能再视图上完成：在视图上<strong>定义新的表</strong></li>
+<li>中国可信平台使用了<strong>TCM，</strong>TCG可信平台使用的<strong>TPM</strong></li>
+<li><strong>TCG</strong>定义的可信计算平台信任根包括三个根：可信测量根、可信存储根、可信<strong>报告</strong>根</li>
+<li>从硬盘读取boot.ini是NTldr  NT Loader</li>
+<li>守护进程通常周期性的执行某种任务或等待处理发生的事件   <strong>no× 长期运行、自动关闭、少数服务通过实现</strong></li>
+<li>数据库安全错误的是：SQL注入攻击利用的是SQL语法，可以<strong>不受限制的访问数据库×</strong></li>
+<li>数据库安全检测：端口扫描、渗透扫描、内部安全扫描yes√ <strong>入侵检测no×</strong></li>
+<li>数据库渗透测试：漏洞分析、用户名和密码渗透、监听器安全特性分析yes√ <strong>发现数据库服务端口no×</strong></li>
+<li>数据库系统提供两种存取控制机制：<strong>自主</strong>存取控制和<strong>强制</strong>存取控制</li>
+<li>Biba模型作为BLP模型的补充，利用“下读\上写”保证数据完整性</li>
+<li>windows两类用户权限：登录权限 操作权限</li>
+</ol>
+<h1 id="网络端口"><a href="#网络端口" class="headerlink" title="网络端口"></a>网络端口</h1><p>110-&gt;POP3</p>
+<p>25-&gt;SMTP</p>
+<p>23-&gt;TELNET</p>
+<p>21-&gt;FTP</p>
+<h1 id="标准答案"><a href="#标准答案" class="headerlink" title="标准答案"></a>标准答案</h1><ol>
+<li><strong>智能</strong>模糊测试技术：结合了程序理解和模糊测试的测试技术</li>
+<li>会话劫持</li>
+<li>污点传播分析技术</li>
+<li>regedit</li>
+<li>RADIUS 拨号用户远程认证服务</li>
+<li>安全特征</li>
+<li>渗透测试</li>
+<li>证书链的起始端：<strong>信任锚</strong></li>
+<li>信任模型：主要适用于有严格的<strong>层次级别</strong>划分的大型组织机构和行业领域的信任模型</li>
+<li>美国的国家漏洞库：<strong>NVD</strong></li>
+<li>信息安全管理体系的主要内容：信息管理<strong>框架</strong>及其实施、信息<strong>安全管理体系审核</strong>、信息安全管理体系的<strong>认证</strong></li>
+<li>信息安全管理的内容主要包括信息安全<strong>管理体系</strong>、信息安全<strong>风险管理</strong>、信息安全<strong>管理措施</strong></li>
+<li>重要安全管理过程：系统获取、开发和维护、信息安全事件管理与应急响应、业务连续性管理与灾难恢复yes√ <strong>安全资质评审no×</strong></li>
+<li>安全管理方针手册主要内容：信息安全方针的阐述、控制目标与控制方式描述、程序或其引用yes√ <strong>信息管理的流程no×</strong></li>
+<li>信息系统安全：a.<strong>自主</strong>保护级、b.系统审计保护级、c.<strong>安全标记</strong>保护级、d.结构化保护级、e.访问验证保护级</li>
+<li>信息系统的安全保护等级两个定级要素：等级保护对象受到破坏时所侵害的客体；对客体造成侵害的程度</li>
+<li>Msinfo32显示本地计算机硬件、系统组件和软件环境的完整视图，查看系统信息的工具</li>
+</ol>
+<h1 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h1><ol>
+<li>（<strong>公共密钥基础设施</strong>）PKI核心<strong>数字证书****，</strong>用<strong>公钥</strong>密码学技术来实施和提供安全服务的安全基础设施</li>
+<li>数字证书不包含<strong>用户私钥 no×</strong> 用户身份标识、用户的公钥、CA的数字签名 <strong>含有信息的一串数字</strong></li>
+<li><strong>数字签名体制</strong>的两个过程：签名和<strong>验证签名</strong></li>
+<li>数字证书的存储格式标准：X.509最基本的证书存储格式，签名值是<strong>CA</strong>对证书上述内容的数字签名值，其他用户、应用程序或实体需下载<strong>CA根证书</strong>，使用此证书中的<strong>公钥</strong>对证书中的数字签名进行验证</li>
+<li>信息安全技术的核心：<strong>密码技术</strong></li>
+<li>可信计算平台的主要关键技术：<strong>信任根和信任链</strong></li>
+<li>**证书签发机构(CA)**是公共密钥基础设施的核心机构</li>
+<li>**证书注册机构(RA)**是接受客户证书申请并进行审核注册的机构</li>
+<li>身份认证的方法：静态密码、动态口令、USB KEY认证 yes√ <strong>AC证书no×</strong></li>
+</ol>
+<h1 id="🐎你🐎呢"><a href="#🐎你🐎呢" class="headerlink" title="🐎你🐎呢"></a>🐎你🐎呢</h1><ol>
+<li>恶意程序的传播方法：网站挂🐎、诱骗下载、通过移动存储介质传播、通过电子邮件和即时通信软件传播、通过局域网传播 （网络钓鱼<strong>×</strong>）</li>
+<li>rootkit技术的木马是<strong>第五代</strong>木马，<strong>内核隐藏</strong>技术</li>
+</ol>
+<h1 id="密码种类"><a href="#密码种类" class="headerlink" title="密码种类"></a>密码种类</h1><ol>
+<li>对称密码：DES（64）、AES(128)、IDEA</li>
+<li>分组密码：（Feistel网络）DES、IDEA、(sp网络)AES、 （商业）SM4</li>
+<li>序列密码：<strong>RC4</strong>、SEAL</li>
+<li>160位哈希值：<strong>SHA-1</strong>、椭圆曲线密码的p值、ECC参数规模、SHA算法</li>
+<li>MD5是128位</li>
+<li>ElGamal密码-&gt;离散对数；RSA-&gt;大整数因式分解</li>
+<li>非保护信道第一个：Diffie-Hellman</li>
+</ol>
+<h1 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h1><ol>
+<li><p>《可信计算机评估标准》（<strong>TCSEC</strong>，也称为橘皮书）将计算机系统安全划分为：<strong>四</strong>个等级<strong>七</strong>个级别</p>
+</li>
+<li><p>《信息安全等级保护管理办法》信息系统分为：<strong>五</strong>个安全保护等级</p>
+</li>
+<li><p>基于角色的访问控制：用户、角色、<strong>许可</strong></p>
+</li>
+<li><p>信息系统的<em>安全</em>保护：人员、技术、操作</p>
+</li>
+<li></li>
+<li><p>进程与CPU通信是通过<strong>中断</strong>完成的</p>
+</li>
+<li><p>进程是<strong>资源分配</strong>的基本单位</p>
+</li>
+<li><p>线程是独立<strong>运行</strong>和独立<strong>调度</strong>的基本单位，操作系统能够进行<strong>运算调度</strong>的最小单位</p>
+</li>
+<li><p>chmod改变文件权限</p>
+</li>
+<li><p>chown改变文件<strong>拥有权</strong></p>
+</li>
+<li><p>last命令：列出用户所有登录时间和登陆终端地址</p>
+</li>
+<li><p>lastlog命令：列出用户<strong>最后</strong>登录时间和登陆终端地址</p>
+</li>
+<li><p>unix文件系统安全基于i节点中三段关键信息：<strong>文件拥有者、文件所在分组、****模式</strong></p>
+</li>
+<li><p>信任根包括：可信测量根、可信存储根、可信<strong>报告</strong>根</p>
+</li>
+<li><p>栈是先进后出的数据结构，内存增长方向是高-&gt;低</p>
+</li>
+<li><p>堆是先进先出的数据结构，内存增长方向是低-&gt;高</p>
+</li>
+<li><p>缓冲区溢出攻击，用来获得执行权限的代码被称为<strong>shellcode</strong>代码</p>
+</li>
+<li><p><strong>保护环：</strong>操作系统使用确保进程不会彼此造成负面影响</p>
+</li>
+<li><p>服务通过<strong>inetd</strong>进程或启动脚本启动</p>
+</li>
+<li><p>运行程序使用的是<strong>bash</strong>命令</p>
+</li>
+<li><p>审计<strong>audit</strong></p>
+</li>
+<li><p>自主访问控制：<strong>DAC</strong></p>
+</li>
+<li><p>强制访问控制：<strong>MAC</strong></p>
+</li>
+<li><p>访问控制类型：预防性、纠正性、探查性yes√ <strong>检验性no×</strong></p>
+</li>
+<li><p>现实方法访问控制：行政性、逻辑\技术性、物理性</p>
+</li>
+<li><p>访问控制依赖三个职责：用户账户管理、操作跟踪、访问权利和许可权的管理</p>
+</li>
+<li><p>程序分配内存地址随机化分布：<strong>ASLR</strong></p>
+</li>
+<li><p>跨站请求伪造CRSF  <strong>客户端</strong>请求				</p>
+</li>
+<li><p>跨站<strong>脚本攻击XSS</strong> </p>
+</li>
+<li><p>存储型XSS又称为<strong>持久型</strong>跨站脚本攻击</p>
+</li>
+<li><p>Dos攻击 TCP协议：a.本身缺陷：SYN-Flood ACK-Flood b.全连接发起攻击</p>
+</li>
+<li><p>SQL攻击利用<strong>服务器端漏洞</strong>进行攻击</p>
+</li>
+<li><p>信息技术的产生和发展经历三阶段：电讯技术的发明、计算机技术的发展、互联网的使用</p>
+</li>
+<li><p>网络层协议：RIP</p>
+</li>
+<li><p>应用层协议：HTTP\DNS\SSH	</p>
+</li>
+<li><p>基于矩阵的行的访问控制信息表示的是<strong>访问能力表（主体）</strong></p>
+</li>
+<li><p>基于矩阵的列的访问控制信息表示的是<strong>访问控制表（客体）</strong></p>
+</li>
+<li><p>A类IP地址范围：0.0.0.0~127.255.255.255</p>
+<p>B类IP地址范围：128.0.0.0~191.255.255.255</p>
+<p>C类IP地址范围：192.0.0.0~223.255.255.255</p>
+<p>D类IP地址范围：224.0.0.0~239.255.255.255</p>
+</li>
+</ol>
+<h1 id="USB-Key身份认证（加密狗）"><a href="#USB-Key身份认证（加密狗）" class="headerlink" title="USB Key身份认证（加密狗）"></a>USB Key身份认证（加密狗）</h1><p>USB接口的硬件设备，内置单片机或智能卡芯片，可以存储用户的密钥或数字证书  </p>
+<p>利用Usbkey内置的密码算法实现对用户身份的认证。  .</p>
+<p> 基于USB Key身份认证系统主要有两种应用模式：一是基于冲击&#x2F;响应(挑战&#x2F;应答)的认证模式，二是基于PKI体系的认证模式，运用在电子政务、网上银行。  </p>
+<p>PKI体系（数字证书种类）：</p>
+<p>PKI 是 Public Key Infrastructure 的缩写，中文叫做公开密钥基础设施，也就是利用公开密钥机制建立起来的基础设施。  <strong>目的是为了管理密钥和证书。</strong></p>
+<p>PKI 是 Public Key Infrastructure 的缩写，其主要功能是绑定证书持有者的身份和相关的密钥对（通过为公钥及相关的用户身份信息签发数字证书），为用户提供方便的证书申请、证书作废、证书获取、证书状态查询的途径，并利用数字证书及相关的各种服务（证书发布，黑名单发布，时间戳服务等）实现通信中各实体的身份认证、完整性、抗抵赖性和保密性。</p>
+<p>PKI 既不是一个协议，也不是一个软件，它是一个标准，在这个标准之下发展出的为了实现安全基础服务目的的技术统称为 PKI。  </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Something</li>
+        <li><strong>Author:</strong> Juana_2u</li>
+        <li><strong>Created at
+                :</strong> 2023-10-14 12:01:05</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-10-14 14:54:25
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://juana-2u.github.io/2023/10/14/Something/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/have-deal/">#have_deal</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/10/14/About%E3%80%90python%E3%80%91/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">About【python】</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/09/13/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">刷题记录</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Something</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LuoGo%E5%88%B7%E9%A2%98%EF%BC%8820220107%EF%BC%89"><span class="nav-text">LuoGo刷题（20220107）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A5Hp6"><span class="nav-text">例题：题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D397J"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#devIX"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aZBUg"><span class="nav-text">输入输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%9C%E5%91%9C%E5%91%9C-%E6%96%B0%E5%AD%A6%E6%9C%9F%E7%BD%91%E5%8F%95G%E4%BA%8620230222"><span class="nav-text">呜呜呜 新学期网叕G了20230222</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E6%81%B6%E5%95%8A-python%E8%A3%85%E4%B8%8D%E4%B8%8Az3-20221114"><span class="nav-text">可恶啊 python装不上z3(20221114)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python3%E7%9A%84%E9%87%8D%E8%A3%85"><span class="nav-text">python3的重装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%EF%BC%9A"><span class="nav-text">卸载：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BA%86%E4%B8%A4%E7%A7%8D%E7%89%88%E6%9C%AC%E7%9A%84python%E8%83%BD%E5%A4%9F%E5%85%B1%E5%AD%98%EF%BC%8C%E8%A6%81%E6%94%B9%E6%8E%89%E5%90%8D%E5%AD%97%E3%80%82"><span class="nav-text">为了两种版本的python能够共存，要改掉名字。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEpip%EF%BC%8C%E4%BD%BF%E5%BE%97%E4%B8%A4%E7%A7%8Dpip%E5%85%B1%E5%AD%98"><span class="nav-text">设置pip，使得两种pip共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E9%83%A8%E6%8E%A8%E7%BF%BB%EF%BC%81%EF%BC%81"><span class="nav-text">全部推翻！！</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BurpSuite%E8%BF%99%E4%B8%AA%E8%BD%AF%E4%BB%B6G%E4%BA%86%E4%B9%8B%E5%90%8E%E7%9A%84%E9%87%8D%E6%96%B0%E4%B8%8B%E8%BD%BD-20221106"><span class="nav-text">BurpSuite这个软件G了之后的重新下载(20221106)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8E%9FJava%E7%8E%AF%E5%A2%83%E7%9A%84%E5%8D%B8%E9%99%A4"><span class="nav-text">1.原Java环境的卸除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84Java8%E7%8E%AF%E5%A2%83"><span class="nav-text">2.配置新的Java8环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85BurpSuite"><span class="nav-text">3.安装BurpSuite</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91%E7%9A%84%E7%BD%91%E5%B7%AE%E7%82%B9%E5%8F%88G%E4%BA%86-20221102"><span class="nav-text">关于我的网差点又G了(20221102)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%99%9A%E6%8B%9F%E6%9C%BAVMware%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98"><span class="nav-text">1.虚拟机VMware网络问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8B%92%E7%BB%9D%E8%BF%9E%E6%8E%A5"><span class="nav-text">2.代理服务器拒绝连接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ewin7%E7%B3%BB%E7%BB%9F%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85win10-20220822"><span class="nav-text">关于win7系统重新安装win10(20220822)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88"><span class="nav-text">首先</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E6%AC%A1"><span class="nav-text">其次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-text">最后</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Evscode%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84ssh-20220805"><span class="nav-text">关于vscode连接服务器的ssh(20220805)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%89%E7%BA%A7%E5%88%86%E4%B8%8D%E6%B8%85%E7%9A%84%E8%80%83%E7%82%B9"><span class="nav-text">信息安全三级分不清的考点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B4%E4%BB%BD%E6%95%B4%E7%90%86"><span class="nav-text">年份整理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D"><span class="nav-text">专业名词</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UNIX-Linux%E7%B3%BB%E7%BB%9F"><span class="nav-text">UNIX&#x2F;Linux系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E3%80%81%E9%A6%96%E9%83%A8"><span class="nav-text">第一、首部</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E7%B3%8A%E5%88%86%E4%B8%8D%E6%B8%85"><span class="nav-text">模糊分不清</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4%E6%A0%87%E5%BF%97%E4%BD%8D"><span class="nav-text">TCP数据包头标志位</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE"><span class="nav-text">协议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E9%94%99"><span class="nav-text">全错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%AB%AF%E5%8F%A3"><span class="nav-text">网络端口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E7%AD%94%E6%A1%88"><span class="nav-text">标准答案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83"><span class="nav-text">核心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%90%8E%E4%BD%A0%F0%9F%90%8E%E5%91%A2"><span class="nav-text">🐎你🐎呢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E7%A7%8D%E7%B1%BB"><span class="nav-text">密码种类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B7%E6%B7%86"><span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#USB-Key%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%EF%BC%88%E5%8A%A0%E5%AF%86%E7%8B%97%EF%BC%89"><span class="nav-text">USB Key身份认证（加密狗）</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">PUJIPUJIPUJI~~~~DA~~~~</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Juana_2u</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>
