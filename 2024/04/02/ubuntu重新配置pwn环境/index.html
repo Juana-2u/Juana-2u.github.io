@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Juana_2u">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://juana-2u.github.io/2024/04/02/ubuntu重新配置pwn环境/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="重新安装好了镜像文件之后，先去换源，上一个文件已经写过怎么把ubantu换源的方法，还原之后要更新一下apt命令：apt update  apt upgrade 安装python首先进入root用户(当然愿意在命令前加sudo也可以)： 1su - root  然后执行所有升级： 12apt updateapt upgrade -y  安装编译Python源程序所需的包： 123apt insta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu重新配置pwn环境">
+<meta property="og:url" content="https://juana-2u.github.io/2024/04/02/ubuntu%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEpwn%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="重新安装好了镜像文件之后，先去换源，上一个文件已经写过怎么把ubantu换源的方法，还原之后要更新一下apt命令：apt update  apt upgrade 安装python首先进入root用户(当然愿意在命令前加sudo也可以)： 1su - root  然后执行所有升级： 12apt updateapt upgrade -y  安装编译Python源程序所需的包： 123apt insta">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678421855414-a481bcf6-963d-4660-a4f9-a75deed5a9dd.png#averageHue=%23796f60&clientId=u295b0ab2-9a27-4&from=paste&height=718&id=ub5a99f4c&originHeight=898&originWidth=1001&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=243328&status=done&style=none&taskId=ud51d2f72-4a1f-46b8-be53-040e3e39257&title=&width=800.8">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678434233284-a4b15f8f-1f29-4448-8c23-792824345a99.png#averageHue=%23310b26&clientId=ue3bd1ed6-6e56-4&from=paste&height=531&id=ue8bc7b33&originHeight=531&originWidth=729&originalType=binary&ratio=1&rotation=0&showTitle=false&size=177816&status=done&style=none&taskId=ub2950c72-17c6-4fd1-b1e6-aa37b4af90c&title=&width=729">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678445985072-829a1163-c7e7-47ae-aaa5-01159fd99d4e.png#averageHue=%23310a25&clientId=ue3bd1ed6-6e56-4&from=paste&height=445&id=u7b4cfd45&originHeight=445&originWidth=1112&originalType=binary&ratio=1&rotation=0&showTitle=false&size=86083&status=done&style=none&taskId=ub387d71e-555f-4a03-835a-f1c4aa7cf26&title=&width=1112">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678446052397-bda26f69-adab-417c-aeaa-91c7585d2db3.png#averageHue=%23300b26&clientId=ue3bd1ed6-6e56-4&from=paste&height=736&id=u5afebc81&originHeight=736&originWidth=1066&originalType=binary&ratio=1&rotation=0&showTitle=false&size=212125&status=done&style=none&taskId=u2085aa68-6564-40b2-8267-82d4c9d35f2&title=&width=1066">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678446084916-27397f2b-c701-4fa1-9568-a0fdbdc25b5c.png#averageHue=%23300a25&clientId=ue3bd1ed6-6e56-4&from=paste&height=568&id=ub9369de3&originHeight=568&originWidth=1069&originalType=binary&ratio=1&rotation=0&showTitle=false&size=128560&status=done&style=none&taskId=ub1ea0fcb-d5b0-4ace-9f31-8927cb74b1f&title=&width=1069">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450477029-4f72517b-cbc7-44fc-a65b-8053efc7af8a.png#averageHue=%23ebeaea&clientId=u8e94baf1-7dc7-4&from=paste&height=694&id=u54ddc5da&originHeight=868&originWidth=1516&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=60036&status=done&style=none&taskId=u9394b321-b683-4a1b-bcc6-24683b0cd1c&title=&width=1212.8">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450509837-e91cd2ec-c582-4629-a929-05fd39429c4b.png#averageHue=%23c7c6c5&clientId=u8e94baf1-7dc7-4&from=paste&height=428&id=u1452e30a&originHeight=535&originWidth=620&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=30425&status=done&style=none&taskId=ua892cdd0-8c27-4d35-a76d-0a88aac5ef1&title=&width=496">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450237175-ddd78380-d4cd-4dcc-b5b8-755d9f7f5368.png#averageHue=%23310b25&clientId=u8e94baf1-7dc7-4&from=paste&id=u51231c4a&originHeight=603&originWidth=915&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=140432&status=done&style=none&taskId=u48be8a1b-69cc-42c9-a05e-5052b14b778&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450322386-5d2a4c83-a6ee-48a1-b7e6-3c52c2f95492.png#averageHue=%23320d28&clientId=u8e94baf1-7dc7-4&from=paste&height=27&id=u5e52a3ba&originHeight=34&originWidth=793&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=10349&status=done&style=none&taskId=uc406a0c8-318f-4ce7-a092-8319a108e74&title=&width=634.4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450364621-b02153de-faff-4304-a92d-b703cd38ad2f.png#averageHue=%23403271&clientId=u8e94baf1-7dc7-4&from=paste&height=61&id=u6b2e5359&originHeight=76&originWidth=732&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=18605&status=done&style=none&taskId=u8d76f9d6-924f-44aa-91aa-71a288ea002&title=&width=585.6">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450377846-75857bab-6cda-4e44-96a4-25c8eed0874f.png#averageHue=%23300b26&clientId=u8e94baf1-7dc7-4&from=paste&height=126&id=u847f303c&originHeight=158&originWidth=804&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=44177&status=done&style=none&taskId=u2d1c7d5f-0567-4241-87cf-3bd0e7a12fe&title=&width=643.2">
+<meta property="article:published_time" content="2024-04-02T11:55:47.000Z">
+<meta property="article:modified_time" content="2024-04-02T11:57:08.539Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678421855414-a481bcf6-963d-4660-a4f9-a75deed5a9dd.png#averageHue=%23796f60&clientId=u295b0ab2-9a27-4&from=paste&height=718&id=ub5a99f4c&originHeight=898&originWidth=1001&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=243328&status=done&style=none&taskId=ud51d2f72-4a1f-46b8-be53-040e3e39257&title=&width=800.8">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/ico.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/ico.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/ico.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            ubuntu重新配置pwn环境 -
+        
+        Juana_2u
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"juana-2u.github.io","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["记录来时的路"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#FF5722"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Juana_2uのhappyworld","subtitle":{"text":["BEING HAPPY IS THE MOST IMPORTANT!!"," I have a dream!","Sometimes you have to trust your gut.","If you start at the bottom,pay your dues,life here can be a dream come true.","Loading..."],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":"https://www.zhihu.com/people/fawn-16-32","twitter":null,"email":null,"bilibili":"https://space.bilibili.com/440820814?spm_id_from=333.1007.0.0"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"An der schönen blauen Donau,Walzer,op.314","artist":"Johann Strauss II","url":"https://open.spotify.com/embed/track/5odlY52u43F5BjByhxg7wg?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"City of Stars","artist":"Ryan Gosling,Emma Stone","url":"https://open.spotify.com/embed/track/1xk2Z84gbcn4tPXiiutxzS?utm_source=generator","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"},{"name":"Stray sheep","artist":"Kenshi Yonezu","url":"https://open.spotify.com/track/0iniTNHwqBiP4UDE1dgUpD?si=94e55cca33114e88","cover":"http://p1.music.126.net/ZahwBmJHBnG9Gm4VC51Yew==/109951168758832434.jpg?param=180y180"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user"},"tags":{"icon":"fa-solid fa-tags","path":"/tags/","categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"Links":{"icon":"fa-regular fa-link"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/5/10 23:30:00"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Juana_2u
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags/"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-tags"></i>
+                                        
+                                        TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/tags/"  >
+                             
+                                
+                                    <i class="fa-solid fa-tags"></i>
+                                
+                                TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">ubuntu重新配置pwn环境</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Juana_2u</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">记录来时的路</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-02 19:55:47</span>
+        <span class="mobile">2024-04-02 19:55:47</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-02 19:57:08</span>
+            <span class="mobile">2024-04-02 19:57:08</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/CTF/">CTF</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <p>重新安装好了镜像文件之后，先去换源，上一个文件已经写过怎么把ubantu换源的方法，还原之后要更新一下apt<br>命令：<code>apt update </code> <code>apt upgrade</code></p>
+<h3 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h3><p>首先进入root用户(当然愿意在命令前加sudo也可以)：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - root</span><br></pre></td></tr></table></figure></div>
+
+<p>然后执行所有升级：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt upgrade -y</span><br></pre></td></tr></table></figure></div>
+
+<p>安装编译Python源程序所需的包：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install build-essential -y</span><br><span class="line">apt install libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev -y</span><br><span class="line">apt-get install zlib1g-dev</span><br></pre></td></tr></table></figure></div>
+
+<p>进入应用目录</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/<span class="built_in">bin</span></span><br><span class="line">mkdir python</span><br><span class="line">cd python</span><br></pre></td></tr></table></figure></div>
+
+<p>下载python 源程序压缩包，各版本链接可以在<a class="link"   target="_blank" rel="noopener" href="https://www.python.org/ftp/python/" >官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>获取，这里以3.9.0为例</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/<span class="number">3.9</span><span class="number">.0</span>/Python-<span class="number">3.9</span><span class="number">.0</span>.tgz</span><br><span class="line">tar -xzvf Python-<span class="number">3.9</span><span class="number">.0</span>.tgz</span><br></pre></td></tr></table></figure></div>
+
+<p>配置</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Python-<span class="number">3.9</span><span class="number">.0</span></span><br><span class="line">./configure --enable-optimizations</span><br></pre></td></tr></table></figure></div>
+
+<p>编译和安装python</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></div>
+
+<p>安装完成后，输入python3，如果进入python命令行就说明安装成功了</p>
+<h3 id="安装vim"><a href="#安装vim" class="headerlink" title="安装vim"></a>安装vim</h3><p>命令：<code>apt install vim</code></p>
+<h3 id="安装sublime-text"><a href="#安装sublime-text" class="headerlink" title="安装sublime-text"></a>安装sublime-text</h3><p>直接在software软件下载就好。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678421855414-a481bcf6-963d-4660-a4f9-a75deed5a9dd.png#averageHue=%23796f60&clientId=u295b0ab2-9a27-4&from=paste&height=718&id=ub5a99f4c&originHeight=898&originWidth=1001&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=243328&status=done&style=none&taskId=ud51d2f72-4a1f-46b8-be53-040e3e39257&title=&width=800.8"
+                      alt="image.png"
+                ><br>下载的时候发生报错，发现是没有安装 ca-certificates 的软件包 ：<br>命令：<code>sudo apt install ca-certificates</code></p>
+<h3 id="3-安装LibcSearch"><a href="#3-安装LibcSearch" class="headerlink" title="3.安装LibcSearch"></a>3.安装LibcSearch</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/lieanu/LibcSearcher.git</span><br><span class="line"> </span><br><span class="line">cd LibcSearcher</span><br><span class="line"> </span><br><span class="line">python3 setup.py develop</span><br></pre></td></tr></table></figure></div>
+
+<p>这里有一个报错就是python的版本问题，直接改为python3就可以运行了</p>
+<h3 id="4-安装qemu"><a href="#4-安装qemu" class="headerlink" title="4.安装qemu"></a>4.安装qemu</h3><p> 使用apt list qemu*可查看所有前缀为qemu的包。可以看到这里有很多支持不同架构的qemu。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678434233284-a4b15f8f-1f29-4448-8c23-792824345a99.png#averageHue=%23310b26&clientId=ue3bd1ed6-6e56-4&from=paste&height=531&id=ue8bc7b33&originHeight=531&originWidth=729&originalType=binary&ratio=1&rotation=0&showTitle=false&size=177816&status=done&style=none&taskId=ub2950c72-17c6-4fd1-b1e6-aa37b4af90c&title=&width=729"
+                      alt="image.png"
+                ><br>根据自己的需要安装对应架构的包即可。一般最为常用的是x86架构：apt install qemu-system-x86，注意不能只输入apt install qemu。  </p>
+<h2 id="5-安装pwntools"><a href="#5-安装pwntools" class="headerlink" title="5.安装pwntools"></a>5.安装pwntools</h2><p> pwntools是pwn最常用的一个python包。<br>首先需要安装pip：<code>apt install python3-pip</code><br>然后安装pwntools：<code>pip install pwntools</code><br>完成  </p>
+<h2 id="6-安装pwndbg"><a href="#6-安装pwndbg" class="headerlink" title="6.安装pwndbg"></a>6.安装pwndbg</h2><p>首先就是直接使用的git clone的方法<br>pwndbg是gdb的插件，帮助我们在做题时进行调试。<br>首先安装git：<code>apt install git</code><br>然后拉取git库：<code>git clone https://github.com/pwndbg/pwndbg</code><br>进入pwndbg目录下，运行bash脚本<code>./setup.sh</code>开始安装<br> <a class="link"   target="_blank" rel="noopener" href="https://github.com/pwndbg/pwndbg" >https://github.com/pwndbg/pwndbg <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678445985072-829a1163-c7e7-47ae-aaa5-01159fd99d4e.png#averageHue=%23310a25&clientId=ue3bd1ed6-6e56-4&from=paste&height=445&id=u7b4cfd45&originHeight=445&originWidth=1112&originalType=binary&ratio=1&rotation=0&showTitle=false&size=86083&status=done&style=none&taskId=ub387d71e-555f-4a03-835a-f1c4aa7cf26&title=&width=1112"
+                      alt="image.png"
+                ><br>后面就有了dbg的标识，但还是有报错的信息<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678446052397-bda26f69-adab-417c-aeaa-91c7585d2db3.png#averageHue=%23300b26&clientId=ue3bd1ed6-6e56-4&from=paste&height=736&id=u5afebc81&originHeight=736&originWidth=1066&originalType=binary&ratio=1&rotation=0&showTitle=false&size=212125&status=done&style=none&taskId=u2085aa68-6564-40b2-8267-82d4c9d35f2&title=&width=1066"
+                      alt="image.png"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678446084916-27397f2b-c701-4fa1-9568-a0fdbdc25b5c.png#averageHue=%23300a25&clientId=ue3bd1ed6-6e56-4&from=paste&height=568&id=ub9369de3&originHeight=568&originWidth=1069&originalType=binary&ratio=1&rotation=0&showTitle=false&size=128560&status=done&style=none&taskId=ub1ea0fcb-d5b0-4ace-9f31-8927cb74b1f&title=&width=1069"
+                      alt="image.png"
+                ><br>有这样的报错貌似没啥关系，但还是可以修的<br>直接在~下输入pip的命令<code>python3 -m pip install launchpadlib</code><br>dbg退出命令：<code>quit/exit</code></p>
+<blockquote>
+<p>敢说一下午搞了这个啥也不是<br>一开始报的错误是超时的错误，听说可以在ubantu虚拟机里搞一个梯子挂着，clash for Linux最后尝试失败，不知道是订阅的链接失败还是说下载安装的方法出现错误<br>还有就是ubantu网络的代理设置：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450477029-4f72517b-cbc7-44fc-a65b-8053efc7af8a.png#averageHue=%23ebeaea&clientId=u8e94baf1-7dc7-4&from=paste&height=694&id=u54ddc5da&originHeight=868&originWidth=1516&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=60036&status=done&style=none&taskId=u9394b321-b683-4a1b-bcc6-24683b0cd1c&title=&width=1212.8"
+                      alt="image.png"
+                ><br>设置栏的网络的地方，选择work proxy的选项<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450509837-e91cd2ec-c582-4629-a929-05fd39429c4b.png#averageHue=%23c7c6c5&clientId=u8e94baf1-7dc7-4&from=paste&height=428&id=u1452e30a&originHeight=535&originWidth=620&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=30425&status=done&style=none&taskId=ua892cdd0-8c27-4d35-a76d-0a88aac5ef1&title=&width=496"
+                      alt="image.png"
+                ><br>用手动的设置代理的ip和端口。要看当时clash for linux报的是什么端口。<br>第二个就是使用git ssh免密安装的方式，但貌似还是不成功。<br>同时有几种方法，还是具有借鉴作用的：<br>M1： <a class="link"   target="_blank" rel="noopener" href="https://github.com/pwndbg/pwndbg" >https://github.com/pwndbg/pwndbg <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 将https换成git也就是换成git:&#x2F;&#x2F;<a class="link"   target="_blank" rel="noopener" href="https://github.com/pwndbg/pwndbg" >github.com&#x2F;pwndbg&#x2F;pwndbg <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>M2：取消代理的方法，没试过 不会<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/dashi_lu/article/details/89641778" >https://blog.csdn.net/dashi_lu&#x2F;article&#x2F;details&#x2F;89641778 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>M3：</p>
+<ol>
+<li>安装git：<code>sudo apt-get install git</code></li>
+<li>配置用户信息</li>
+</ol>
+<p><code>$ git config --global user.name &quot;your name&quot;</code><br><code>$ git config --global user.email &quot;your email address&quot;</code></p>
+<ol start="3">
+<li>初始化本地仓库设置<code>git init</code></li>
+</ol>
+<p>通过ssh连接github</p>
+<ol start="4">
+<li>安装ssh</li>
+</ol>
+<p><code>sudo apt-get install ssh</code><br>ssh-keygen 会确认密钥的存储位置和文件名（默认是 .ssh&#x2F;id_rsa）,然后他会要求你输入两次密钥口令，留空即可。所以一般选用默认，全部回车即可。 如下图所示<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450237175-ddd78380-d4cd-4dcc-b5b8-755d9f7f5368.png#averageHue=%23310b25&clientId=u8e94baf1-7dc7-4&from=paste&id=u51231c4a&originHeight=603&originWidth=915&originalType=url&ratio=1.25&rotation=0&showTitle=false&size=140432&status=done&style=none&taskId=u48be8a1b-69cc-42c9-a05e-5052b14b778&title="
+                      alt="image.png"
+                ></p>
+<ol start="5">
+<li>创建密钥文件<code>ssh-keygen -t rsa -C &quot;你的github账号邮箱&quot;</code></li>
+<li>将公钥添加到GitHub账户</li>
+</ol>
+<p>（1）将id_rsa.pub文件内容全部复制；<br>（2）登陆到<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=GitHub&spm=1001.2101.3001.7020" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>上，右上角小头像-&gt;Setting-&gt;SSH and GPG keys中，点击new SSH key。</p>
+<ol start="7">
+<li>ssh测试<code>ssh -T git@github.com</code></li>
+</ol>
+<p>结果为这个 则表示成功：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450322386-5d2a4c83-a6ee-48a1-b7e6-3c52c2f95492.png#averageHue=%23320d28&clientId=u8e94baf1-7dc7-4&from=paste&height=27&id=u5e52a3ba&originHeight=34&originWidth=793&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=10349&status=done&style=none&taskId=uc406a0c8-318f-4ce7-a092-8319a108e74&title=&width=634.4"
+                      alt="20210506201033697.png"
+                > 8. 使用使用 git clone <a class="link"   target="_blank" rel="noopener" href="https://github.com/Z3Prover/z3.git" >https://github.com/Z3Prover/z3.git <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，测试是否真的成功？<br>在别人的机器上又报了如下错误：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450364621-b02153de-faff-4304-a92d-b703cd38ad2f.png#averageHue=%23403271&clientId=u8e94baf1-7dc7-4&from=paste&height=61&id=u6b2e5359&originHeight=76&originWidth=732&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=18605&status=done&style=none&taskId=u8d76f9d6-924f-44aa-91aa-71a288ea002&title=&width=585.6"
+                      alt="20210506201256239.png"
+                ></p>
+<ol start="5">
+<li>原因是你的git buffer太低了。为解决上述报错，需要执行：<br><code>git config --global http.postBuffer 50M</code><br>再次执行 git clone的命令 就好了<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.nlark.com/yuque/0/2023/png/23148330/1678450377846-75857bab-6cda-4e44-96a4-25c8eed0874f.png#averageHue=%23300b26&clientId=u8e94baf1-7dc7-4&from=paste&height=126&id=u847f303c&originHeight=158&originWidth=804&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=44177&status=done&style=none&taskId=u2d1c7d5f-0567-4241-87cf-3bd0e7a12fe&title=&width=643.2"
+                      alt="20210506201544505.png"
+                ></li>
+</ol>
+</blockquote>
+<h2 id="6-安装pwntools"><a href="#6-安装pwntools" class="headerlink" title="6.安装pwntools"></a>6.安装pwntools</h2><p> pwntools是pwn最常用的一个python包。<br>首先需要安装pip：<code>apt install python3-pip</code><br>然后安装pwntools：<code>pip install pwntools</code><br>完成  </p>
+<h2 id="7-ubantu如何运行exe可执行文件"><a href="#7-ubantu如何运行exe可执行文件" class="headerlink" title="7.ubantu如何运行exe可执行文件"></a>7.ubantu如何运行exe可执行文件</h2><p>命令：<code>sudo apt-get install wine </code></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> ubuntu重新配置pwn环境</li>
+        <li><strong>Author:</strong> Juana_2u</li>
+        <li><strong>Created at
+                :</strong> 2024-04-02 19:55:47</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-04-02 19:57:08
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://juana-2u.github.io/2024/04/02/ubuntu重新配置pwn环境/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/CTF/">#CTF</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/04/02/ubuntu%E5%AE%89%E8%A3%85/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">ubuntu安装zsh</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">ubuntu重新配置pwn环境</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85python"><span class="nav-text">安装python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vim"><span class="nav-text">安装vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85sublime-text"><span class="nav-text">安装sublime-text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85LibcSearch"><span class="nav-text">3.安装LibcSearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85qemu"><span class="nav-text">4.安装qemu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%89%E8%A3%85pwntools"><span class="nav-text">5.安装pwntools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AE%89%E8%A3%85pwndbg"><span class="nav-text">6.安装pwndbg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AE%89%E8%A3%85pwntools"><span class="nav-text">6.安装pwntools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-ubantu%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8Cexe%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="nav-text">7.ubantu如何运行exe可执行文件</span></a>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">PUJIPUJIPUJI~~~~DA~~~~</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Juana_2u</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>
